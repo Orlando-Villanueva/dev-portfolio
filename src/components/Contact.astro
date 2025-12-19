@@ -9,6 +9,12 @@ const content = {
     service: "Service Type",
     message: "Tell me about your project",
     submit: "Send Message",
+    success_title: "Message Sent!",
+    success_message:
+      "Thank you for reaching out. I'll get back to you within 24 hours.",
+    error_title: "Oops!",
+    error_message:
+      "Something went wrong. Please try again or email me directly at orlandovillanueva11@gmail.com",
     options: [
       "Marketing Website",
       "Business Automation",
@@ -25,6 +31,12 @@ const content = {
     service: "Type de service",
     message: "Parlez-moi de votre projet",
     submit: "Envoyer le message",
+    success_title: "Message envoyé !",
+    success_message:
+      "Merci d'avoir pris contact. Je vous répondrai dans les 24 heures.",
+    error_title: "Oups !",
+    error_message:
+      "Un problème est survenu. Veuillez réessayer ou m'envoyer un courriel directement à orlandovillanueva11@gmail.com",
     options: ["Site Vitrine", "Automatisation", "Application Web", "Autre"],
   },
 } as const;
@@ -44,107 +56,178 @@ const t = content[lang];
       <p class="text-slate text-lg">{t.subtitle}</p>
     </div>
 
-    <form
-      name="contact"
-      method="POST"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
-      class="bg-white p-8 md:p-12 rounded-[2rem] shadow-xl shadow-navy/5 space-y-6"
+    <div
+      id="contact-container"
+      class="bg-white p-8 md:p-12 rounded-[2rem] shadow-xl shadow-navy/5"
     >
-      <input type="hidden" name="form-name" value="contact" />
-      <input type="hidden" name="subject" value="Project Inquiry" />
-      <div class="hidden">
-        <label
-          >Don't fill this out if you're human: <input
-            name="bot-field"
-          /></label
-        >
-      </div>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="space-y-2">
-          <label class="text-sm font-bold text-navy ml-1">{t.name}</label>
-          <input
-            type="text"
-            id="contact-name"
-            name="name"
-            required
-            class="w-full px-6 py-4 rounded-xl border-2 border-slate/10 focus:border-accent outline-none transition-colors"
-          />
-        </div>
-        <div class="space-y-2">
-          <label class="text-sm font-bold text-navy ml-1">{t.email}</label>
-          <input
-            type="email"
-            name="email"
-            required
-            class="w-full px-6 py-4 rounded-xl border-2 border-slate/10 focus:border-accent outline-none transition-colors"
-          />
-        </div>
-      </div>
-
-      <div class="space-y-2">
-        <label class="text-sm font-bold text-navy ml-1">{t.service}</label>
-        <select
-          id="contact-service"
-          name="service"
-          class="w-full px-6 py-4 rounded-xl border-2 border-slate/10 focus:border-accent outline-none transition-colors appearance-none bg-white"
-        >
-          {t.options.map((opt) => <option>{opt}</option>)}
-        </select>
-      </div>
-
-      <div class="space-y-2">
-        <label class="text-sm font-bold text-navy ml-1">{t.message}</label>
-        <textarea
-          name="message"
-          rows="4"
-          required
-          class="w-full px-6 py-4 rounded-xl border-2 border-slate/10 focus:border-accent outline-none transition-colors resize-none"
-        ></textarea>
-      </div>
-
-      <input type="hidden" name="subject" value="Project Inquiry" />
-
-      <button
-        type="submit"
-        class="w-full bg-accent text-white py-5 rounded-xl font-bold text-lg hover:bg-accent/90 transition-all shadow-lg shadow-accent/20"
+      <form
+        id="contact-form"
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        class="space-y-6"
       >
-        {t.submit}
-      </button>
-    </form>
+        <input type="hidden" name="form-name" value="contact" />
+        <input
+          type="hidden"
+          name="subject"
+          id="subject-input"
+          value="Project Inquiry"
+        />
+        <div class="hidden">
+          <label
+            >Don't fill this out if you're human: <input
+              name="bot-field"
+            /></label
+          >
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="space-y-2">
+            <label class="text-sm font-bold text-navy ml-1">{t.name}</label>
+            <input
+              type="text"
+              name="name"
+              id="name-input"
+              required
+              class="w-full px-6 py-4 rounded-xl border-2 border-slate/10 focus:border-accent outline-none transition-colors"
+            />
+          </div>
+          <div class="space-y-2">
+            <label class="text-sm font-bold text-navy ml-1">{t.email}</label>
+            <input
+              type="email"
+              name="email"
+              required
+              class="w-full px-6 py-4 rounded-xl border-2 border-slate/10 focus:border-accent outline-none transition-colors"
+            />
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <label class="text-sm font-bold text-navy ml-1">{t.service}</label>
+          <select
+            name="service"
+            id="service-select"
+            class="w-full px-6 py-4 rounded-xl border-2 border-slate/10 focus:border-accent outline-none transition-colors appearance-none bg-white"
+          >
+            {t.options.map((opt) => <option>{opt}</option>)}
+          </select>
+        </div>
+
+        <div class="space-y-2">
+          <label class="text-sm font-bold text-navy ml-1">{t.message}</label>
+          <textarea
+            name="message"
+            rows="4"
+            required
+            class="w-full px-6 py-4 rounded-xl border-2 border-slate/10 focus:border-accent outline-none transition-colors resize-none"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          id="submit-btn"
+          class="w-full bg-accent text-white py-5 rounded-xl font-bold text-lg hover:bg-accent/90 transition-all shadow-lg shadow-accent/20"
+        >
+          {t.submit}
+        </button>
+      </form>
+
+      <div id="success-msg" class="hidden text-center py-10 animate-in">
+        <div
+          class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-10 w-10"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="3"
+              d="M5 13l4 4L19 7"></path>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-navy mb-2">{t.success_title}</h3>
+        <p class="text-slate">{t.success_message}</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<script>
-  const form = document.querySelector(
-    'form[name="contact"]',
-  ) as HTMLFormElement;
-  if (form) {
-    const nameInput = form.querySelector(
-      'input[name="name"]',
-    ) as HTMLInputElement;
-    const serviceSelect = form.querySelector(
-      'select[name="service"]',
-    ) as HTMLSelectElement;
-    const subjectInput = form.querySelector(
-      'input[name="subject"]',
-    ) as HTMLInputElement;
-
-    const updateSubject = () => {
-      const name = nameInput?.value?.trim() || "New Client";
-      const service = serviceSelect?.value || "General Inquiry";
-      if (subjectInput) {
-        subjectInput.value = `Project Inquiry from ${name} – ${service}`;
-      }
-    };
-
-    nameInput?.addEventListener("input", updateSubject);
-    serviceSelect?.addEventListener("change", updateSubject);
-
-    // Final check on submit
-    form.addEventListener("submit", updateSubject);
-
-    // Initial run
-    updateSubject();
+<style>
+  .hidden {
+    display: none;
   }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-in {
+    animation: fadeIn 0.4s ease-out forwards;
+  }
+</style>
+
+<script>
+  const form = document.getElementById("contact-form") as HTMLFormElement;
+  const successMsg = document.getElementById("success-msg");
+  const nameInput = document.getElementById("name-input") as HTMLInputElement;
+  const serviceSelect = document.getElementById(
+    "service-select",
+  ) as HTMLSelectElement;
+  const subjectInput = document.getElementById(
+    "subject-input",
+  ) as HTMLInputElement;
+
+  // Update hidden subject
+  const updateSubject = () => {
+    subjectInput.value = `Project Inquiry from ${nameInput.value || "New Client"} – ${serviceSelect.value}`;
+  };
+  nameInput?.addEventListener("input", updateSubject);
+  serviceSelect?.addEventListener("change", updateSubject);
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const btn = document.getElementById("submit-btn") as HTMLButtonElement;
+    const ogBtnText = btn.innerText;
+
+    btn.disabled = true;
+    btn.innerText = "...";
+
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(new FormData(form) as any).toString(),
+      });
+
+      if (response.ok) {
+        form.classList.add("hidden");
+        successMsg?.classList.remove("hidden");
+      } else {
+        throw new Error("Submission failed");
+      }
+    } catch (error) {
+      console.error(error);
+      btn.disabled = false;
+      btn.innerText = "Error. Try again?";
+
+      // Reset button text after 3 seconds so user can try again cleanly
+      setTimeout(() => {
+        btn.innerText = ogBtnText;
+      }, 3000);
+    }
+  });
 </script>
+```
