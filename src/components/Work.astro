@@ -29,6 +29,21 @@ const projects = await getCollection("projects", ({ id }) => {
 });
 
 const t = labels[lang];
+
+const tagStyles: Record<string, string> = {
+  Laravel: "bg-red-50 text-red-700 border border-red-100",
+  Astro: "bg-purple-50 text-purple-700 border border-purple-100",
+  "Tailwind CSS": "bg-sky-50 text-sky-700 border border-sky-100",
+  htmx: "bg-indigo-50 text-indigo-700 border border-indigo-100",
+  "Alpine.js": "bg-cyan-50 text-cyan-700 border border-cyan-100",
+  PostgreSQL: "bg-blue-50 text-blue-800 border border-blue-100",
+  TypeScript: "bg-blue-50 text-blue-700 border border-blue-100",
+  MySQL: "bg-orange-50 text-orange-700 border border-orange-100",
+};
+
+const getTagStyle = (tag: string) => {
+  return tagStyles[tag] || "bg-navy/5 text-navy border border-transparent";
+};
 ---
 
 <section id="work" class="py-20 bg-ghost">
@@ -61,7 +76,9 @@ const t = labels[lang];
             <div class="w-full lg:w-1/2 space-y-6">
               <div class="flex flex-wrap gap-2">
                 {project.data.tags.map((tag) => (
-                  <span class="px-3 py-1 rounded-full bg-navy/5 text-navy text-xs font-bold tracking-wider uppercase">
+                  <span
+                    class={`px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase transition-all ${getTagStyle(tag)}`}
+                  >
                     {tag}
                   </span>
                 ))}

@@ -7,7 +7,9 @@
     "image": "/projects/delight.png",
     "tags": [
         "Laravel",
-        "Vue",
-        "MySQL"
+        "Tailwind CSS",
+        "htmx",
+        "Alpine.js",
+        "PostgreSQL"
     ]
 }

@@ -50,6 +50,14 @@ const t = content[lang];
       data-netlify="true"
       class="bg-white p-8 md:p-12 rounded-[2rem] shadow-xl shadow-navy/5 space-y-6"
     >
+      <input type="hidden" name="form-name" value="contact" />
+      <div class="hidden">
+        <label
+          >Don't fill this out if you're human: <input
+            name="bot-field"
+          /></label
+        >
+      </div>
       <div class="grid md:grid-cols-2 gap-6">
         <div class="space-y-2">
           <label class="text-sm font-bold text-navy ml-1">{t.name}</label>
