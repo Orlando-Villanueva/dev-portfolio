@@ -4,41 +4,57 @@ interface Props {
   subheadline: string;
   primaryCTA: string;
   secondaryCTA: string;
+  availabilityText: string;
 }
 
-const { headline, subheadline, primaryCTA, secondaryCTA } = Astro.props;
+const { headline, subheadline, primaryCTA, secondaryCTA, availabilityText } =
+  Astro.props;
 ---
 
 <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
   <!-- Subtle Background Decorations -->
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full -z-10 opacity-30 pointer-events-none">
-    <div class="absolute top-20 right-0 w-96 h-96 bg-accent/20 blur-[120px] rounded-full"></div>
-    <div class="absolute -bottom-20 -left-10 w-80 h-80 bg-emerald/10 blur-[100px] rounded-full"></div>
+  <div
+    class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full -z-10 opacity-30 pointer-events-none"
+  >
+    <div
+      class="absolute top-20 right-0 w-96 h-96 bg-accent/20 blur-[120px] rounded-full"
+    >
+    </div>
+    <div
+      class="absolute -bottom-20 -left-10 w-80 h-80 bg-emerald/10 blur-[100px] rounded-full"
+    >
+    </div>
   </div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <div class="inline-flex items-center px-4 py-2 rounded-full bg-navy/5 text-navy text-sm font-bold mb-8 animate-fade-in">
+    <div
+      class="inline-flex items-center px-4 py-2 rounded-full bg-navy/5 text-navy text-sm font-bold mb-8 animate-fade-in"
+    >
       <span class="flex h-2 w-2 rounded-full bg-emerald mr-2"></span>
-      Available for new projects in Montreal & Quebec
+      {availabilityText}
     </div>
-    
-    <h1 class="text-4xl md:text-7xl font-bold text-navy leading-[1.1] mb-8 max-w-4xl mx-auto">
+
+    <h1
+      class="text-4xl md:text-7xl font-bold text-navy leading-[1.1] mb-8 max-w-4xl mx-auto"
+    >
       {headline}
     </h1>
-    
-    <p class="text-lg md:text-xl text-slate max-w-2xl mx-auto mb-12 leading-relaxed">
+
+    <p
+      class="text-lg md:text-xl text-slate max-w-2xl mx-auto mb-12 leading-relaxed"
+    >
       {subheadline}
     </p>
 
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-      <a 
-        href="#contact" 
+      <a
+        href="#contact"
         class="w-full sm:w-auto bg-navy text-white px-8 py-4 rounded-full font-bold text-lg hover:translate-y-[-2px] transition-all shadow-xl shadow-navy/20"
       >
         {primaryCTA}
       </a>
-      <a 
-        href="#work" 
+      <a
+        href="#work"
         class="w-full sm:w-auto bg-ghost border-2 border-navy/10 text-navy px-8 py-4 rounded-full font-bold text-lg hover:bg-navy/5 transition-all"
       >
         {secondaryCTA}
@@ -49,8 +65,14 @@ const { headline, subheadline, primaryCTA, secondaryCTA } = Astro.props;
 
 <style>
   @keyframes fade-in {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   .animate-fade-in {
     animation: fade-in 0.8s ease-out forwards;
