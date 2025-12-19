@@ -52,12 +52,7 @@ const t = content[lang];
       class="bg-white p-8 md:p-12 rounded-[2rem] shadow-xl shadow-navy/5 space-y-6"
     >
       <input type="hidden" name="form-name" value="contact" />
-      <input
-        type="hidden"
-        name="subject"
-        data-remove-prefix
-        value="Project Inquiry from %{name} – %{service}"
-      />
+      <input type="hidden" name="subject" value="Project Inquiry" />
       <div class="hidden">
         <label
           >Don't fill this out if you're human: <input
@@ -70,6 +65,7 @@ const t = content[lang];
           <label class="text-sm font-bold text-navy ml-1">{t.name}</label>
           <input
             type="text"
+            id="contact-name"
             name="name"
             required
             class="w-full px-6 py-4 rounded-xl border-2 border-slate/10 focus:border-accent outline-none transition-colors"
@@ -89,6 +85,7 @@ const t = content[lang];
       <div class="space-y-2">
         <label class="text-sm font-bold text-navy ml-1">{t.service}</label>
         <select
+          id="contact-service"
           name="service"
           class="w-full px-6 py-4 rounded-xl border-2 border-slate/10 focus:border-accent outline-none transition-colors appearance-none bg-white"
         >
@@ -106,6 +103,8 @@ const t = content[lang];
         ></textarea>
       </div>
 
+      <input type="hidden" name="subject" value="Project Inquiry" />
+
       <button
         type="submit"
         class="w-full bg-accent text-white py-5 rounded-xl font-bold text-lg hover:bg-accent/90 transition-all shadow-lg shadow-accent/20"
@@ -115,3 +114,37 @@ const t = content[lang];
     </form>
   </div>
 </section>
+
+<script>
+  const form = document.querySelector(
+    'form[name="contact"]',
+  ) as HTMLFormElement;
+  if (form) {
+    const nameInput = form.querySelector(
+      'input[name="name"]',
+    ) as HTMLInputElement;
+    const serviceSelect = form.querySelector(
+      'select[name="service"]',
+    ) as HTMLSelectElement;
+    const subjectInput = form.querySelector(
+      'input[name="subject"]',
+    ) as HTMLInputElement;
+
+    const updateSubject = () => {
+      const name = nameInput?.value?.trim() || "New Client";
+      const service = serviceSelect?.value || "General Inquiry";
+      if (subjectInput) {
+        subjectInput.value = `Project Inquiry from ${name} – ${service}`;
+      }
+    };
+
+    nameInput?.addEventListener("input", updateSubject);
+    serviceSelect?.addEventListener("change", updateSubject);
+
+    // Final check on submit
+    form.addEventListener("submit", updateSubject);
+
+    // Initial run
+    updateSubject();
+  }
+</script>
