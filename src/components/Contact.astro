@@ -52,6 +52,12 @@ const t = content[lang];
       class="bg-white p-8 md:p-12 rounded-[2rem] shadow-xl shadow-navy/5 space-y-6"
     >
       <input type="hidden" name="form-name" value="contact" />
+      <input
+        type="hidden"
+        name="subject"
+        data-remove-prefix
+        value="Project Inquiry from %{name} – %{service}"
+      />
       <div class="hidden">
         <label
           >Don't fill this out if you're human: <input
