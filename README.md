@@ -1,43 +1,62 @@
-# Astro Starter Kit: Minimal
+# Orlando Portfolio | Web Engineer
 
-```sh
-npm create astro@latest -- --template minimal
-```
+A professional, bilingual (EN/FR) freelance web development portfolio built with **Astro**, **Tailwind CSS 4**, and **Alpine.js**.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🛠️ Tech Stack
 
-## 🚀 Project Structure
+- **Framework:** [Astro 5](https://astro.build/)
+- **Styling:** [Tailwind CSS 4](https://tailwindcss.com/)
+- **Interactivity:** [Alpine.js](https://alpinejs.dev/)
+- **Deployment:** [Netlify](https://www.netlify.com/) (with Netlify Forms integration)
+- **Internationalization:** Astro i18n routing (`/en`, `/fr`)
 
-Inside of your Astro project, you'll see the following folders and files:
+## 📂 Project Structure
 
 ```text
 /
-├── public/
+├── docs/               # Strategic documentation (specs, copy)
+├── public/             # Static assets (logos, project screenshots)
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── components/     # Reusable Astro components (Navbar, Hero, Work, etc.)
+│   ├── content/        # Project data collections (Bilingual JSON)
+│   ├── layouts/        # Base HTML layouts
+│   ├── pages/          # i18n Routes ([lang]/index.astro)
+│   └── styles/         # Global CSS and Tailwind 4 theme
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🚀 Getting Started
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+1. **Install dependencies:**
+   ```sh
+   npm install
+   ```
 
-Any static assets, like images, can be placed in the `public/` directory.
+2. **Run development server:**
+   ```sh
+   npm run dev
+   ```
+   The site will be available at `http://localhost:4321`.
+
+3. **Build for production:**
+   ```sh
+   npm run build
+   ```
+   This command runs `astro check` and then builds the static site to the `dist/` directory.
+
+## 📝 Features
+
+- **Bilingual Support:** Full EN/FR routing and content collections.
+- **Engineering Grade UI:** High-contrast, performance-focused design with custom color profiles for tech stacks.
+- **Responsive Design:** Optimized for mobile, tablet, and desktop.
+- **Form Automation:** Built-in Netlify Forms support with honeypot spam protection.
 
 ## 🧞 Commands
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+| Command           | Action                                           |
+| :---------------- | :----------------------------------------------- |
+| `npm install`     | Installs dependencies                            |
+| `npm run dev`     | Starts local dev server at `localhost:4321`      |
+| `npm run build`   | Runs type checking and builds for production     |
+| `npm run preview` | Preview your build locally                       |
+| `npm run astro`   | Run CLI commands like `astro add`, `astro check` |
