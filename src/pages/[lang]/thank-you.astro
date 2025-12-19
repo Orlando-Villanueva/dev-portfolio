@@ -1,0 +1,65 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Navbar from "@/components/Navbar.astro";
+import Footer from "@/components/Footer.astro";
+
+export function getStaticPaths() {
+    return [{ params: { lang: "en" } }, { params: { lang: "fr" } }];
+}
+
+const content = {
+    en: {
+        title: "Message Sent!",
+        heading: "Thank You!",
+        message:
+            "Your message has been sent successfully. I'll get back to you within 24 hours.",
+        cta: "Back to Home",
+    },
+    fr: {
+        title: "Message Envoyé !",
+        heading: "Merci !",
+        message:
+            "Votre message a bien été envoyé. Je vous répondrai dans les 24 heures.",
+        cta: "Retour à l'accueil",
+    },
+} as const;
+
+const { lang } = Astro.params as { lang: keyof typeof content };
+const t = content[lang];
+---
+
+<BaseLayout title={t.title} lang={lang}>
+    <Navbar lang={lang} />
+    <main class="min-h-[70vh] flex items-center justify-center py-20">
+        <div class="text-center px-4">
+            <div
+                class="w-24 h-24 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-8"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-12 w-12"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="3"
+                        d="M5 13l4 4L19 7"></path>
+                </svg>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-navy mb-4">
+                {t.heading}
+            </h1>
+            <p class="text-slate text-lg mb-8 max-w-md mx-auto">{t.message}</p>
+            <a
+                href={`/${lang}/`}
+                class="inline-block bg-accent text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-accent/90 transition-all shadow-lg shadow-accent/20"
+            >
+                {t.cta}
+            </a>
+        </div>
+    </main>
+    <Footer lang={lang} />
+</BaseLayout>
