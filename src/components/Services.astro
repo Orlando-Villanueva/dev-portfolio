@@ -1,43 +1,52 @@
 ---
-const { lang = 'en' } = Astro.props;
-
 const services = {
   en: [
     {
       title: "Marketing Websites",
-      description: "High-performance, SEO-ready sites built with Astro for maximum speed and local visibility.",
-      icon: "M13 10V3L4 14h7v7l9-11h-7z"
+      description:
+        "High-performance, SEO-ready sites built with Astro for maximum speed and local visibility.",
+      icon: "M13 10V3L4 14h7v7l9-11h-7z",
     },
     {
       title: "Business Automation",
-      description: "Custom quote forms and lead capture systems that move your manual processes to digital tools.",
-      icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+      description:
+        "Custom quote forms and lead capture systems that move your manual processes to digital tools.",
+      icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",
     },
     {
       title: "Web Applications",
-      description: "Custom portals and database management for complex business logic using Laravel and Vue.",
-      icon: "M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z"
-    }
+      description:
+        "Custom portals and database management for complex business logic using Laravel and Vue.",
+      icon: "M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z",
+    },
   ],
   fr: [
     {
       title: "Sites Vitrines",
-      description: "Sites haute performance optimisés pour le SEO, bâtis avec Astro pour une vitesse maximale.",
-      icon: "M13 10V3L4 14h7v7l9-11h-7z"
+      description:
+        "Sites haute performance optimisés pour le SEO, bâtis avec Astro pour une vitesse maximale.",
+      icon: "M13 10V3L4 14h7v7l9-11h-7z",
     },
     {
       title: "Automatisation",
-      description: "Systèmes de capture de prospects qui transforment vos processus manuels en outils numériques.",
-      icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+      description:
+        "Systèmes de capture de prospects qui transforment vos processus manuels en outils numériques.",
+      icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",
     },
     {
       title: "Applications Web",
-      description: "Portails sur mesure et gestion de bases de données pour logiques complexes via Laravel et Vue.",
-      icon: "M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z"
-    }
-  ]
-};
+      description:
+        "Portails sur mesure et gestion de bases de données pour logiques complexes via Laravel et Vue.",
+      icon: "M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z",
+    },
+  ],
+} as const;
 
+interface Props {
+  lang: keyof typeof services;
+}
+
+const { lang = "en" } = Astro.props;
 const currentServices = services[lang];
 ---
 
@@ -45,27 +54,41 @@ const currentServices = services[lang];
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
       <h2 class="text-3xl md:text-5xl font-bold text-navy mb-4">
-        {lang === 'en' ? 'The "Hybrid" Offer' : 'L\'offre "Hybride"'}
+        {lang === "en" ? 'The "Hybrid" Offer' : 'L\'offre "Hybride"'}
       </h2>
       <p class="text-slate text-lg max-w-2xl mx-auto">
-        {lang === 'en' ? 'Bridging the gap between fast marketing sites and complex engineering.' : 'Combler l\'écart entre les sites marketing rapides et l\'ingénierie complexe.'}
+        {
+          lang === "en"
+            ? "Bridging the gap between fast marketing sites and complex engineering."
+            : "Combler l'écart entre les sites marketing rapides et l'ingénierie complexe."
+        }
       </p>
     </div>
 
     <div class="grid md:grid-cols-3 gap-8">
-      {currentServices.map((service) => (
-        <div class="p-8 rounded-3xl border border-slate/10 hover:border-accent/30 hover:shadow-2xl hover:shadow-accent/5 transition-all group">
-          <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-colors text-accent">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={service.icon}></path>
-            </svg>
+      {
+        currentServices.map((service) => (
+          <div class="p-8 rounded-3xl border border-slate/10 hover:border-accent/30 hover:shadow-2xl hover:shadow-accent/5 transition-all group">
+            <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-colors text-accent">
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d={service.icon}
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-navy mb-4">{service.title}</h3>
+            <p class="text-slate leading-relaxed">{service.description}</p>
           </div>
-          <h3 class="text-xl font-bold text-navy mb-4">{service.title}</h3>
-          <p class="text-slate leading-relaxed">
-            {service.description}
-          </p>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </div>
 </section>

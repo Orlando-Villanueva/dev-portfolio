@@ -1,38 +1,41 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
+const labels = {
+  en: {
+    title: "Featured Work",
+    subtitle:
+      "Depth over breadth. Detailed case studies of technical solutions.",
+    problem: "The Problem",
+    solution: "The Solution",
+    result: "The Result",
+  },
+  fr: {
+    title: "Réalisations",
+    subtitle:
+      "La profondeur avant tout. Études de cas détaillées de solutions techniques.",
+    problem: "Le Problème",
+    solution: "La Solution",
+    result: "Le Résultat",
+  },
+} as const;
 
 interface Props {
-  lang: string;
+  lang: keyof typeof labels;
 }
 
 const { lang } = Astro.props;
-const projects = await getCollection('projects', ({ id }) => {
+const projects = await getCollection("projects", ({ id }) => {
   return id.startsWith(`${lang}/`);
 });
-
-const labels = {
-  en: { 
-    title: 'Featured Work', 
-    subtitle: 'Depth over breadth. Detailed case studies of technical solutions.',
-    problem: 'The Problem',
-    solution: 'The Solution',
-    result: 'The Result'
-  },
-  fr: { 
-    title: 'Réalisations', 
-    subtitle: 'La profondeur avant tout. Études de cas détaillées de solutions techniques.',
-    problem: 'Le Problème',
-    solution: 'La Solution',
-    result: 'Le Résultat'
-  }
-};
 
 const t = labels[lang];
 ---
 
 <section id="work" class="py-20 bg-ghost">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+    <div
+      class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6"
+    >
       <div class="max-w-2xl">
         <h2 class="text-3xl md:text-5xl font-bold text-navy mb-4">{t.title}</h2>
         <p class="text-slate text-lg">{t.subtitle}</p>
@@ -40,47 +43,59 @@ const t = labels[lang];
     </div>
 
     <div class="space-y-24">
-      {projects.map((project, index) => (
-        <div class={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 items-center`}>
-          <div class="w-full lg:w-1/2">
-            <div class="relative group rounded-3xl overflow-hidden shadow-2xl">
-              <img 
-                src={project.data.image} 
-                alt={project.data.title}
-                class="w-full aspect-[16/9.5] object-cover object-top group-hover:scale-105 transition-transform duration-500"
-              />
+      {
+        projects.map((project, index) => (
+          <div
+            class={`flex flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-12 items-center`}
+          >
+            <div class="w-full lg:w-1/2">
+              <div class="relative group rounded-3xl overflow-hidden shadow-2xl">
+                <img
+                  src={project.data.image}
+                  alt={project.data.title}
+                  class="w-full aspect-[16/9.5] object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            </div>
+
+            <div class="w-full lg:w-1/2 space-y-6">
+              <div class="flex flex-wrap gap-2">
+                {project.data.tags.map((tag) => (
+                  <span class="px-3 py-1 rounded-full bg-navy/5 text-navy text-xs font-bold tracking-wider uppercase">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <h3 class="text-3xl font-bold text-navy">{project.data.title}</h3>
+              <p class="text-xl text-accent font-medium italic">
+                {project.data.tagline}
+              </p>
+
+              <div class="grid gap-6 pt-4">
+                <div class="border-l-4 border-slate/10 pl-6">
+                  <p class="text-xs font-bold text-slate uppercase tracking-widest mb-1">
+                    {t.problem}
+                  </p>
+                  <p class="text-navy">{project.data.problem}</p>
+                </div>
+                <div class="border-l-4 border-slate/10 pl-6">
+                  <p class="text-xs font-bold text-slate uppercase tracking-widest mb-1">
+                    {t.solution}
+                  </p>
+                  <p class="text-navy">{project.data.solution}</p>
+                </div>
+                <div class="border-l-4 border-emerald/30 pl-6">
+                  <p class="text-xs font-bold text-emerald uppercase tracking-widest mb-1">
+                    {t.result}
+                  </p>
+                  <p class="text-navy font-medium">{project.data.result}</p>
+                </div>
+              </div>
             </div>
           </div>
-          
-          <div class="w-full lg:w-1/2 space-y-6">
-            <div class="flex flex-wrap gap-2">
-              {project.data.tags.map(tag => (
-                <span class="px-3 py-1 rounded-full bg-navy/5 text-navy text-xs font-bold tracking-wider uppercase">
-                  {tag}
-                </span>
-              ))}
-            </div>
-            
-            <h3 class="text-3xl font-bold text-navy">{project.data.title}</h3>
-            <p class="text-xl text-accent font-medium italic">{project.data.tagline}</p>
-            
-            <div class="grid gap-6 pt-4">
-              <div class="border-l-4 border-slate/10 pl-6">
-                <p class="text-xs font-bold text-slate uppercase tracking-widest mb-1">{t.problem}</p>
-                <p class="text-navy">{project.data.problem}</p>
-              </div>
-              <div class="border-l-4 border-slate/10 pl-6">
-                <p class="text-xs font-bold text-slate uppercase tracking-widest mb-1">{t.solution}</p>
-                <p class="text-navy">{project.data.solution}</p>
-              </div>
-              <div class="border-l-4 border-emerald/30 pl-6">
-                <p class="text-xs font-bold text-emerald uppercase tracking-widest mb-1">{t.result}</p>
-                <p class="text-navy font-medium">{project.data.result}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </div>
 </section>
