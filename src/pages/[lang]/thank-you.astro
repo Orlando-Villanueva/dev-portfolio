@@ -14,6 +14,8 @@ const content = {
         message:
             "Your message has been sent successfully. I'll get back to you within 24 hours.",
         cta: "Back to Home",
+        description:
+            "Your message has been sent successfully. I'll get back to you soon.",
     },
     fr: {
         title: "Message Envoyé !",
@@ -21,6 +23,8 @@ const content = {
         message:
             "Votre message a bien été envoyé. Je vous répondrai dans les 24 heures.",
         cta: "Retour à l'accueil",
+        description:
+            "Votre message a bien été envoyé. Je vous répondrai bientôt.",
     },
 } as const;
 
@@ -28,7 +32,7 @@ const { lang } = Astro.params as { lang: keyof typeof content };
 const t = content[lang];
 ---
 
-<BaseLayout title={t.title} lang={lang}>
+<BaseLayout title={t.title} lang={lang} description={t.description}>
     <Navbar lang={lang} />
     <main class="min-h-[70vh] flex items-center justify-center py-20">
         <div class="text-center px-4">

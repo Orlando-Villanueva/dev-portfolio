@@ -5,12 +5,22 @@ const labels = {
     solutions: "Solutions",
     connect: "Connect",
     rights: "All rights reserved.",
+    services: {
+      marketing: "Marketing Sites",
+      automation: "Automation",
+      webApps: "Web Apps",
+    },
   },
   fr: {
     tagline: "Fiabilité technique. Croissance commerciale.",
     solutions: "Solutions",
-    connect: "Connexion",
+    connect: "Me suivre",
     rights: "Tous droits réservés.",
+    services: {
+      marketing: "Sites Vitrines",
+      automation: "Automatisation",
+      webApps: "Applications Web",
+    },
   },
 } as const;
 
@@ -39,17 +49,17 @@ const t = labels[lang];
         <ul class="space-y-4">
           <li>
             <a href="#services" class="hover:text-accent transition-colors"
-              >Marketing Sites</a
+              >{t.services.marketing}</a
             >
           </li>
           <li>
             <a href="#services" class="hover:text-accent transition-colors"
-              >Automation</a
+              >{t.services.automation}</a
             >
           </li>
           <li>
             <a href="#services" class="hover:text-accent transition-colors"
-              >Web Apps</a
+              >{t.services.webApps}</a
             >
           </li>
         </ul>

@@ -33,6 +33,8 @@ const content = {
       capability: "Full-Stack Capability",
       professional: "Bilingual Professional",
     },
+    description:
+      "Freelance web developer in Montreal & Quebec specializing in business automation and high-performance websites.",
   },
   fr: {
     title: "Orlando Villanueva | Développeur Web Freelance",
@@ -50,9 +52,11 @@ const content = {
       image: orlandoImg,
       location: "Grand Montréal",
       rigor: "Rigueur en ingénierie logicielle",
-      capability: "Capacité Full-Stack",
+      capability: "Expertise Full-Stack",
       professional: "Professionnel bilingue",
     },
+    description:
+      "Développeur web freelance à Montréal et au Québec, spécialisé en automatisation d'entreprise et sites web haute performance.",
   },
 } as const;
 
@@ -60,7 +64,7 @@ const { lang } = Astro.params as { lang: keyof typeof content };
 const t = content[lang];
 ---
 
-<BaseLayout title={t.title} lang={lang}>
+<BaseLayout title={t.title} lang={lang} description={t.description}>
   <Navbar lang={lang} />
   <main>
     <Hero {...t.hero} />
