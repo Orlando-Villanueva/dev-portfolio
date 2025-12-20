@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
 const labels = {
   en: {
     title: "Featured Work",
@@ -65,10 +66,13 @@ const getTagStyle = (tag: string) => {
           >
             <div class="w-full lg:w-1/2">
               <div class="relative group rounded-3xl overflow-hidden shadow-2xl">
-                <img
+                <Image
                   src={project.data.image}
                   alt={project.data.title}
-                  class="w-full aspect-[16/9.5] object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  width={1600}
+                  format="webp"
+                  quality="high"
+                  class="block w-full aspect-[16/10] object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
             </div>

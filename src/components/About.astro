@@ -1,8 +1,11 @@
 ---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
 interface Props {
   heading: string;
   body: string;
-  image: string;
+  image: ImageMetadata;
   location: string;
   rigor: string;
   capability: string;
@@ -29,9 +32,12 @@ const { heading, body, image, location, rigor, capability, professional } =
           <div
             class="aspect-square bg-slate/20 rounded-3xl border border-white/10 overflow-hidden"
           >
-            <img
+            <Image
               src={image}
               alt="Orlando Villanueva"
+              width={1000}
+              height={1000}
+              quality="high"
               class="w-full h-full object-cover"
             />
           </div>

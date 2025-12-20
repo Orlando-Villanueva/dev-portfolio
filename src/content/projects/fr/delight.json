@@ -4,7 +4,7 @@
     "problem": "Besoin d'un système robuste pour gérer une logique utilisateur complexe et des interactions avec la base de données pour une base d'utilisateurs croissante.",
     "solution": "Développement d'une application Laravel full-stack axée sur la performance, la sécurité et des tableaux de bord utilisateurs intuitifs.",
     "result": "Une plateforme prête pour la production supportant plus de 50 utilisateurs actifs avec un traitement des données en temps réel et des rapports automatisés.",
-    "image": "/projects/delight.png",
+    "image": "@/assets/projects/delight.png",
     "tags": [
         "Laravel",
         "Tailwind CSS",

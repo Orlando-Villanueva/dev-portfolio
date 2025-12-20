@@ -4,7 +4,7 @@
     "problem": "Le client était submergé par les appels téléphoniques et les messages texte pour des demandes de soumission, ce qui entraînait des opportunités manquées et une perte de temps.",
     "solution": "Création d'un site web bilingue haute performance avec un flux de travail 'Obtenir une soumission' optimisé qui capture les détails essentiels dès le départ.",
     "result": "Prise en charge automatisée des prospects 24/7 directement dans leur boîte de réception, réduisant le temps au téléphone de 40%.",
-    "image": "/projects/hierronix.png",
+    "image": "@/assets/projects/hierronix.png",
     "tags": [
         "Astro",
         "Tailwind CSS",
