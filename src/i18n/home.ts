@@ -1,0 +1,48 @@
+import orlandoImg from "@/assets/orlando.png";
+
+export const homeContent = {
+    en: {
+        title: "Orlando Villanueva | Freelance Web Developer",
+        hero: {
+            headline: "Bilingual Web Development for Montreal & Quebec Businesses.",
+            availabilityText: "Available for new projects",
+            subheadline:
+                "I don’t just build websites; I build automated systems. From fast marketing sites to custom lead-capture tools, I help local businesses stop chasing phones and start closing deals.",
+            primaryCTA: "Discuss Your Project",
+            secondaryCTA: "View My Work",
+        },
+        about: {
+            heading: "Local Roots, Engineering Grade Quality.",
+            body: "I am Orlando Villanueva, a full-stack developer with 3+ years of experience serving the Greater Montreal area and all of Quebec. I help local businesses replace basic websites with high-performance automation.\n\nI don’t just install themes; I build custom bilingual systems with software engineering rigor. From lightning-fast performance to 24/7 automated quote tools, I ensure your digital presence is secure, scalable, and built to convert.",
+            image: orlandoImg,
+            location: "Greater Montreal",
+            rigor: "Software Engineering Rigor",
+            capability: "Full-Stack Capability",
+            professional: "Bilingual Professional",
+        },
+        description:
+            "Freelance web developer in Montreal & Quebec specializing in business automation and high-performance websites.",
+    },
+    fr: {
+        title: "Orlando Villanueva | Développeur Web Freelance",
+        hero: {
+            headline: "Développement Web Bilingue pour Montréal et le Québec.",
+            availabilityText: "Disponible pour de nouveaux projets",
+            subheadline:
+                "Je ne fais pas que créer des sites web; je bâtis des systèmes automatisés. Des sites vitrines ultra-rapides aux outils de capture de prospects sur mesure, j'aide les entreprises d'ici à passer moins de temps au téléphone et plus de temps à conclure des ventes.",
+            primaryCTA: "Discuter de votre projet",
+            secondaryCTA: "Voir mes réalisations",
+        },
+        about: {
+            heading: "Ancré localement, qualité d'ingénierie.",
+            body: "Je suis Orlando Villanueva, développeur full-stack avec plus de 3 ans d'expérience au service du Grand Montréal et de tout le Québec. J'aide les entreprises d'ici à transformer de simples sites web en systèmes automatisés performants.\n\nJe ne me contente pas d'installer des thèmes ; je bâtis des solutions bilingues sur mesure avec une rigueur d'ingénierie. De la vitesse éclair aux systèmes de soumission 24/7, je m'assure que votre présence numérique soit sécurisée, évolutive et conçue pour convertir.",
+            image: orlandoImg,
+            location: "Grand Montréal",
+            rigor: "Rigueur en ingénierie logicielle",
+            capability: "Expertise Full-Stack",
+            professional: "Professionnel bilingue",
+        },
+        description:
+            "Développeur web freelance à Montréal et au Québec, spécialisé en automatisation d'entreprise et sites web haute performance.",
+    },
+} as const;

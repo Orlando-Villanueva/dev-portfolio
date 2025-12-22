@@ -9,22 +9,18 @@ import Contact from "@/components/Contact.astro";
 import Footer from "@/components/Footer.astro";
 import { homeContent } from "@/i18n/home";
 
-export function getStaticPaths() {
-  return [{ params: { lang: "fr" } }];
-}
-
-const { lang } = Astro.params as { lang: keyof typeof homeContent };
-const t = homeContent[lang];
+const lang = "en";
+const t = homeContent.en;
 ---
 
 <BaseLayout title={t.title} lang={lang} description={t.description}>
-  <Navbar lang={lang} />
-  <main>
-    <Hero {...t.hero} />
-    <Services lang={lang} />
-    <Work lang={lang} />
-    <About {...t.about} />
-    <Contact lang={lang} />
-  </main>
-  <Footer lang={lang} />
+    <Navbar lang={lang} />
+    <main>
+        <Hero {...t.hero} />
+        <Services lang={lang} />
+        <Work lang={lang} />
+        <About {...t.about} />
+        <Contact lang={lang} />
+    </main>
+    <Footer lang={lang} />
 </BaseLayout>
