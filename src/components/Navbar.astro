@@ -31,15 +31,7 @@ const currentLinks = t.links;
 // Logic for language switcher
 const currentPath = Astro.url.pathname;
 const otherLang = lang === "en" ? "fr" : "en";
-
-let otherLangPath;
-if (lang === "en") {
-  otherLangPath = "/fr" + (currentPath === "/" ? "/" : currentPath);
-} else {
-  const stripped = currentPath.replace(/^\/fr/, "") || "/";
-  // Add ?lang=en to force middleware to update the cookie preference for English
-  otherLangPath = stripped + "?lang=en";
-}
+const otherLangPath = `${currentPath}?lang=${otherLang}`;
 ---
 
 <nav
