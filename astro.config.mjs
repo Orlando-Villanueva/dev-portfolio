@@ -9,7 +9,6 @@ import netlify from '@astrojs/netlify';
 // https://astro.build/config
 export default defineConfig({
     site: 'https://orlandovillanueva.com',
-    output: 'server',
     i18n: {
         defaultLocale: 'en',
         locales: ['en', 'fr'],

@@ -31,7 +31,24 @@ const currentLinks = t.links;
 // Logic for language switcher
 const currentPath = Astro.url.pathname;
 const otherLang = lang === "en" ? "fr" : "en";
-const otherLangPath = `${currentPath}?lang=${otherLang}`;
+let otherLangPath;
+if (lang === "en") {
+  if (currentPath === "/" || currentPath === "/en") {
+    otherLangPath = "/fr";
+  } else if (currentPath.startsWith("/en/")) {
+    otherLangPath = "/fr" + currentPath.slice(3);
+  } else {
+    otherLangPath = "/fr" + (currentPath.startsWith("/") ? "" : "/") + currentPath;
+  }
+} else {
+  if (currentPath === "/fr" || currentPath === "/fr/") {
+    otherLangPath = "/";
+  } else if (currentPath.startsWith("/fr/")) {
+    otherLangPath = "/en" + currentPath.slice(3);
+  } else {
+    otherLangPath = "/";
+  }
+}
 ---
 
 <nav
