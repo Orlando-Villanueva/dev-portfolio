@@ -15,7 +15,7 @@ export const onRequest = defineMiddleware((context: APIContext, next: Middleware
             // Remove the query param and redirect to the clean URL
             const cleanUrl = new URL(url);
             cleanUrl.searchParams.delete("lang");
-            return redirect(cleanUrl.toString());
+            return redirect(cleanUrl.pathname + cleanUrl.search);
         }
     }
 
