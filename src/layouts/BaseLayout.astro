@@ -1,13 +1,19 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 
 interface Props {
 	title: string;
 	description?: string;
 	lang?: string;
+	image?: string;
 }
 
-const { title, description = "Freelance Web Developer in Montreal & Quebec", lang = 'en' } = Astro.props;
+const {
+	title,
+	description = "Freelance Web Developer in Montreal & Quebec",
+	lang = "en",
+	image = "/social-preview.png",
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -19,9 +25,27 @@ const { title, description = "Freelance Web Developer in Montreal & Quebec", lan
 		<meta name="generator" content={Astro.generator} />
 		<title>{title} | Orlando - Web Engineer</title>
 		<meta name="description" content={description} />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={new URL(image, Astro.url)} />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={Astro.url} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 	<body class="bg-navy/5">
 		<slot />
