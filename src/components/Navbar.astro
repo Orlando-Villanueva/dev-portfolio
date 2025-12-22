@@ -36,7 +36,9 @@ let otherLangPath;
 if (lang === "en") {
   otherLangPath = "/fr" + (currentPath === "/" ? "/" : currentPath);
 } else {
-  otherLangPath = currentPath.replace(/^\/fr/, "") || "/";
+  const stripped = currentPath.replace(/^\/fr/, "") || "/";
+  // Add ?lang=en to force middleware to update the cookie preference for English
+  otherLangPath = stripped + "?lang=en";
 }
 ---
 
