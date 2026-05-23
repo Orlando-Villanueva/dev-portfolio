@@ -3,17 +3,17 @@ import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 const labels = {
   en: {
-    title: "Featured Work",
+    title: "Lead systems I’ve built",
     subtitle:
-      "Depth over breadth. Detailed case studies of technical solutions.",
+      "Local intake and automation work first, with deeper application engineering as proof of technical depth.",
     problem: "The Problem",
     solution: "The Solution",
     result: "The Result",
   },
   fr: {
-    title: "Réalisations",
+    title: "Systèmes de demandes que j’ai bâtis",
     subtitle:
-      "La profondeur avant tout. Études de cas détaillées de solutions techniques.",
+      "Des systèmes de demandes et d'automatisation en premier, avec l'ingénierie d'application comme preuve de profondeur technique.",
     problem: "Le Problème",
     solution: "La Solution",
     result: "Le Résultat",
@@ -27,6 +27,10 @@ interface Props {
 const { lang } = Astro.props;
 const projects = await getCollection("projects", ({ id }) => {
   return id.startsWith(`${lang}/`);
+});
+projects.sort((a, b) => {
+  const priority = (id: string) => (id.includes("hierronix") ? 0 : 1);
+  return priority(a.id) - priority(b.id);
 });
 
 const t = labels[lang];

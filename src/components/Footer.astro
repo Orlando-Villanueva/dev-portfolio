@@ -1,25 +1,25 @@
 ---
 const labels = {
   en: {
-    tagline: "Technical Reliability. Business Growth.",
+    tagline: "Bilingual lead systems for Quebec service businesses.",
     solutions: "Solutions",
     connect: "Connect",
     rights: "All rights reserved.",
     services: {
-      marketing: "Marketing Sites",
-      automation: "Automation",
-      webApps: "Web Apps",
+      marketing: "Website Audits",
+      automation: "Lead Pages",
+      webApps: "Lead Capture",
     },
   },
   fr: {
-    tagline: "Fiabilité technique. Croissance commerciale.",
+    tagline: "Systèmes de demandes bilingues pour entreprises de services au Québec.",
     solutions: "Solutions",
     connect: "Me suivre",
     rights: "Tous droits réservés.",
     services: {
-      marketing: "Sites Vitrines",
-      automation: "Automatisation",
-      webApps: "Applications Web",
+      marketing: "Audits de site",
+      automation: "Pages de demandes",
+      webApps: "Capture de demandes",
     },
   },
 } as const;
@@ -70,13 +70,7 @@ const t = labels[lang];
         <ul class="space-y-4">
           <li>
             <a
-              href="https://linkedin.com"
-              class="hover:text-accent transition-colors">LinkedIn</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://github.com"
+              href="https://github.com/orlando-villanueva"
               class="hover:text-accent transition-colors">GitHub</a
             >
           </li>
@@ -93,7 +87,7 @@ const t = labels[lang];
       class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm"
     >
       <p>© {new Date().getFullYear()} Orlando_ {t.rights}</p>
-      <p>Made with ⚡ and Astro in Montreal.</p>
+      <p>Built with Astro in Montreal.</p>
     </div>
   </div>
 </footer>

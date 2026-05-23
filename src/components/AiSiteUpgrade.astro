@@ -1,0 +1,72 @@
+---
+const content = {
+    en: {
+        eyebrow: "Already have a site?",
+        title: "Wix, Squarespace, and AI builders can start the page. They usually do not finish the lead system.",
+        body: "I help turn a basic generated site into something more useful for Quebec service businesses: sharper local positioning, French/English copy, mobile quote actions, trust content, form routing, analytics, and SEO structure.",
+        points: [
+            "Make the service and service area obvious in seconds.",
+            "Ask better quote questions before the first reply.",
+            "Track which pages and calls to action create real inquiries.",
+        ],
+        cta: "Request a quick audit",
+    },
+    fr: {
+        eyebrow: "Vous avez déjà un site?",
+        title: "Wix, Squarespace et les outils IA peuvent lancer une page. Ils terminent rarement le système de demandes.",
+        body: "J'aide à transformer un site de base en outil plus utile pour les entreprises de services au Québec: positionnement local, textes français/anglais, appels à l'action mobiles, contenu de confiance, routage des formulaires, analytics et structure SEO.",
+        points: [
+            "Rendre le service et le secteur desservi évidents en quelques secondes.",
+            "Poser de meilleures questions de soumission avant le premier suivi.",
+            "Suivre quelles pages et quels appels à l'action créent de vraies demandes.",
+        ],
+        cta: "Demander un audit rapide",
+    },
+} as const;
+
+interface Props {
+    lang: keyof typeof content;
+}
+
+const { lang = "en" } = Astro.props;
+const t = content[lang];
+---
+
+<section class="py-20 bg-navy text-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
+            <div>
+                <p class="text-accent text-sm font-bold uppercase tracking-widest mb-5">
+                    {t.eyebrow}
+                </p>
+                <h2 class="text-3xl md:text-5xl font-bold leading-tight text-white mb-6 max-w-4xl">
+                    {t.title}
+                </h2>
+                <p class="text-slate-300 text-lg leading-relaxed max-w-3xl">
+                    {t.body}
+                </p>
+            </div>
+
+            <div class="border border-white/10 rounded-2xl p-7 bg-white/5">
+                <ul class="space-y-5 mb-8">
+                    {
+                        t.points.map((point) => (
+                            <li class="flex gap-3 text-white/85 leading-relaxed">
+                                <span class="mt-1 h-5 w-5 rounded-full bg-emerald/20 text-emerald flex items-center justify-center text-sm font-bold">
+                                    ✓
+                                </span>
+                                <span>{point}</span>
+                            </li>
+                        ))
+                    }
+                </ul>
+                <a
+                    href="#contact"
+                    class="inline-flex w-full sm:w-auto justify-center bg-accent text-white px-7 py-4 rounded-xl font-bold hover:bg-accent/90 transition-colors"
+                >
+                    {t.cta}
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

@@ -14,21 +14,70 @@ const {
 	lang = "en",
 	image = "/social-preview.png",
 } = Astro.props;
+
+const siteUrl = Astro.site ?? new URL("https://orlandovillanueva.com");
+const pathWithoutLocale =
+	Astro.url.pathname.replace(/^\/(en|fr)(?=\/|$)/, "") || "/";
+const canonicalPath =
+	lang === "fr"
+		? `/fr${pathWithoutLocale === "/" ? "/" : pathWithoutLocale}`
+		: pathWithoutLocale === "/"
+			? "/"
+			: `/en${pathWithoutLocale}`;
+const englishPath = pathWithoutLocale === "/" ? "/" : `/en${pathWithoutLocale}`;
+const frenchPath = pathWithoutLocale === "/" ? "/fr/" : `/fr${pathWithoutLocale}`;
+const canonicalUrl = new URL(canonicalPath, siteUrl).toString();
+const englishUrl = new URL(englishPath, siteUrl).toString();
+const frenchUrl = new URL(frenchPath, siteUrl).toString();
+const businessDescription =
+	"Bilingual website and lead capture systems for Quebec service businesses.";
+const schema = {
+	"@context": "https://schema.org",
+	"@type": ["ProfessionalService", "LocalBusiness"],
+	name: "Orlando Villanueva",
+	url: new URL("/", siteUrl).toString(),
+	image: new URL(image, siteUrl).toString(),
+	description: businessDescription,
+	address: {
+		"@type": "PostalAddress",
+		addressLocality: "Salaberry-de-Valleyfield",
+		addressRegion: "QC",
+		addressCountry: "CA",
+	},
+	areaServed: [
+		"Quebec",
+		"Montreal",
+		"Salaberry-de-Valleyfield",
+		"Greater Montreal",
+	],
+	knowsLanguage: ["English", "French"],
+	serviceType: [
+		"Bilingual website audits",
+		"Lead capture systems",
+		"Local SEO website structure",
+		"Business website maintenance",
+	],
+	sameAs: ["https://github.com/orlando-villanueva"],
+};
 ---
 
 <!doctype html>
 <html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title} | Orlando - Web Engineer</title>
+		<title>{title}</title>
 		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalUrl} />
+		<link rel="alternate" hreflang="en" href={englishUrl} />
+		<link rel="alternate" hreflang="fr" href={frenchUrl} />
+		<link rel="alternate" hreflang="x-default" href={englishUrl} />
 
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content={Astro.url} />
+		<meta property="og:url" content={canonicalUrl} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:image" content={new URL(image, Astro.url)} />
@@ -38,7 +87,7 @@ const {
 
 		<!-- Twitter -->
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:url" content={Astro.url} />
+		<meta name="twitter:url" content={canonicalUrl} />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content={new URL(image, Astro.url)} />
@@ -49,8 +98,13 @@ const {
 			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
 			rel="stylesheet"
 		/>
+		<script
+			type="application/ld+json"
+			is:inline
+			set:html={JSON.stringify(schema)}
+		/>
 	</head>
-	<body class="bg-navy/5">
+	<body class="bg-ghost">
 		<slot />
 	</body>
 </html>

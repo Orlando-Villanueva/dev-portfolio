@@ -1,31 +1,40 @@
 ---
 const content = {
   en: {
-    title: "Discuss Your Project",
+    title: "Request a quick website/lead audit",
     subtitle:
-      "Ready to automate your business? Let's talk about building something that works for you.",
+      "Send the site you have, the service you want more inquiries for, and where you serve clients. I’ll reply with the most useful next step.",
     name: "Name",
     email: "Email",
-    service: "Service Type",
-    message: "Tell me about your project",
-    submit: "Send Message",
+    service: "What do you need?",
+    message: "Website URL, service area, and what you want to improve",
+    submit: "Request audit",
+    note: "Prefer a project discussion? Use the same form and include your timeline.",
     options: [
-      "Marketing Website",
-      "Business Automation",
-      "Web Application",
+      "Website / AI Site Audit",
+      "Bilingual Lead Page",
+      "Lead Capture System",
+      "Care Plan",
       "Other",
     ],
   },
   fr: {
-    title: "Discuter de votre projet",
+    title: "Demander un audit rapide du site",
     subtitle:
-      "Prêt à automatiser votre entreprise ? Parlons de la création d'un outil qui travaille pour vous.",
+      "Envoyez le site que vous avez, le service pour lequel vous voulez plus de demandes et votre secteur. Je vous répondrai avec la prochaine étape la plus utile.",
     name: "Nom",
     email: "Courriel",
-    service: "Type de service",
-    message: "Parlez-moi de votre projet",
-    submit: "Envoyer le message",
-    options: ["Site Vitrine", "Automatisation", "Application Web", "Autre"],
+    service: "De quoi avez-vous besoin?",
+    message: "URL du site, secteur desservi et ce que vous voulez améliorer",
+    submit: "Demander l'audit",
+    note: "Vous préférez discuter d'un projet? Utilisez le même formulaire et ajoutez votre échéancier.",
+    options: [
+      "Audit de site / site IA",
+      "Page de demandes bilingue",
+      "Système de capture de demandes",
+      "Plan d'entretien",
+      "Autre",
+    ],
   },
 } as const;
 
@@ -42,6 +51,7 @@ const t = content[lang];
     <div class="text-center mb-16">
       <h2 class="text-3xl md:text-5xl font-bold text-navy mb-4">{t.title}</h2>
       <p class="text-slate text-lg">{t.subtitle}</p>
+      <p class="text-slate text-sm mt-4">{t.note}</p>
     </div>
 
     <form
@@ -53,7 +63,7 @@ const t = content[lang];
       class="bg-white p-8 md:p-12 rounded-[2rem] shadow-xl shadow-navy/5 space-y-6"
     >
       <input type="hidden" name="form-name" value="contact" />
-      <input type="hidden" name="subject" value="Project Inquiry" />
+      <input type="hidden" name="subject" value="Website audit request" />
       <div class="hidden">
         <label
           >Don't fill this out if you're human: <input
@@ -104,8 +114,6 @@ const t = content[lang];
         ></textarea>
       </div>
 
-      <input type="hidden" name="subject" value="Project Inquiry" />
-
       <button
         type="submit"
         class="w-full bg-accent text-white py-5 rounded-xl font-bold text-lg hover:bg-accent/90 transition-all shadow-lg shadow-accent/20"
@@ -135,7 +143,7 @@ const t = content[lang];
       const name = nameInput?.value?.trim() || "New Client";
       const service = serviceSelect?.value || "General Inquiry";
       if (subjectInput) {
-        subjectInput.value = `Project Inquiry from ${name} – ${service}`;
+        subjectInput.value = `Website audit request from ${name} - ${service}`;
       }
     };
 

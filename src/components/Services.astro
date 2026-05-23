@@ -1,49 +1,69 @@
 ---
 const services = {
-  en: [
-    {
-      title: "Marketing Websites",
-      description:
-        "High-performance, SEO-ready sites built with Astro for maximum speed and local visibility.",
-      icon: "M13 10V3L4 14h7v7l9-11h-7z",
-    },
-    {
-      title: "Business Automation",
-      description:
-        "Custom quote forms and lead capture systems that move your manual processes to digital tools.",
-      icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",
-    },
-    {
-      title: "Web Applications",
-      description:
-        "Custom portals and database management for complex business logic using Laravel and Vue.",
-      icon: "M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z",
-    },
-  ],
-  fr: [
-    {
-      title: "Sites Vitrines",
-      description:
-        "Sites haute performance optimisés pour le SEO, bâtis avec Astro pour une vitesse maximale.",
-      icon: "M13 10V3L4 14h7v7l9-11h-7z",
-    },
-    {
-      title: "Automatisation",
-      description:
-        "Systèmes de capture de prospects qui transforment vos processus manuels en outils numériques.",
-      icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",
-    },
-    {
-      title: "Applications Web",
-      description:
-        "Portails sur mesure et gestion de bases de données pour logiques complexes via Laravel et Vue.",
-      icon: "M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z",
-    },
-  ],
+    en: [
+        {
+            title: "Website / AI Site Audit",
+            price: "$250-$500 typical range",
+            description:
+                "A focused review of your website, Google profile, mobile CTAs, bilingual copy, forms, analytics, and local SEO structure.",
+            icon: "M13 10V3L4 14h7v7l9-11h-7z",
+        },
+        {
+            title: "Bilingual Lead Page",
+            price: "$900-$1,800 starting range",
+            description:
+                "A fast English/French landing page built around one service, one local market, and one clear quote or booking action.",
+            icon: "M3 5h18M3 12h18M3 19h18",
+        },
+        {
+            title: "Lead Capture System",
+            price: "$2,500-$5,000 typical range",
+            description:
+                "A bilingual site or upgrade with quote intake, routing, tracking, trust content, and cleaner details before you reply.",
+            icon: "M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z",
+        },
+        {
+            title: "Care Plan",
+            price: "$150-$400/mo starting range",
+            description:
+                "Ongoing updates, small improvements, performance checks, form monitoring, and lead-system maintenance after launch.",
+            icon: "M9 12l2 2 4-4m5 2a9 9 0 11-18 0 9 9 0 0118 0z",
+        },
+    ],
+    fr: [
+        {
+            title: "Audit de site / site IA",
+            price: "250 $ à 500 $ typiquement",
+            description:
+                "Une analyse ciblée de votre site, profil Google, appels à l'action mobiles, textes bilingues, formulaires, analytics et structure SEO locale.",
+            icon: "M13 10V3L4 14h7v7l9-11h-7z",
+        },
+        {
+            title: "Page de demandes bilingue",
+            price: "900 $ à 1 800 $ pour démarrer",
+            description:
+                "Une page rapide en français et en anglais, centrée sur un service, un marché local et une action claire de soumission ou réservation.",
+            icon: "M3 5h18M3 12h18M3 19h18",
+        },
+        {
+            title: "Système de capture de demandes",
+            price: "2 500 $ à 5 000 $ typiquement",
+            description:
+                "Un site bilingue ou une amélioration complète avec formulaire de soumission, suivi, contenu de confiance et demandes plus précises.",
+            icon: "M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z",
+        },
+        {
+            title: "Plan d'entretien",
+            price: "150 $ à 400 $/mois pour démarrer",
+            description:
+                "Mises à jour, petites améliorations, vérifications de performance, surveillance des formulaires et entretien du système après lancement.",
+            icon: "M9 12l2 2 4-4m5 2a9 9 0 11-18 0 9 9 0 0118 0z",
+        },
+    ],
 } as const;
 
 interface Props {
-  lang: keyof typeof services;
+    lang: keyof typeof services;
 }
 
 const { lang = "en" } = Astro.props;
@@ -51,44 +71,55 @@ const currentServices = services[lang];
 ---
 
 <section id="services" class="py-20 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-5xl font-bold text-navy mb-4">
-        {lang === "en" ? 'The "Hybrid" Offer' : 'L\'offre "Hybride"'}
-      </h2>
-      <p class="text-slate text-lg max-w-2xl mx-auto">
-        {
-          lang === "en"
-            ? "Bridging the gap between fast marketing sites and complex engineering."
-            : "Combler l'écart entre les sites marketing rapides et l'ingénierie complexe."
-        }
-      </p>
-    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold text-navy mb-4">
+                {
+                    lang === "en"
+                        ? "Offers for better local leads"
+                        : "Offres pour de meilleures demandes locales"
+                }
+            </h2>
+            <p class="text-slate text-lg max-w-2xl mx-auto">
+                {
+                    lang === "en"
+                        ? "Start with a quick audit or build the full bilingual intake flow your service business needs."
+                        : "Commencez par un audit rapide ou bâtissez le parcours bilingue complet dont votre entreprise de services a besoin."
+                }
+            </p>
+        </div>
 
-    <div class="grid md:grid-cols-3 gap-8">
-      {
-        currentServices.map((service) => (
-          <div class="p-8 rounded-3xl border border-slate/10 hover:border-accent/30 hover:shadow-2xl hover:shadow-accent/5 transition-all group">
-            <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-colors text-accent">
-              <svg
-                class="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d={service.icon}
-                />
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold text-navy mb-4">{service.title}</h3>
-            <p class="text-slate leading-relaxed">{service.description}</p>
-          </div>
-        ))
-      }
+        <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+            {
+                currentServices.map((service) => (
+                    <div class="p-7 rounded-2xl border border-slate/10 hover:border-accent/30 hover:shadow-2xl hover:shadow-accent/5 transition-all group">
+                        <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-colors text-accent">
+                            <svg
+                                class="w-6 h-6"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d={service.icon}
+                                />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy mb-2">
+                            {service.title}
+                        </h3>
+                        <p class="text-sm font-bold text-accent mb-4">
+                            {service.price}
+                        </p>
+                        <p class="text-slate leading-relaxed">
+                            {service.description}
+                        </p>
+                    </div>
+                ))
+            }
+        </div>
     </div>
-  </div>
 </section>
