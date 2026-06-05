@@ -1,9 +1,9 @@
 {
     "title": "Hierronix Care",
-    "tagline": "Converting manual calls into digital leads.",
-    "problem": "The client was overwhelmed by manual phone calls and text requests for cleaning quotes, leading to missed opportunities and wasted time.",
-    "solution": "Built a high-performance bilingual website with a streamlined 'Get a Quote' workflow that captures specific details upfront.",
-    "result": "24/7 automated quote intake directly to their inbox, with cleaner details captured before the first reply.",
+    "tagline": "Local cleaning quote intake in English and French.",
+    "problem": "The client relied on manual phone calls and text requests for cleaning quotes, which made it harder to collect the right details before replying.",
+    "solution": "Built a high-performance bilingual website with a clear service story and a streamlined 'Get a Quote' workflow that captures specific details upfront.",
+    "result": "24/7 quote intake directly to their inbox, with cleaner details captured before the first reply.",
     "image": "@/assets/projects/hierronix.png",
     "tags": [
         "Astro",

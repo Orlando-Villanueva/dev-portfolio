@@ -5,8 +5,9 @@ const labels = {
     solutions: "Solutions",
     connect: "Connect",
     rights: "All rights reserved.",
+    built: "Built with Astro in Montreal.",
     services: {
-      marketing: "Website Audits",
+      marketing: "Website Reviews",
       automation: "Lead Pages",
       webApps: "Lead Capture",
     },
@@ -16,8 +17,9 @@ const labels = {
     solutions: "Solutions",
     connect: "Me suivre",
     rights: "Tous droits réservés.",
+    built: "Construit avec Astro à Montréal.",
     services: {
-      marketing: "Audits de site",
+      marketing: "Revues de site",
       automation: "Pages de demandes",
       webApps: "Capture de demandes",
     },
@@ -87,7 +89,7 @@ const t = labels[lang];
       class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm"
     >
       <p>© {new Date().getFullYear()} Orlando_ {t.rights}</p>
-      <p>Built with Astro in Montreal.</p>
+      <p>{t.built}</p>
     </div>
   </div>
 </footer>

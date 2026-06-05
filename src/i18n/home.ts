@@ -2,18 +2,20 @@ import orlandoImg from "@/assets/orlando.png";
 
 export const homeContent = {
     en: {
-        title: "Orlando Villanueva | Bilingual Lead Systems for Quebec Businesses",
+        title: "Orlando Villanueva | Bilingual Lead Capture Websites in Quebec",
         hero: {
-            headline: "Turn your website into a bilingual lead system.",
+            headline: "Bilingual lead systems for Quebec service businesses.",
             availabilityText: "Available for new projects",
+            localProof:
+                "Orlando Villanueva, full-stack developer near Montreal / Valleyfield",
             subheadline:
-                "I help Quebec service businesses improve their website, Google profile, and quote process so they get cleaner inquiries and spend less time chasing details by phone or text.",
-            primaryCTA: "Request a quick audit",
-            secondaryCTA: "See lead systems",
+                "I help cleaners, contractors, clinics, consultants, trades, churches, nonprofits, and local teams turn websites and quote forms into cleaner inquiries in English and French.",
+            primaryCTA: "Request a website review",
+            secondaryCTA: "Compare offers",
         },
         about: {
-            heading: "Local service-business focus, engineering-grade build quality.",
-            body: "I am Orlando Villanueva, a full-stack developer based near Montreal and serving Quebec businesses in English and French. I focus on the practical pieces that turn visitors into better leads: clear positioning, mobile calls to action, quote forms, local SEO structure, and follow-up workflows.\n\nI do not just install themes. I build bilingual systems with software engineering rigor, so your website can stay fast, trustworthy, and useful after launch.",
+            heading: "A local full-stack developer for the details templates leave unfinished.",
+            body: "I am Orlando Villanueva, a full-stack developer based near Salaberry-de-Valleyfield and serving Quebec businesses in English and French. I focus on the practical pieces that make a service website easier to trust and easier to act on: local positioning, bilingual copy, mobile calls to action, quote forms, tracking, local SEO structure, and follow-up workflows.\n\nThe goal is not a cheap page or an AI-generated site. The goal is a clean bilingual system that helps people understand what you do, request the right service, and send enough detail before your team replies.",
             image: orlandoImg,
             location: "Montreal, Valleyfield & Quebec",
             rigor: "Software Engineering Rigor",
@@ -21,21 +23,23 @@ export const homeContent = {
             professional: "French / English",
         },
         description:
-            "Bilingual website and lead capture systems for Quebec service businesses that need cleaner quote requests, better local SEO, and less phone back-and-forth.",
+            "Bilingual lead capture websites, website lead reviews, and quote forms for Quebec service businesses in Montreal, Valleyfield, and across Quebec.",
     },
     fr: {
-        title: "Orlando Villanueva | Systèmes de demandes bilingues au Québec",
+        title: "Orlando Villanueva | Sites de capture de demandes bilingues au Québec",
         hero: {
-            headline: "Transformez votre site en système de demandes bilingue.",
+            headline: "Des systèmes de demandes bilingues pour les entreprises de services au Québec.",
             availabilityText: "Disponible pour de nouveaux projets",
+            localProof:
+                "Orlando Villanueva, développeur full-stack près de Montréal / Valleyfield",
             subheadline:
-                "J'aide les entreprises de services au Québec à améliorer leur site, leur profil Google et leur processus de soumission pour recevoir des demandes plus claires et réduire les échanges par téléphone ou texto.",
-            primaryCTA: "Demander un audit rapide",
-            secondaryCTA: "Voir les systèmes créés",
+                "J'aide les nettoyeurs, entrepreneurs, cliniques, consultants, métiers spécialisés, églises, OBNL et équipes locales à transformer les sites et formulaires en demandes plus claires, en français et en anglais.",
+            primaryCTA: "Demander une revue du site",
+            secondaryCTA: "Comparer les offres",
         },
         about: {
-            heading: "Pensé pour les entreprises locales, bâti avec une vraie rigueur technique.",
-            body: "Je suis Orlando Villanueva, développeur full-stack établi près de Montréal et au service des entreprises québécoises en français et en anglais. Je travaille les éléments concrets qui transforment les visiteurs en meilleures demandes: positionnement clair, appels à l'action mobiles, formulaires de soumission, structure SEO locale et suivis.\n\nJe ne fais pas qu'installer un thème. Je bâtis des systèmes bilingues avec une rigueur d'ingénierie, pour que votre site reste rapide, crédible et utile après sa mise en ligne.",
+            heading: "Un développeur full-stack local pour les détails que les modèles laissent incomplets.",
+            body: "Je suis Orlando Villanueva, développeur full-stack établi près de Salaberry-de-Valleyfield et au service des entreprises québécoises en français et en anglais. Je travaille les éléments concrets qui rendent un site de service plus crédible et plus facile à utiliser: positionnement local, textes bilingues, appels à l'action mobiles, formulaires de soumission, suivi, structure SEO locale et processus de relance.\n\nL'objectif n'est pas une page bon marché ni un site généré par IA. L'objectif est un système bilingue clair qui aide les visiteurs à comprendre votre offre, demander le bon service et envoyer assez de détails avant que votre équipe réponde.",
             image: orlandoImg,
             location: "Montréal, Valleyfield et Québec",
             rigor: "Rigueur en ingénierie logicielle",
@@ -43,6 +47,6 @@ export const homeContent = {
             professional: "Français / anglais",
         },
         description:
-            "Sites web bilingues et systèmes de demandes pour entreprises de services au Québec: soumissions plus claires, SEO local et moins d'échanges par téléphone.",
+            "Sites de capture de demandes bilingues, revues de sites et formulaires de soumission pour entreprises de services au Québec, à Montréal et à Valleyfield.",
     },
 } as const;

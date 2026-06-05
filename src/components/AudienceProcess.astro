@@ -1,0 +1,156 @@
+---
+const content = {
+    en: {
+        audienceEyebrow: "Who this is for",
+        audienceTitle: "Quebec service businesses that depend on clear intake.",
+        audienceIntro:
+            "This fits local organizations where a better website means fewer vague inquiries and a cleaner path to the next reply.",
+        audiences: [
+            "Cleaners and maintenance teams",
+            "Contractors, trades, and home-service companies",
+            "Local clinics, consultants, and client-intake teams",
+            "Churches, nonprofits, and community organizations",
+        ],
+        signals: [
+            "You rely on quote requests, calls, bookings, forms, or client intake.",
+            "Clients often miss details your team needs before replying.",
+            "You serve French and English visitors and want both sides to feel intentional.",
+        ],
+        processEyebrow: "How it works",
+        processTitle: "A practical path from review to launch",
+        steps: [
+            {
+                title: "Website review / discovery",
+                body: "Review the current site, Google Business Profile, service area, CTAs, forms, and bilingual gaps.",
+            },
+            {
+                title: "Offer and lead-flow plan",
+                body: "Define the service focus, page structure, quote questions, tracking needs, and follow-up path.",
+            },
+            {
+                title: "Build and launch",
+                body: "Create or improve the bilingual page or site, then test mobile layout, forms, SEO basics, and deployment.",
+            },
+            {
+                title: "Improve and maintain",
+                body: "Monitor forms, update details, and make small improvements as services, seasons, or priorities change.",
+            },
+        ],
+    },
+    fr: {
+        audienceEyebrow: "Pour qui",
+        audienceTitle:
+            "Entreprises de services au Québec qui dépendent de demandes claires.",
+        audienceIntro:
+            "Cette approche convient aux organisations locales où un meilleur site veut dire moins de demandes vagues et une prochaine réponse plus simple.",
+        audiences: [
+            "Entreprises de nettoyage et équipes d'entretien",
+            "Entrepreneurs, métiers spécialisés et services à domicile",
+            "Cliniques locales, consultants et équipes d'accueil client",
+            "Églises, OBNL et organismes communautaires",
+        ],
+        signals: [
+            "Vous comptez sur les soumissions, appels, réservations, formulaires ou demandes client.",
+            "Les clients oublient souvent des détails nécessaires avant votre réponse.",
+            "Vous servez des visiteurs francophones et anglophones et voulez que les deux parcours soient soignés.",
+        ],
+        processEyebrow: "Comment ça fonctionne",
+        processTitle: "Un parcours pratique de la revue au lancement",
+        steps: [
+            {
+                title: "Revue du site / découverte",
+                body: "Revue du site actuel, fiche Google Business Profile, secteur desservi, CTA, formulaires et écarts bilingues.",
+            },
+            {
+                title: "Plan d'offre et de parcours de demande",
+                body: "Définir le service ciblé, la structure de page, les questions de soumission, le suivi et le parcours de relance.",
+            },
+            {
+                title: "Création et lancement",
+                body: "Créer ou améliorer la page ou le site bilingue, puis tester le mobile, les formulaires, les bases SEO et le déploiement.",
+            },
+            {
+                title: "Amélioration et entretien",
+                body: "Surveiller les formulaires, mettre les détails à jour et améliorer le système quand les services, saisons ou priorités changent.",
+            },
+        ],
+    },
+} as const;
+
+interface Props {
+    lang: keyof typeof content;
+}
+
+const { lang = "en" } = Astro.props;
+const t = content[lang];
+---
+
+<section class="py-20 bg-ghost">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16">
+            <div>
+                <p class="text-accent text-sm font-bold uppercase tracking-widest mb-4">
+                    {t.audienceEyebrow}
+                </p>
+                <h2 class="text-3xl md:text-5xl font-bold text-navy mb-5 leading-tight">
+                    {t.audienceTitle}
+                </h2>
+                <p class="text-slate text-lg leading-relaxed mb-8">
+                    {t.audienceIntro}
+                </p>
+
+                <ul class="grid sm:grid-cols-2 gap-3 mb-8">
+                    {
+                        t.audiences.map((audience) => (
+                            <li class="rounded-xl bg-white border border-slate/10 px-4 py-3 font-bold text-navy">
+                                {audience}
+                            </li>
+                        ))
+                    }
+                </ul>
+
+                <ul class="space-y-4">
+                    {
+                        t.signals.map((signal) => (
+                            <li class="flex gap-3 text-slate leading-relaxed">
+                                <span class="mt-1 h-5 w-5 shrink-0 rounded-full bg-emerald/10 text-emerald flex items-center justify-center text-xs font-bold">
+                                    ✓
+                                </span>
+                                <span>{signal}</span>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+
+            <div class="lg:pt-3">
+                <p class="text-accent text-xs font-bold uppercase tracking-widest mb-3">
+                    {t.processEyebrow}
+                </p>
+                <h3 class="text-2xl md:text-3xl font-bold text-navy mb-6 leading-tight">
+                    {t.processTitle}
+                </h3>
+
+                <ol class="space-y-4">
+                    {
+                        t.steps.map((step, index) => (
+                            <li class="grid grid-cols-[2.5rem_1fr] gap-4">
+                                <div class="h-10 w-10 rounded-full bg-navy text-white flex items-center justify-center text-sm font-bold">
+                                    {index + 1}
+                                </div>
+                                <div class="border-b border-slate/10 pb-4">
+                                    <h4 class="text-lg font-bold text-navy mb-1">
+                                        {step.title}
+                                    </h4>
+                                    <p class="text-slate leading-relaxed">
+                                        {step.body}
+                                    </p>
+                                </div>
+                            </li>
+                        ))
+                    }
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>

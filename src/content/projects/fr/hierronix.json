@@ -1,9 +1,9 @@
 {
     "title": "Hierronix Care",
-    "tagline": "Transformer les appels manuels en prospects numériques.",
-    "problem": "Le client était submergé par les appels téléphoniques et les messages texte pour des demandes de soumission, ce qui entraînait des opportunités manquées et une perte de temps.",
-    "solution": "Création d'un site web bilingue haute performance avec un flux de travail 'Obtenir une soumission' optimisé qui capture les détails essentiels dès le départ.",
-    "result": "Réception automatisée des demandes de soumission 24/7 directement dans leur boîte courriel, avec des détails plus clairs avant le premier suivi.",
+    "tagline": "Demandes de soumission locales en français et en anglais.",
+    "problem": "Le client dépendait des appels téléphoniques et des textos pour les demandes de soumission de nettoyage, ce qui rendait la collecte des bons détails plus difficile avant la réponse.",
+    "solution": "Création d'un site web bilingue haute performance avec un message de service clair et un parcours 'Obtenir une soumission' qui capture les détails essentiels dès le départ.",
+    "result": "Réception des demandes de soumission 24/7 directement dans leur boîte courriel, avec des détails plus clairs avant le premier suivi.",
     "image": "@/assets/projects/hierronix.png",
     "tags": [
         "Astro",

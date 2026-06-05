@@ -1,8 +1,8 @@
 {
     "title": "Delight App",
-    "tagline": "Scalable Web Application Engineering.",
+    "tagline": "Full-stack product engineering depth.",
     "problem": "Need for a robust system to manage complex user logic and database interactions for a growing user base.",
-    "solution": "Developed a full-stack Laravel application focusing on performance, security, and intuitive user dashboards.",
+    "solution": "Developed a full-stack Laravel application focused on performance, security, and intuitive user dashboards.",
     "result": "A production-ready platform supporting 50+ active users with real-time data processing and automated reporting.",
     "image": "@/assets/projects/delight.png",
     "tags": [

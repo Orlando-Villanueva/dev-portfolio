@@ -7,7 +7,8 @@ const content = {
       { name: "About", href: "#about" },
       { name: "Contact", href: "#contact" },
     ],
-    cta: "Request Audit",
+    cta: "Request Review",
+    menuLabel: "Toggle menu",
   },
   fr: {
     links: [
@@ -16,7 +17,8 @@ const content = {
       { name: "À Propos", href: "#about" },
       { name: "Contact", href: "#contact" },
     ],
-    cta: "Demander un audit",
+    cta: "Demander une revue",
+    menuLabel: "Ouvrir ou fermer le menu",
   },
 } as const;
 
@@ -106,7 +108,7 @@ if (lang === "en") {
         <button
           @click="isOpen = !isOpen"
           class="text-navy p-2 focus:outline-none"
-          aria-label="Toggle menu"
+          aria-label={t.menuLabel}
         >
           <svg
             class="h-6 w-6"

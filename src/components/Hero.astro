@@ -5,26 +5,21 @@ interface Props {
   primaryCTA: string;
   secondaryCTA: string;
   availabilityText: string;
+  localProof: string;
 }
 
-const { headline, subheadline, primaryCTA, secondaryCTA, availabilityText } =
-  Astro.props;
+const {
+  headline,
+  subheadline,
+  primaryCTA,
+  secondaryCTA,
+  availabilityText,
+  localProof,
+} = Astro.props;
 ---
 
-<section class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
-  <!-- Subtle Background Decorations -->
-  <div
-    class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full -z-10 opacity-30 pointer-events-none"
-  >
-    <div
-      class="absolute top-20 right-0 w-96 h-96 bg-accent/20 blur-[120px] rounded-full"
-    >
-    </div>
-    <div
-      class="absolute -bottom-20 -left-10 w-80 h-80 bg-emerald/10 blur-[100px] rounded-full"
-    >
-    </div>
-  </div>
+<section class="relative pt-28 pb-16 md:pt-36 md:pb-20 overflow-hidden bg-ghost">
+  <div class="absolute inset-x-0 bottom-0 h-px bg-slate/10"></div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <div
@@ -35,15 +30,19 @@ const { headline, subheadline, primaryCTA, secondaryCTA, availabilityText } =
     </div>
 
     <h1
-      class="text-4xl md:text-7xl font-bold text-navy leading-[1.1] mb-8 max-w-4xl mx-auto"
+      class="text-4xl md:text-6xl font-bold text-navy leading-[1.08] mb-7 max-w-4xl mx-auto"
     >
       {headline}
     </h1>
 
     <p
-      class="text-lg md:text-xl text-slate max-w-2xl mx-auto mb-12 leading-relaxed"
+      class="text-lg md:text-xl text-slate max-w-2xl mx-auto mb-5 leading-relaxed"
     >
       {subheadline}
+    </p>
+
+    <p class="text-sm md:text-base font-bold text-navy/75 mb-10">
+      {localProof}
     </p>
 
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -54,7 +53,7 @@ const { headline, subheadline, primaryCTA, secondaryCTA, availabilityText } =
         {primaryCTA}
       </a>
       <a
-        href="#work"
+        href="#services"
         class="w-full sm:w-auto bg-ghost border-2 border-navy/10 text-navy px-8 py-4 rounded-full font-bold text-lg hover:bg-navy/5 transition-all"
       >
         {secondaryCTA}
