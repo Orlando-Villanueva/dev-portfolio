@@ -10,7 +10,7 @@ interface Props {
 
 const {
 	title,
-	description = "Bilingual lead capture websites and website lead reviews for Quebec service businesses.",
+	description = "Bilingual quote-request upgrades and practical implementation for Quebec service contractors.",
 	lang = "en",
 	image = "/social-preview.png",
 } = Astro.props;
@@ -35,24 +35,24 @@ const schemaCopy =
 	lang === "fr"
 		? {
 				description:
-					"Sites de capture de demandes bilingues, revues de sites et formulaires de soumission pour entreprises de services au Québec.",
+					"Demandes de soumission bilingues, amélioration de formulaires et mise en oeuvre pratique pour entrepreneurs de services au Québec.",
 				serviceType: [
-					"Revues de sites pour les demandes",
-					"Systèmes de capture de demandes",
+					"Diagnostics de parcours de soumission",
+					"Améliorations des demandes de soumission",
 					"Formulaires de soumission bilingues",
 					"Structure SEO locale",
-					"Entretien de sites d'entreprise",
+					"Mise en oeuvre pour sites existants",
 				],
 			}
 		: {
 				description:
-					"Bilingual lead capture websites, website lead reviews, and quote forms for Quebec service businesses.",
+					"Bilingual quote-request upgrades, contact-form improvements, and practical implementation for Quebec service contractors.",
 				serviceType: [
-					"Website lead reviews",
-					"Lead capture systems",
+					"Quote path checkups",
+					"Quote request upgrades",
 					"Bilingual quote forms",
 					"Local SEO website structure",
-					"Business website maintenance",
+					"Existing-site implementation",
 				],
 			};
 const schema = {
