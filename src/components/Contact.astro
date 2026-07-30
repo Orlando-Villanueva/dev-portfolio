@@ -1,185 +1,140 @@
 ---
 const content = {
-  en: {
-    title: "Get Better Quote Requests",
-    subtitle:
-      "Send the online presence people use to find you, the service you want better quote requests for, and where you serve clients. I'll reply with the most useful next step.",
-    name: "Name",
-    email: "Email",
-    service: "Which offer fits best?",
-    message: "Website, Google/Facebook link, service area, and missing quote details",
-    namePlaceholder: "Your name",
-    emailPlaceholder: "you@example.com",
-    messagePlaceholder:
-      "Example: Google profile or mysite.com, serving Montreal and Valleyfield, callers often forget photos, urgency, and address details",
-    submit: "Improve quote requests",
-    note: "Send your website, Google profile, Facebook page, or listing, plus what details are missing from current requests. Prefer a project discussion? Include your timeline.",
-    honeypot: "Don't fill this out if you're human:",
-    subjectInitial: "Bilingual Quote Website",
-    subjectPrefix: "Bilingual Quote Website from",
-    defaultName: "New Client",
-    defaultService: "General Inquiry",
-    options: [
-      "Bilingual Quote Website",
-      "Quote Path Checkup",
-      "Care Plan",
-      "Other",
-    ],
-  },
-  fr: {
-    title: "Améliorer les demandes de soumission",
-    subtitle:
-      "Envoyez la présence en ligne que les clients utilisent pour vous trouver, le service à améliorer et votre secteur. Je vous répondrai avec la prochaine étape la plus utile.",
-    name: "Nom",
-    email: "Courriel",
-    service: "Quelle offre convient le mieux?",
-    message: "Site, lien Google/Facebook, secteur et détails de soumission manquants",
-    namePlaceholder: "Votre nom",
-    emailPlaceholder: "vous@exemple.com",
-    messagePlaceholder:
-      "Exemple : fiche Google ou monsite.com, Montréal et Valleyfield, les clients oublient souvent les photos, l'urgence et l'adresse",
-    submit: "Améliorer les soumissions",
-    note: "Envoyez votre site, fiche Google, page Facebook ou inscription, avec les détails qui manquent dans les demandes actuelles. Pour discuter d'un projet, ajoutez aussi votre échéancier.",
-    honeypot: "Ne remplissez pas ce champ si vous êtes humain:",
-    subjectInitial: "Site bilingue avec demande de soumission",
-    subjectPrefix: "Demande de site bilingue de",
-    defaultName: "Nouveau client",
-    defaultService: "Demande générale",
-    options: [
-      "Site bilingue avec demande de soumission",
-      "Diagnostic du parcours de soumission",
-      "Plan d'entretien",
-      "Autre",
-    ],
-  },
+    en: {
+        eyebrow: "Free fit review",
+        title: "Show me how quote requests arrive today.",
+        subtitle:
+            "Send your current setup and the details you need before calling a customer back. I’ll reply with whether a focused page, a form improvement, or a larger project is the useful next step.",
+        name: "Name",
+        email: "Email",
+        currentSetup: "Current website, profile, listing, or no site",
+        requestNeed: "What should a useful request tell you?",
+        namePlaceholder: "Your name",
+        emailPlaceholder: "you@example.com",
+        currentSetupPlaceholder:
+            "mysite.com, Google Business Profile, Facebook page, directory listing, or no site yet",
+        requestNeedPlaceholder:
+            "Your priority service and area, plus details such as job type, address, urgency, photos, access, or timing",
+        submit: "Send my current setup",
+        note:
+            "This is a brief fit review, not a paid report or an obligation to start a project.",
+        honeypot: "Don't fill this out if you're human:",
+        subject: "New quote-request project inquiry",
+    },
+    fr: {
+        eyebrow: "Courte évaluation sans frais",
+        title: "Montrez-moi comment les demandes vous arrivent aujourd'hui.",
+        subtitle:
+            "Envoyez votre situation actuelle et les détails dont vous avez besoin avant de rappeler un client. Je vous dirai si une page ciblée, un meilleur formulaire ou un projet plus complet représente la prochaine étape utile.",
+        name: "Nom",
+        email: "Courriel",
+        currentSetup: "Site, fiche, inscription actuelle ou absence de site",
+        requestNeed: "Que devrait contenir une demande utile?",
+        namePlaceholder: "Votre nom",
+        emailPlaceholder: "vous@exemple.com",
+        currentSetupPlaceholder:
+            "monsite.com, fiche Google, page Facebook, annuaire ou aucun site pour le moment",
+        requestNeedPlaceholder:
+            "Votre service prioritaire et votre secteur, puis les détails utiles : type de travaux, adresse, urgence, photos, accès ou délai",
+        submit: "Envoyer ma situation actuelle",
+        note:
+            "Il s'agit d'une courte évaluation de compatibilité, pas d'un rapport payant ni d'un engagement à démarrer un projet.",
+        honeypot: "Ne remplissez pas ce champ si vous êtes humain:",
+        subject: "Nouvelle demande pour améliorer la prise de soumissions",
+    },
 } as const;
 
 interface Props {
-  lang: keyof typeof content;
+    lang: keyof typeof content;
 }
 
 const { lang } = Astro.props;
 const t = content[lang];
 ---
 
-<section id="contact" class="py-16 md:py-20 bg-ghost">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-10 md:mb-12">
-      <h2 class="text-3xl md:text-5xl font-bold text-navy mb-4">{t.title}</h2>
-      <p class="text-slate text-lg">{t.subtitle}</p>
-      <p class="text-slate text-sm mt-4 max-w-2xl mx-auto">{t.note}</p>
+<section id="contact" class="bg-paper py-16 md:py-24">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-10 lg:grid-cols-[minmax(0,0.78fr)_minmax(28rem,1.22fr)] lg:gap-14">
+            <div>
+                <p class="section-label text-accent">{t.eyebrow}</p>
+                <h2 class="mt-4 text-4xl leading-[0.98] md:text-5xl lg:text-6xl">
+                    {t.title}
+                </h2>
+                <p class="mt-6 text-lg leading-relaxed text-steel">
+                    {t.subtitle}
+                </p>
+                <p class="mt-6 text-sm font-medium leading-relaxed text-steel">
+                    {t.note}
+                </p>
+            </div>
+
+            <form
+                name="contact"
+                method="POST"
+                action={`/${lang}/thank-you/`}
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                class="border-t-2 border-navy bg-white p-5 md:p-8"
+            >
+                <input type="hidden" name="form-name" value="contact" />
+                <input type="hidden" name="subject" value={t.subject} />
+                <div class="hidden">
+                    <label>{t.honeypot} <input name="bot-field" /></label>
+                </div>
+
+                <div class="grid gap-5 md:grid-cols-2">
+                    <div class="form-field">
+                        <label for="contact-name">{t.name}</label>
+                        <input
+                            type="text"
+                            id="contact-name"
+                            name="name"
+                            autocomplete="name"
+                            placeholder={t.namePlaceholder}
+                            required
+                        />
+                    </div>
+                    <div class="form-field">
+                        <label for="contact-email">{t.email}</label>
+                        <input
+                            type="email"
+                            id="contact-email"
+                            name="email"
+                            autocomplete="email"
+                            placeholder={t.emailPlaceholder}
+                            required
+                        />
+                    </div>
+                </div>
+
+                <div class="form-field mt-5">
+                    <label for="contact-current-setup">
+                        {t.currentSetup}
+                    </label>
+                    <input
+                        type="text"
+                        id="contact-current-setup"
+                        name="current_setup"
+                        placeholder={t.currentSetupPlaceholder}
+                        required
+                    />
+                </div>
+
+                <div class="form-field mt-5">
+                    <label for="contact-request-need">{t.requestNeed}</label>
+                    <textarea
+                        id="contact-request-need"
+                        name="request_need"
+                        rows="6"
+                        placeholder={t.requestNeedPlaceholder}
+                        required
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="button-primary mt-6 w-full">
+                    {t.submit}
+                </button>
+            </form>
+        </div>
     </div>
-
-    <form
-      name="contact"
-      method="POST"
-      action={`/${lang}/thank-you/`}
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
-      data-subject-prefix={t.subjectPrefix}
-      data-default-name={t.defaultName}
-      data-default-service={t.defaultService}
-      class="bg-white p-6 md:p-10 rounded-[2rem] shadow-xl shadow-navy/5 space-y-6"
-    >
-      <input type="hidden" name="form-name" value="contact" />
-      <input type="hidden" name="subject" value={t.subjectInitial} />
-      <div class="hidden">
-        <label>{t.honeypot} <input name="bot-field" /></label>
-      </div>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="space-y-2">
-          <label for="contact-name" class="text-sm font-bold text-navy ml-1">{t.name}</label>
-          <input
-            type="text"
-            id="contact-name"
-            name="name"
-            autocomplete="name"
-            placeholder={t.namePlaceholder}
-            required
-            class="w-full px-6 py-4 rounded-xl border-2 border-slate/10 focus:border-accent outline-none transition-colors"
-          />
-        </div>
-        <div class="space-y-2">
-          <label for="contact-email" class="text-sm font-bold text-navy ml-1">{t.email}</label>
-          <input
-            type="email"
-            id="contact-email"
-            name="email"
-            autocomplete="email"
-            placeholder={t.emailPlaceholder}
-            required
-            class="w-full px-6 py-4 rounded-xl border-2 border-slate/10 focus:border-accent outline-none transition-colors"
-          />
-        </div>
-      </div>
-
-      <div class="space-y-2">
-        <label for="contact-service" class="text-sm font-bold text-navy ml-1">{t.service}</label>
-        <select
-          id="contact-service"
-          name="service"
-          class="w-full px-6 py-4 rounded-xl border-2 border-slate/10 focus:border-accent outline-none transition-colors appearance-none bg-white"
-        >
-          {t.options.map((opt) => <option>{opt}</option>)}
-        </select>
-      </div>
-
-      <div class="space-y-2">
-        <label for="contact-message" class="text-sm font-bold text-navy ml-1">{t.message}</label>
-        <textarea
-          id="contact-message"
-          name="message"
-          rows="4"
-          placeholder={t.messagePlaceholder}
-          required
-          class="w-full px-6 py-4 rounded-xl border-2 border-slate/10 focus:border-accent outline-none transition-colors resize-none"
-        ></textarea>
-      </div>
-
-      <button
-        type="submit"
-        class="w-full bg-accent text-white py-5 rounded-xl font-bold text-lg hover:bg-accent/90 transition-all shadow-lg shadow-accent/20"
-      >
-        {t.submit}
-      </button>
-    </form>
-  </div>
 </section>
-
-<script>
-  const form = document.querySelector(
-    'form[name="contact"]',
-  ) as HTMLFormElement;
-  if (form) {
-    const nameInput = form.querySelector(
-      'input[name="name"]',
-    ) as HTMLInputElement;
-    const serviceSelect = form.querySelector(
-      'select[name="service"]',
-    ) as HTMLSelectElement;
-    const subjectInput = form.querySelector(
-      'input[name="subject"]',
-    ) as HTMLInputElement;
-
-    const updateSubject = () => {
-      const subjectPrefix =
-        form.dataset.subjectPrefix || subjectInput?.value || "";
-      const name =
-        nameInput?.value?.trim() || form.dataset.defaultName || "";
-      const service =
-        serviceSelect?.value || form.dataset.defaultService || "";
-      if (subjectInput) {
-        subjectInput.value = subjectPrefix + " " + name + " - " + service;
-      }
-    };
-
-    nameInput?.addEventListener("input", updateSubject);
-    serviceSelect?.addEventListener("change", updateSubject);
-
-    // Final check on submit
-    form.addEventListener("submit", updateSubject);
-
-    // Initial run
-    updateSubject();
-  }
-</script>

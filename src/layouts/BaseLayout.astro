@@ -10,7 +10,7 @@ interface Props {
 
 const {
 	title,
-	description = "Bilingual quote-request upgrades and practical implementation for Quebec service contractors.",
+	description = "Focused bilingual quote pages and job-specific forms for Quebec contractors.",
 	lang = "en",
 	image = "/social-preview.png",
 } = Astro.props;
@@ -35,24 +35,24 @@ const schemaCopy =
 	lang === "fr"
 		? {
 				description:
-					"Demandes de soumission bilingues, amélioration de formulaires et mise en oeuvre pratique pour entrepreneurs de services au Québec.",
+					"Pages bilingues et formulaires adaptés aux travaux pour entrepreneurs au Québec.",
 				serviceType: [
-					"Diagnostics de parcours de soumission",
-					"Améliorations des demandes de soumission",
+					"Pages de demande de soumission bilingues",
 					"Formulaires de soumission bilingues",
-					"Structure SEO locale",
-					"Mise en oeuvre pour sites existants",
+					"Questions adaptées aux travaux",
+					"Parcours depuis les fiches et sites existants",
+					"Avis et confirmations de demande",
 				],
 			}
 		: {
 				description:
-					"Bilingual quote-request upgrades, contact-form improvements, and practical implementation for Quebec service contractors.",
+					"Focused bilingual quote pages and job-specific forms for Quebec contractors.",
 				serviceType: [
-					"Quote path checkups",
-					"Quote request upgrades",
+					"Bilingual quote-request pages",
 					"Bilingual quote forms",
-					"Local SEO website structure",
-					"Existing-site implementation",
+					"Job-specific request questions",
+					"Profile and existing-site request paths",
+					"Request notifications and confirmations",
 				],
 			};
 const schema = {
@@ -116,7 +116,7 @@ const schema = {
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;600;700&display=swap"
 			rel="stylesheet"
 		/>
 		<script

@@ -1,406 +1,153 @@
 ---
-const services = {
-    en: [
-        {
-            title: "Bilingual Quote Website",
-            price: "$1,500-$3,000 typical project range",
-            outcome: "A new small website built around clearer quote requests.",
-            summary:
-                "Launch a bilingual website or focused rebuild with a practical path from visitor interest to useful job details.",
-            includes: [
-                "Small bilingual website or focused site rebuild for one service business",
-                "Service positioning, mobile calls to action, quote/contact form, and confirmation copy",
-                "Basic local SEO structure and email-notification details",
-            ],
-            bestFor:
-                "You need a new site, a replacement for a weak site, or a real quote path beyond Google/Facebook.",
-            scopeNote:
-                "If your current site is already usable, this can be scoped as a smaller quote-request upgrade.",
-            icon: "M8 7h8m-8 4h8m-8 4h5m8-12 4 4-4 4M5 5a2 2 0 0 1 2-2h7.5L19 7.5V19a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5Z",
-            featured: true,
-            compact: false,
-        },
-        {
-            title: "Quote Path Checkup",
-            price: "$150-$300 fixed starting range",
-            outcome: "A lower-friction way to find the request gaps.",
-            summary:
-                "Find the gaps across Google, Facebook, directory listings, website, CTAs, and form.",
-            includes: [
-                "Google profile, Facebook or directory listing, website, mobile CTA, and form review",
-                "Bilingual copy and quote-question notes",
-                "Short action list for what to fix first",
-            ],
-            bestFor:
-                "Basic site, weak site, or Google/Facebook presence; you want a clear next step.",
-            scopeNote:
-                "Review and recommendations only. Implementation is quoted separately.",
-            icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2Z",
-            featured: false,
-            compact: true,
-        },
-        {
-            title: "Care Plan",
-            price: "$150-$300/mo starting range",
-            outcome: "Ongoing care for the quote-request path after launch.",
-            summary:
-                "Light maintenance for forms, quote requests, and fresh service details.",
-            includes: [
-                "Updates, small improvements, and performance checks",
-                "Form monitoring and quote-request maintenance",
-                "Practical adjustments as services, seasons, or service areas change",
-            ],
-            bestFor:
-                "Your site supports daily operations and needs regular updates.",
-            scopeNote: null,
-            icon: "M9 12l2 2 4-4m5 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z",
-            featured: false,
-            compact: false,
-        },
-    ],
-    fr: [
-        {
-            title: "Site bilingue avec demande de soumission",
-            price: "Fourchette typique : 1 500 $ à 3 000 $",
-            outcome: "Un nouveau petit site construit autour de demandes plus claires.",
-            summary:
-                "Lancer un site bilingue ou une refonte ciblée avec un chemin pratique entre l'intérêt du visiteur et les détails du travail.",
-            includes: [
-                "Petit site bilingue ou refonte ciblée pour une entreprise de services",
-                "Positionnement du service, CTA mobiles, formulaire de soumission/contact et message de confirmation",
-                "Structure SEO locale de base et détails d'avis courriel",
-            ],
-            bestFor:
-                "Vous avez besoin d'un nouveau site, de remplacer un site faible ou d'avoir un vrai parcours au-delà de Google/Facebook.",
-            scopeNote:
-                "Si votre site actuel est déjà utilisable, le mandat peut être réduit à une amélioration du parcours de soumission.",
-            icon: "M8 7h8m-8 4h8m-8 4h5m8-12 4 4-4 4M5 5a2 2 0 0 1 2-2h7.5L19 7.5V19a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5Z",
-            featured: true,
-            compact: false,
-        },
-        {
-            title: "Diagnostic du parcours de soumission",
-            price: "Fourchette fixe de départ : 150 $ à 300 $",
-            outcome: "Une façon simple de repérer les écarts dans la prise de demande.",
-            summary:
-                "Repérer les écarts dans la fiche Google, Facebook, les annuaires, le site, les CTA et le formulaire.",
-            includes: [
-                "Revue de la fiche Google, page Facebook ou inscription, site, CTA mobiles et formulaire",
-                "Notes sur les textes bilingues et les questions de soumission",
-                "Courte liste d'actions pour savoir quoi corriger en premier",
-            ],
-            bestFor:
-                "Site de base, site faible ou présence Google/Facebook; vous voulez une prochaine étape claire.",
-            scopeNote:
-                "Analyse et recommandations seulement. La mise en œuvre est soumissionnée séparément.",
-            icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2Z",
-            featured: false,
-            compact: true,
-        },
-        {
-            title: "Plan d'entretien",
-            price: "150 $ à 300 $/mois pour démarrer",
-            outcome: "Un entretien continu du parcours de soumission après le lancement.",
-            summary:
-                "Entretien léger des formulaires, demandes de soumission et détails de services.",
-            includes: [
-                "Mises à jour, petites améliorations et vérifications de performance",
-                "Surveillance des formulaires et entretien des demandes de soumission",
-                "Ajustements pratiques lorsque les services, saisons ou secteurs changent",
-            ],
-            bestFor:
-                "Votre site soutient vos opérations et doit rester à jour.",
-            scopeNote: null,
-            icon: "M9 12l2 2 4-4m5 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z",
-            featured: false,
-            compact: false,
-        },
-    ],
-} as const;
-
-const labels = {
+const content = {
     en: {
-        eyebrow: "What you can buy",
-        heading: "Websites and quote paths for Quebec service businesses",
+        eyebrow: "One focused offer",
+        heading:
+            "A bilingual quote page that asks the right questions before you call back.",
         intro:
-            "Whether you need a new website, a focused rebuild, or a smaller intake improvement, the goal is the same: clearer quote requests with the right job details.",
-        includes: "Includes",
-        bestFor: "Best for",
-        featured: "Primary offer",
-        cta: "Improve quote requests",
-        preview: {
-            title: "Example request received",
-            source: "From the quote form",
-            status: "New request",
-            fields: [
-                { label: "Service", value: "Repair or installation" },
-                { label: "Area", value: "Montreal area" },
-                { label: "Timing", value: "This week" },
-                { label: "Photos", value: "3 attached" },
-                {
-                    label: "Message",
-                    value: "Access details and best time to call",
-                    wide: true,
-                },
-            ],
-        },
+            "I build a clear path from the place customers find you to a focused form that matches the work you quote.",
+        price: "Projects start at $750 CAD",
+        priceNote:
+            "The starting scope covers one priority service and one focused English/French page and form.",
+        includesLabel: "What the focused setup includes",
+        includes: [
+            "Job-specific questions and natural English/French copy",
+            "A clear path from Google, Facebook, directories, or your current site",
+            "Email notification, confirmation, and follow-up wording",
+            "Mobile testing and deployment",
+        ],
+        startingLabel: "Built around what you have now",
+        startingPoints: [
+            {
+                title: "Profile or listing only",
+                body: "Create a focused destination beyond a Google profile, Facebook page, or directory listing.",
+            },
+            {
+                title: "Weak or broken website",
+                body: "Replace the unclear request path without turning every project into a full rebuild.",
+            },
+            {
+                title: "Usable site, generic form",
+                body: "Add better questions and calls to action while keeping the parts that already work.",
+            },
+        ],
+        scope:
+            "Larger bilingual sites, multi-service flows, booking logic, and custom integrations are quoted separately.",
+        cta: "Improve my quote requests",
     },
     fr: {
-        eyebrow: "Ce que vous pouvez acheter",
-        heading: "Sites web et parcours de soumission pour entreprises de services au Québec",
+        eyebrow: "Une offre ciblée",
+        heading:
+            "Une page bilingue qui pose les bonnes questions avant votre rappel.",
         intro:
-            "Que vous ayez besoin d'un nouveau site, d'une refonte ciblée ou d'une amélioration plus légère, l'objectif reste le même : des demandes plus claires avec les bons détails.",
-        includes: "Inclus",
-        bestFor: "Idéal pour",
-        featured: "Offre principale",
-        cta: "Améliorer les soumissions",
-        preview: {
-            title: "Exemple de demande reçue",
-            source: "Depuis le formulaire",
-            status: "Nouvelle demande",
-            fields: [
-                { label: "Service", value: "Réparation ou installation" },
-                { label: "Secteur", value: "Grand Montréal" },
-                { label: "Délai", value: "Cette semaine" },
-                { label: "Photos", value: "3 jointes" },
-                {
-                    label: "Message",
-                    value: "Accès et meilleur moment pour appeler",
-                    wide: true,
-                },
-            ],
-        },
+            "Je crée un parcours clair entre l'endroit où les clients vous trouvent et un formulaire adapté aux travaux que vous soumissionnez.",
+        price: "Projets à partir de 750 $ CA",
+        priceNote:
+            "Le mandat de départ couvre un service prioritaire ainsi qu'une page et un formulaire ciblés en français et en anglais.",
+        includesLabel: "Ce que comprend la mise en place ciblée",
+        includes: [
+            "Questions adaptées aux travaux et textes naturels en français et en anglais",
+            "Parcours clair depuis Google, Facebook, les annuaires ou votre site actuel",
+            "Avis courriel, confirmation et textes de suivi",
+            "Tests mobiles et déploiement",
+        ],
+        startingLabel: "Adaptée à votre situation actuelle",
+        startingPoints: [
+            {
+                title: "Fiche ou inscription seulement",
+                body: "Créer une destination ciblée au-delà d'une fiche Google, d'une page Facebook ou d'un annuaire.",
+            },
+            {
+                title: "Site faible ou brisé",
+                body: "Remplacer le parcours de demande confus sans transformer chaque mandat en refonte complète.",
+            },
+            {
+                title: "Site utilisable, formulaire générique",
+                body: "Ajouter de meilleures questions et de meilleurs appels à l'action tout en gardant ce qui fonctionne.",
+            },
+        ],
+        scope:
+            "Les sites bilingues plus complets, les parcours multiservices, la réservation et les intégrations sur mesure font l'objet d'une soumission distincte.",
+        cta: "Améliorer mes demandes",
     },
 } as const;
 
 interface Props {
-    lang: keyof typeof services;
+    lang: keyof typeof content;
 }
 
 const { lang = "en" } = Astro.props;
-const currentServices = services[lang];
-const t = labels[lang];
+const t = content[lang];
 ---
 
-<section id="services" class="py-16 md:py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="mb-10 md:mb-14 grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,27rem)] lg:items-start">
-            <div class="max-w-3xl">
-                <p class="text-accent text-sm font-bold uppercase tracking-widest mb-4">
-                    {t.eyebrow}
-                </p>
-                <h2 class="text-3xl md:text-5xl font-bold text-navy mb-5">
+<section id="offer" class="bg-white py-16 md:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-10 lg:grid-cols-[minmax(0,0.92fr)_minmax(24rem,1.08fr)] lg:gap-16">
+            <div>
+                <p class="section-label text-accent">{t.eyebrow}</p>
+                <h2 class="mt-4 max-w-3xl text-4xl leading-[0.98] md:text-5xl lg:text-6xl">
                     {t.heading}
                 </h2>
-                <p class="text-slate text-lg leading-relaxed">
+                <p class="mt-6 max-w-2xl text-lg leading-relaxed text-steel">
                     {t.intro}
                 </p>
+
+                <div class="mt-8 border-y border-steel/25 py-5">
+                    <p class="text-2xl font-bold text-navy">{t.price}</p>
+                    <p class="mt-2 max-w-xl text-sm leading-relaxed text-steel">
+                        {t.priceNote}
+                    </p>
+                </div>
+
+                <a
+                    href="#contact"
+                    class="button-primary mt-8 inline-flex"
+                >
+                    {t.cta}
+                </a>
             </div>
 
-            <aside
-                class="rounded-2xl border border-accent/15 bg-ghost p-4 md:p-5 shadow-lg shadow-navy/5"
-                aria-label={t.preview.title}
-            >
-                <div class="flex flex-wrap items-center justify-between gap-3">
-                    <div>
-                        <h3 class="text-base font-bold text-navy">
-                            {t.preview.title}
-                        </h3>
-                        <p class="mt-1 text-xs font-bold uppercase tracking-widest text-slate/70">
-                            {t.preview.source}
-                        </p>
-                    </div>
-                    <span class="inline-flex items-center rounded-full bg-emerald/10 px-3 py-1 text-xs font-bold text-emerald">
-                        {t.preview.status}
-                    </span>
+            <div class="border-t-2 border-navy bg-paper">
+                <div class="border-b border-steel/20 p-5 md:p-7">
+                    <p class="section-label text-steel">{t.includesLabel}</p>
                 </div>
-
-                <div class="mt-4 grid grid-cols-2 gap-2">
+                <ul>
                     {
-                        t.preview.fields.map((field) => (
-                            <div
-                                class:list={[
-                                    "rounded-xl border border-slate/10 bg-white px-3 py-2.5",
-                                    "wide" in field && field.wide
-                                        ? "col-span-2"
-                                        : "",
-                                ]}
-                            >
-                                <p class="text-[10px] font-bold uppercase tracking-widest text-slate/70">
-                                    {field.label}
-                                </p>
-                                <p class="mt-1 text-sm font-bold leading-snug text-navy">
-                                    {field.value}
-                                </p>
-                            </div>
+                        t.includes.map((item) => (
+                            <li class="flex gap-4 border-b border-steel/20 px-5 py-4 text-navy md:px-7">
+                                <span
+                                    class="mt-0.5 shrink-0 text-base font-bold leading-none text-confirm"
+                                    aria-hidden="true"
+                                >
+                                    ✓
+                                </span>
+                                <span class="font-semibold leading-relaxed">
+                                    {item}
+                                </span>
+                            </li>
                         ))
                     }
-                </div>
-            </aside>
+                </ul>
+                <p class="p-5 text-sm leading-relaxed text-steel md:p-7">
+                    {t.scope}
+                </p>
+            </div>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-5 md:gap-6">
-            {
-                currentServices.map((service) => (
-                    <article
-                        class:list={[
-                            "relative rounded-2xl border p-5 md:p-6 transition-all",
-                            service.featured
-                                ? "border-accent/50 bg-ghost shadow-xl shadow-accent/10"
-                                : "border-slate/10 bg-white hover:border-accent/25",
-                            service.featured ? "md:col-span-2" : "",
-                        ]}
-                    >
-                        {service.featured && (
-                            <p class="mb-4 inline-flex rounded-full bg-accent/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-accent">
-                                {t.featured}
+        <div class="mt-14 border-t border-steel/25 pt-8 md:mt-20">
+            <p class="section-label text-steel">{t.startingLabel}</p>
+            <div class="mt-5 grid gap-px overflow-hidden border border-steel/20 bg-steel/20 md:grid-cols-3">
+                {
+                    t.startingPoints.map((point) => (
+                        <article class="bg-white p-5 md:p-6">
+                            <h3 class="text-xl leading-tight">{point.title}</h3>
+                            <p class="mt-3 text-sm leading-relaxed text-steel">
+                                {point.body}
                             </p>
-                        )}
-                        <div
-                            class:list={[
-                                service.featured
-                                    ? "grid gap-5 lg:grid-cols-[minmax(0,0.95fr)_minmax(20rem,1fr)] lg:items-start"
-                                    : "",
-                            ]}
-                        >
-                            <div>
-                                <div class="flex items-start gap-4">
-                                    <div class="w-11 h-11 shrink-0 bg-accent/10 rounded-xl flex items-center justify-center text-accent">
-                                        <svg
-                                            class="w-5 h-5"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                            aria-hidden="true"
-                                        >
-                                            <path
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                stroke-width="2"
-                                                d={service.icon}
-                                            />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-xl md:text-2xl font-bold text-navy leading-tight">
-                                            {service.title}
-                                        </h3>
-                                        <p class="text-base font-bold text-accent mt-2">
-                                            {service.price}
-                                        </p>
-                                    </div>
-                                </div>
-                                <p class="mt-5 text-lg font-bold text-navy leading-snug">
-                                    {service.outcome}
-                                </p>
-                                <p class="mt-3 text-sm md:text-base text-slate leading-relaxed">
-                                    {service.summary}
-                                </p>
-                                <p class="mt-4 text-sm leading-relaxed text-navy">
-                                    <span class="font-bold">{t.bestFor}:</span>{" "}
-                                    {service.bestFor}
-                                </p>
-                            </div>
-
-                            <details
-                                data-featured-includes={service.featured ? "true" : undefined}
-                                class:list={[
-                                    "group rounded-xl border border-slate/10 bg-white/70",
-                                    service.featured ? "mt-0" : "mt-5",
-                                ]}
-                            >
-                                <summary
-                                    class:list={[
-                                        "flex list-none items-center justify-between gap-4 px-4 py-3 text-sm font-bold text-navy",
-                                        service.featured
-                                            ? "cursor-pointer lg:cursor-default"
-                                            : "cursor-pointer",
-                                    ]}
-                                >
-                                    <span>{t.includes}</span>
-                                    <span
-                                        class:list={[
-                                            "text-accent transition-transform group-open:rotate-45",
-                                            service.featured ? "lg:hidden" : "",
-                                        ]}
-                                    >
-                                        +
-                                    </span>
-                                </summary>
-                                <div class="border-t border-slate/10 px-4 pb-4 pt-3">
-                                    <ul class="space-y-2.5">
-                                        {service.includes.map((item) => (
-                                            <li class="flex gap-3 text-sm text-slate leading-relaxed">
-                                                <span class="mt-1 h-4 w-4 shrink-0 rounded-full bg-emerald/10 text-emerald flex items-center justify-center text-[10px] font-bold">
-                                                    ✓
-                                                </span>
-                                                <span>{item}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                    {service.scopeNote && (
-                                        <p class="mt-3 border-t border-slate/10 pt-3 text-sm leading-relaxed text-slate">
-                                            {service.scopeNote}
-                                        </p>
-                                    )}
-                                </div>
-                            </details>
-                        </div>
-                    </article>
-                ))
-            }
-        </div>
-
-        <div class="mt-8 flex justify-center">
-            <a
-                href="#contact"
-                class="inline-flex w-full sm:w-auto justify-center bg-navy text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-navy/90 transition-all shadow-lg shadow-navy/10"
-            >
-                {t.cta}
-            </a>
+                        </article>
+                    ))
+                }
+            </div>
         </div>
     </div>
 </section>
-
-<script>
-    const desktopQuery = window.matchMedia("(min-width: 1024px)");
-    const featuredIncludes = document.querySelectorAll<HTMLDetailsElement>(
-        'details[data-featured-includes="true"]',
-    );
-
-    const syncFeaturedIncludes = () => {
-        featuredIncludes.forEach((details) => {
-            details.open = desktopQuery.matches;
-        });
-    };
-
-    featuredIncludes.forEach((details) => {
-        const summary = details.querySelector("summary");
-
-        summary?.addEventListener("click", (event) => {
-            if (desktopQuery.matches) {
-                event.preventDefault();
-                details.open = true;
-            }
-        });
-
-        summary?.addEventListener("keydown", (event) => {
-            if (
-                desktopQuery.matches &&
-                (event.key === "Enter" || event.key === " ")
-            ) {
-                event.preventDefault();
-                details.open = true;
-            }
-        });
-
-        details.addEventListener("toggle", () => {
-            if (desktopQuery.matches && !details.open) {
-                details.open = true;
-            }
-        });
-    });
-
-    desktopQuery.addEventListener("change", syncFeaturedIncludes);
-    syncFeaturedIncludes();
-</script>

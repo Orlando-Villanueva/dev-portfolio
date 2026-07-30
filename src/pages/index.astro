@@ -3,8 +3,8 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Navbar from "@/components/Navbar.astro";
 import Hero from "@/components/Hero.astro";
 import Services from "@/components/Services.astro";
+import RoofingQuoteExample from "@/components/RoofingQuoteExample.astro";
 import AudienceProcess from "@/components/AudienceProcess.astro";
-import AiSiteUpgrade from "@/components/AiSiteUpgrade.astro";
 import Work from "@/components/Work.astro";
 import About from "@/components/About.astro";
 import Contact from "@/components/Contact.astro";
@@ -20,8 +20,8 @@ const t = homeContent.en;
     <main>
         <Hero {...t.hero} />
         <Services lang={lang} />
+        <RoofingQuoteExample lang={lang} />
         <AudienceProcess lang={lang} />
-        <AiSiteUpgrade lang={lang} />
         <Work lang={lang} />
         <About {...t.about} />
         <Contact lang={lang} />

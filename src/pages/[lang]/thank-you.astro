@@ -2,6 +2,7 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Navbar from "@/components/Navbar.astro";
 import Footer from "@/components/Footer.astro";
+import { getLocalizedHomePath } from "@/i18n/routes";
 
 export function getStaticPaths() {
     return [{ params: { lang: "en" } }, { params: { lang: "fr" } }];
@@ -30,6 +31,7 @@ const content = {
 
 const { lang } = Astro.params as { lang: keyof typeof content };
 const t = content[lang];
+const homePath = getLocalizedHomePath(lang);
 ---
 
 <BaseLayout title={t.title} lang={lang} description={t.description}>
@@ -58,8 +60,8 @@ const t = content[lang];
             </h1>
             <p class="text-slate text-lg mb-8 max-w-md mx-auto">{t.message}</p>
             <a
-                href={`/${lang}/`}
-                class="inline-block bg-accent text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-accent/90 transition-all shadow-lg shadow-accent/20"
+                href={homePath}
+                class="button-primary inline-block"
             >
                 {t.cta}
             </a>

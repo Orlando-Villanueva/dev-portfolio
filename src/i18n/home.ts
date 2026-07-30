@@ -9,13 +9,14 @@ export const homeContent = {
             localProof:
                 "Orlando Villanueva, full-stack developer near Montreal / Valleyfield",
             subheadline:
-                "I help small Quebec service contractors turn a basic site, weak site, Google profile, Facebook page, or directory listing into a bilingual quote-request path that captures the right job details before callback.",
-            primaryCTA: "Improve quote requests",
-            secondaryCTA: "See pricing",
+                "I help independent Quebec contractors and home-service businesses turn a basic or broken site, Google profile, Facebook page, directory listing, or generic form into a bilingual path that captures the job details you need before calling back.",
+            primaryCTA: "Improve my quote requests",
+            secondaryCTA: "See the roofing example",
+            priceNote: "Focused bilingual projects start at $750 CAD.",
         },
         about: {
             heading: "A local full-stack developer for the quote-request details templates leave unfinished.",
-            body: "I am Orlando Villanueva, a full-stack developer based near Salaberry-de-Valleyfield and serving Quebec businesses in English and French. I focus on the practical pieces that turn a basic online presence into a clearer quote-request path: service positioning, bilingual copy, mobile calls to action, quote questions, form setup, local SEO structure, and follow-up details.\n\nThe goal is not simply a prettier page or a cheaper AI-generated site. The goal is a bilingual request path that helps people understand what you do, request the right service, and send enough job detail before your team replies.",
+            body: "I am Orlando Villanueva, a full-stack developer based near Salaberry-de-Valleyfield and serving Quebec contractors in English and French. I focus on the practical pieces that turn a basic online presence into a clearer quote-request path: service positioning, bilingual copy, mobile calls to action, job-specific questions, notifications, and follow-up details.\n\nThe goal is not simply a prettier page. It is a reliable bilingual request path that helps people understand what you do and send enough job detail before your team replies.",
             image: orlandoImg,
             location: "Montreal, Valleyfield & Quebec",
             rigor: "Software Engineering Rigor",
@@ -23,23 +24,24 @@ export const homeContent = {
             professional: "French / English",
         },
         description:
-            "Bilingual quote-request upgrades, form improvements, and practical implementation for Quebec service contractors in Montreal, Valleyfield, and across Quebec.",
+            "Focused bilingual quote pages and job-specific forms for Quebec contractors in Montreal, Valleyfield, and across Quebec.",
     },
     fr: {
         title: "Orlando Villanueva | Meilleures demandes de soumission au Québec",
         hero: {
-            headline: "Transformer votre présence en ligne en demandes de soumission plus claires.",
+            headline: "Transformez votre présence en ligne en demandes de soumission plus claires.",
             availabilityText: "Disponible pour de nouveaux projets",
             localProof:
                 "Orlando Villanueva, développeur full-stack près de Montréal / Valleyfield",
             subheadline:
-                "J'aide les petites entreprises de services au Québec à transformer un site de base, un site faible, une fiche Google, une page Facebook ou une inscription en ligne en parcours bilingue qui capte les bons détails avant le rappel.",
-            primaryCTA: "Améliorer les soumissions",
-            secondaryCTA: "Voir les prix",
+                "J'aide les entrepreneurs indépendants et les entreprises de services à domicile au Québec à transformer un site de base ou brisé, une fiche Google, une page Facebook, un annuaire ou un formulaire générique en parcours bilingue qui capte les détails nécessaires avant le rappel.",
+            primaryCTA: "Améliorer mes demandes",
+            secondaryCTA: "Voir l'exemple de toiture",
+            priceNote: "Projets bilingues ciblés à partir de 750 $ CA.",
         },
         about: {
             heading: "Un développeur full-stack local pour les détails de soumission que les modèles laissent incomplets.",
-            body: "Je suis Orlando Villanueva, développeur full-stack établi près de Salaberry-de-Valleyfield et au service des entreprises québécoises en français et en anglais. Je travaille les éléments concrets qui transforment une présence en ligne de base en parcours de soumission plus clair: positionnement de service, textes bilingues, appels à l'action mobiles, questions de soumission, configuration du formulaire, structure SEO locale et détails de suivi.\n\nL'objectif n'est pas seulement une plus belle page ni un site généré par IA moins cher. L'objectif est un parcours bilingue qui aide les visiteurs à comprendre votre offre, demander le bon service et envoyer assez de détails avant que votre équipe réponde.",
+            body: "Je suis Orlando Villanueva, développeur full-stack établi près de Salaberry-de-Valleyfield et au service des entrepreneurs québécois en français et en anglais. Je travaille les éléments concrets qui transforment une présence en ligne de base en parcours de soumission plus clair : positionnement du service, textes bilingues, appels à l'action mobiles, questions adaptées aux travaux, avis et détails de suivi.\n\nL'objectif n'est pas seulement une plus belle page. C'est un parcours bilingue fiable qui aide les visiteurs à comprendre votre offre et à envoyer assez de détails avant que votre équipe réponde.",
             image: orlandoImg,
             location: "Montréal, Valleyfield et Québec",
             rigor: "Rigueur en ingénierie logicielle",
@@ -47,6 +49,6 @@ export const homeContent = {
             professional: "Français / anglais",
         },
         description:
-            "Améliorations bilingues des demandes de soumission, améliorations de formulaires et mise en oeuvre pratique pour entrepreneurs de services au Québec, à Montréal et à Valleyfield.",
+            "Pages bilingues et formulaires adaptés aux travaux pour entrepreneurs au Québec, à Montréal et à Valleyfield.",
     },
 } as const;

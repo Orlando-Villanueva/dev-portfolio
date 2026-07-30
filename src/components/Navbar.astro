@@ -1,23 +1,25 @@
 ---
+import { getLocalizedHomePath } from "@/i18n/routes";
+
 const content = {
   en: {
     links: [
-      { name: "Services", href: "#services" },
+      { name: "Offer", href: "#offer" },
+      { name: "Example", href: "#roofing-example" },
       { name: "Work", href: "#work" },
       { name: "About", href: "#about" },
-      { name: "Contact", href: "#contact" },
     ],
-    cta: "Improve Requests",
+    cta: "Improve my requests",
     menuLabel: "Toggle menu",
   },
   fr: {
     links: [
-      { name: "Services", href: "#services" },
+      { name: "Offre", href: "#offer" },
+      { name: "Exemple", href: "#roofing-example" },
       { name: "Réalisations", href: "#work" },
-      { name: "À Propos", href: "#about" },
-      { name: "Contact", href: "#contact" },
+      { name: "À propos", href: "#about" },
     ],
-    cta: "Améliorer",
+    cta: "Améliorer mes demandes",
     menuLabel: "Ouvrir ou fermer le menu",
   },
 } as const;
@@ -29,6 +31,8 @@ interface Props {
 const { lang = "en" } = Astro.props;
 const t = content[lang];
 const currentLinks = t.links;
+const homePath = getLocalizedHomePath(lang);
+const sectionPath = (hash: string) => `${homePath}${hash}`;
 
 // Logic for language switcher
 const currentPath = Astro.url.pathname;
@@ -55,14 +59,14 @@ if (lang === "en") {
 
 <nav
   x-data="{ isOpen: false }"
-  class="fixed w-full z-50 bg-ghost/80 backdrop-blur-md border-b border-slate/10"
+  class="fixed z-50 w-full border-b border-steel/20 bg-paper/90 backdrop-blur-md"
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between h-20 items-center">
       <!-- Logo -->
       <div class="flex-shrink-0 flex items-center">
         <a
-          href={lang === "en" ? "/" : `/${lang}`}
+          href={homePath}
           class="text-2xl font-bold text-navy tracking-tight group"
         >
           Orlando<span class="text-accent">_</span>
@@ -70,12 +74,12 @@ if (lang === "en") {
       </div>
 
       <!-- Desktop Menu -->
-      <div class="hidden md:flex items-center space-x-8">
+      <div class="hidden items-center space-x-6 lg:flex">
         {
           currentLinks.map((link) => (
             <a
-              href={link.href}
-              class="text-slate hover:text-navy font-medium transition-colors"
+              href={sectionPath(link.href)}
+              class="font-medium text-steel transition-colors hover:text-navy"
             >
               {link.name}
             </a>
@@ -87,27 +91,27 @@ if (lang === "en") {
         <!-- Lang Switcher -->
         <a
           href={otherLangPath}
-          class="text-slate hover:text-navy font-bold uppercase text-sm tracking-widest"
+          class="text-sm font-bold uppercase tracking-widest text-steel transition-colors hover:text-navy"
         >
           {otherLang}
         </a>
 
         <a
-          href="#contact"
-          class="bg-navy text-white px-6 py-2.5 rounded-full font-bold hover:bg-navy/90 transition-all shadow-lg shadow-navy/10"
+          href={sectionPath("#contact")}
+          class="button-primary px-5 py-2.5 text-sm"
         >
           {t.cta}
         </a>
       </div>
 
       <!-- Mobile menu button -->
-      <div class="md:hidden flex items-center space-x-4">
-        <a href={otherLangPath} class="text-slate font-bold uppercase text-sm"
+      <div class="flex items-center space-x-4 lg:hidden">
+        <a href={otherLangPath} class="text-sm font-bold uppercase text-steel"
           >{otherLang}</a
         >
         <button
           @click="isOpen = !isOpen"
-          class="text-navy p-2 focus:outline-none"
+          class="p-2 text-navy"
           aria-label={t.menuLabel}
         >
           <svg
@@ -149,15 +153,15 @@ if (lang === "en") {
     x-transition:enter-start="opacity-0 -translate-y-4"
     x-transition:enter-end="opacity-100 translate-y-0"
     style="display: none;"
-    class="md:hidden bg-ghost border-b border-slate/10"
+    class="border-b border-steel/20 bg-paper lg:hidden"
   >
     <div class="px-4 pt-2 pb-6 space-y-1">
       {
         currentLinks.map((link) => (
           <a
-            href={link.href}
+            href={sectionPath(link.href)}
             @click="isOpen = false"
-            class="block px-3 py-4 text-lg font-bold text-navy border-b border-slate/5"
+            class="block border-b border-steel/15 px-3 py-4 text-lg font-bold text-navy"
           >
             {link.name}
           </a>
@@ -165,9 +169,9 @@ if (lang === "en") {
       }
       <div class="pt-6">
         <a
-          href="#contact"
+          href={sectionPath("#contact")}
           @click="isOpen = false"
-          class="block w-full text-center bg-navy text-white px-6 py-4 rounded-xl font-bold"
+          class="button-primary block w-full text-center"
         >
           {t.cta}
         </a>
