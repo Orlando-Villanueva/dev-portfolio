@@ -35,7 +35,7 @@ Public ownership and cancellation summaries must match the finalized client agre
 
 ## Conversion and measurement
 
-The primary action is a short Netlify managed-website request form. It records the selected payment option and campaign tags. Umami Cloud is optional and enabled only when `PUBLIC_UMAMI_WEBSITE_ID` is configured.
+The primary action is a short Netlify managed-website request form. It records the selected payment option, page locale, offer version, and campaign tags so private operations can interpret each submission against the terms the prospect saw. Umami Cloud is optional and enabled only when `PUBLIC_UMAMI_WEBSITE_ID` is configured.
 
 Tracked signals:
 

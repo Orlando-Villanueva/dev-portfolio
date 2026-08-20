@@ -60,6 +60,7 @@ interface Props { lang: keyof typeof content; }
 const { lang } = Astro.props;
 const t = content[lang];
 const campaignFields = ["utm_source", "utm_medium", "utm_campaign", "utm_content"];
+const offerVersion = "managed-website-v1-2026-08";
 ---
 
 <section id="contact" class="bg-white py-16 md:py-24">
@@ -75,6 +76,8 @@ const campaignFields = ["utm_source", "utm_medium", "utm_campaign", "utm_content
             <form name="contact" method="POST" action={`/${lang}/thank-you/`} data-netlify="true" data-netlify-honeypot="bot-field" class="border-t-2 border-navy bg-paper p-5 md:p-8">
                 <input type="hidden" name="form-name" value="contact" />
                 <input type="hidden" name="subject" value={t.subject} />
+                <input type="hidden" name="locale" value={lang} />
+                <input type="hidden" name="offer_version" value={offerVersion} />
                 {campaignFields.map((field) => <input type="hidden" name={field} value="" data-campaign-field={field} />)}
                 <div class="hidden"><label>{t.honeypot} <input name="bot-field" /></label></div>
 
