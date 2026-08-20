@@ -5,21 +5,23 @@ const content = {
   en: {
     links: [
       { name: "Offer", href: "#offer" },
-      { name: "Example", href: "#roofing-example" },
+      { name: "Pricing", href: "#pricing" },
+      { name: "How it works", href: "#process" },
       { name: "Work", href: "#work" },
-      { name: "About", href: "#about" },
+      { name: "FAQ", href: "#faq" },
     ],
-    cta: "Improve my requests",
+    cta: "Get started",
     menuLabel: "Toggle menu",
   },
   fr: {
     links: [
       { name: "Offre", href: "#offer" },
-      { name: "Exemple", href: "#roofing-example" },
+      { name: "Tarifs", href: "#pricing" },
+      { name: "Déroulement", href: "#process" },
       { name: "Réalisations", href: "#work" },
-      { name: "À propos", href: "#about" },
+      { name: "Questions", href: "#faq" },
     ],
-    cta: "Améliorer mes demandes",
+    cta: "Commencer",
     menuLabel: "Ouvrir ou fermer le menu",
   },
 } as const;
@@ -99,6 +101,7 @@ if (lang === "en") {
         <a
           href={sectionPath("#contact")}
           class="button-primary px-5 py-2.5 text-sm"
+          data-umami-event="nav-contact-cta"
         >
           {t.cta}
         </a>
@@ -172,6 +175,7 @@ if (lang === "en") {
           href={sectionPath("#contact")}
           @click="isOpen = false"
           class="button-primary block w-full text-center"
+          data-umami-event="mobile-nav-contact-cta"
         >
           {t.cta}
         </a>

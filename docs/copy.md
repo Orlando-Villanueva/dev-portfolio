@@ -1,57 +1,35 @@
-# **Portfolio Copy: Hero & About Sections**
+# Managed Website Messaging Guide
 
-## **1\. Hero Section (L'Accroche)**
+## Core promise
 
-**Strategy:** Immediate clarity on location and benefit. The English version focuses on "Growth," while the French version emphasizes "Professionalism and Rigor," which tends to resonate well with Quebec SMBs.
+### English
 
-### **English (EN)**
+**A professional website, built and cared for with simple monthly pricing.**
 
-Headline:  
-Bilingual Web Development for Montreal & Quebec Businesses.  
-Sub-headline:  
-I don’t just build websites; I build automated systems. From fast marketing sites to custom lead-capture tools, I help local businesses stop chasing phones and start closing deals.  
-Primary CTA:  
-Discuss Your Project  
-Secondary CTA:  
-View My Work
+I create and look after simple, fast websites for service businesses that have no site, rely on Google or Facebook, or have outgrown an outdated DIY website.
 
-### **Français (FR)**
+### Français
 
-Titre (Headline):  
-Développement Web Bilingue pour Montréal et le Québec.  
-Sous-titre (Sub-headline):  
-Je ne fais pas que créer des sites web; je bâtis des systèmes automatisés. Des sites vitrines ultra-rapides aux outils de capture de prospects sur mesure, j'aide les entreprises d'ici à passer moins de temps au téléphone et plus de temps à conclure des ventes.  
-CTA Principal:  
-Discuter de votre projet  
-CTA Secondaire:  
-Voir mes réalisations
+**Un site Web professionnel, créé et entretenu avec une tarification mensuelle simple.**
 
-## **2\. About Section (À Propos)**
+Je crée et prends en charge des sites simples et rapides pour les entreprises de services qui n’ont pas de site, dépendent de Google ou Facebook, ou ont dépassé les limites d’un ancien site maison.
 
-**Strategy:** This section bridges the gap between "Freelancer" and "Engineer." We explicitly mention your location (Valleyfield/Montreal) to build local trust, and we mention your full-stack stack (Laravel) to prove you are over-qualified for the job, offering them "peace of mind."
+## Positioning rules
 
-### **English (EN)**
+- Sell relief and ongoing responsibility, not hours of development.
+- Describe one product with two payment methods, not two service tiers.
+- Say “search-engine fundamentals,” not “SEO,” and make no ranking promise.
+- Keep Canada open as the service area while using Montreal-area roots as trust context.
+- Make ownership, monthly change limits, and exclusions visible before the form.
+- Explain that English, French, or both are included according to the business’s actual customers.
+- Do not imply quantified business results that have not been measured.
+- Do not present custom applications, integrations, or agency-scale marketing as part of the managed website.
 
-Heading:  
-Local Roots, Engineering Grade Quality.  
-Body Paragraph:  
-I am a full-stack developer based in Salaberry-de-Valleyfield, serving the Greater Montreal area.  
-Many small business websites are built on heavy, generic templates that break easily and load slowly. I take a different approach. With a background in building scalable web applications (using technologies like Laravel and Vue), I bring software engineering rigor to your business website.
+## Primary calls to action
 
-Why this matters to you:  
-It means I don't just "install a theme." I build custom, bilingual solutions that are secure, fast, and capable of handling complex tasks—like the 24/7 automated quote systems I build for my service-based clients.  
-My Promise:  
-No jargon, no outsourcing. Just clear communication and a website that works as hard as you do.
+- English: “Tell me about your business” / “Send my request”
+- French: “Parlez-moi de votre entreprise” / “Envoyer ma demande”
 
-### **Français (FR)**
+## Payment explanation
 
-Titre:  
-Ancré localement, qualité d'ingénierie.  
-Paragraphe:  
-Je suis un développeur full-stack établi à Salaberry-de-Valleyfield, desservant la région du Grand Montréal et partout au Québec.  
-Beaucoup de sites web de PME sont construits sur des modèles génériques lourds qui sont lents et fragiles. J'adopte une approche différente. Fort d'une expérience dans le développement d'applications web évolutives (utilisant des technologies comme Laravel et Vue), j'apporte une rigueur d'ingénierie logicielle à votre site web commercial.
-
-Pourquoi est-ce important pour vous ?  
-Cela signifie que je ne me contente pas d'installer un thème. Je conçois des solutions bilingues sur mesure, sécurisées et capables de gérer des tâches complexes — comme les systèmes de soumission automatisés 24/7 que je déploie pour mes clients de service.  
-Ma promesse :  
-Pas de jargon technique, pas de sous-traitance. Juste une communication claire et un site web qui travaille aussi fort que vous.
+Both options include the website build, hosting, and ongoing care. The $299 option provides ownership at launch and month-to-month care at $49. The no-upfront option spreads the build cost across twelve required payments of $79; ownership transfers after all twelve payments. After that, care may continue month-to-month at $49 or the website may be transferred elsewhere.

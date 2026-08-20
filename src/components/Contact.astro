@@ -1,140 +1,132 @@
 ---
 const content = {
     en: {
-        eyebrow: "Free fit review",
-        title: "Show me how quote requests arrive today.",
-        subtitle:
-            "Send your current setup and the details you need before calling a customer back. I’ll reply with whether a focused page, a form improvement, or a larger project is the useful next step.",
+        eyebrow: "Get started",
+        title: "Tell me about your business.",
+        subtitle: "Send the basics. I’ll review what you need and reply within two business days with the recommended next step.",
         name: "Name",
         email: "Email",
-        currentSetup: "Current website, profile, listing, or no site",
-        requestNeed: "What should a useful request tell you?",
+        business: "Business name",
+        website: "Current website or profile URL",
+        websiteOptional: "Optional",
+        location: "City and province",
+        plan: "Which payment option interests you?",
+        planPlaceholder: "Choose an option",
+        planSetup: "$299 to start + $49/month",
+        planNoUpfront: "$0 to start + $79/month for 12 months",
+        planUnsure: "Not sure yet",
+        need: "Tell me briefly about the business and what you need",
         namePlaceholder: "Your name",
         emailPlaceholder: "you@example.com",
-        currentSetupPlaceholder:
-            "mysite.com, Google Business Profile, Facebook page, directory listing, or no site yet",
-        requestNeedPlaceholder:
-            "Your priority service and area, plus details such as job type, address, urgency, photos, access, or timing",
-        submit: "Send my current setup",
-        note:
-            "This is a brief fit review, not a paid report or an obligation to start a project.",
-        honeypot: "Don't fill this out if you're human:",
-        subject: "New quote-request project inquiry",
+        businessPlaceholder: "Business name",
+        websitePlaceholder: "example.com, @yourbusiness, or a Google/Facebook profile",
+        locationPlaceholder: "Toronto, ON",
+        needPlaceholder: "What services do you offer, what do customers need to find, and what is missing or frustrating about your current setup?",
+        submit: "Send my request",
+        note: "No payment or commitment is required to send this form.",
+        honeypot: "Don’t fill this out if you’re human:",
+        subject: "New managed website request",
     },
     fr: {
-        eyebrow: "Courte évaluation sans frais",
-        title: "Montrez-moi comment les demandes vous arrivent aujourd'hui.",
-        subtitle:
-            "Envoyez votre situation actuelle et les détails dont vous avez besoin avant de rappeler un client. Je vous dirai si une page ciblée, un meilleur formulaire ou un projet plus complet représente la prochaine étape utile.",
+        eyebrow: "Pour commencer",
+        title: "Parlez-moi de votre entreprise.",
+        subtitle: "Envoyez l’essentiel. J’examinerai vos besoins et vous répondrai dans les deux jours ouvrables avec la prochaine étape recommandée.",
         name: "Nom",
         email: "Courriel",
-        currentSetup: "Site, fiche, inscription actuelle ou absence de site",
-        requestNeed: "Que devrait contenir une demande utile?",
+        business: "Nom de l’entreprise",
+        website: "Site ou fiche actuelle",
+        websiteOptional: "Facultatif",
+        location: "Ville et province",
+        plan: "Quelle option de paiement vous intéresse?",
+        planPlaceholder: "Choisissez une option",
+        planSetup: "299 $ pour commencer + 49 $/mois",
+        planNoUpfront: "0 $ pour commencer + 79 $/mois pendant 12 mois",
+        planUnsure: "Je ne sais pas encore",
+        need: "Décrivez brièvement l’entreprise et votre besoin",
         namePlaceholder: "Votre nom",
         emailPlaceholder: "vous@exemple.com",
-        currentSetupPlaceholder:
-            "monsite.com, fiche Google, page Facebook, annuaire ou aucun site pour le moment",
-        requestNeedPlaceholder:
-            "Votre service prioritaire et votre secteur, puis les détails utiles : type de travaux, adresse, urgence, photos, accès ou délai",
-        submit: "Envoyer ma situation actuelle",
-        note:
-            "Il s'agit d'une courte évaluation de compatibilité, pas d'un rapport payant ni d'un engagement à démarrer un projet.",
-        honeypot: "Ne remplissez pas ce champ si vous êtes humain:",
-        subject: "Nouvelle demande pour améliorer la prise de soumissions",
+        businessPlaceholder: "Nom de l’entreprise",
+        websitePlaceholder: "exemple.com, @votreentreprise ou une fiche Google/Facebook",
+        locationPlaceholder: "Montréal, QC",
+        needPlaceholder: "Quels services offrez-vous, que doivent trouver les clients et qu’est-ce qui manque ou vous dérange dans votre présence actuelle?",
+        submit: "Envoyer ma demande",
+        note: "Aucun paiement ni engagement n’est requis pour envoyer ce formulaire.",
+        honeypot: "Ne remplissez pas ce champ si vous êtes humain :",
+        subject: "Nouvelle demande pour un site Web géré",
     },
 } as const;
 
-interface Props {
-    lang: keyof typeof content;
-}
-
+interface Props { lang: keyof typeof content; }
 const { lang } = Astro.props;
 const t = content[lang];
+const campaignFields = ["utm_source", "utm_medium", "utm_campaign", "utm_content"];
 ---
 
-<section id="contact" class="bg-paper py-16 md:py-24">
-    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div class="grid gap-10 lg:grid-cols-[minmax(0,0.78fr)_minmax(28rem,1.22fr)] lg:gap-14">
+<section id="contact" class="bg-white py-16 md:py-24">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-10 lg:grid-cols-[minmax(0,0.72fr)_minmax(30rem,1.28fr)] lg:gap-14">
             <div>
                 <p class="section-label text-accent">{t.eyebrow}</p>
-                <h2 class="mt-4 text-4xl leading-[0.98] md:text-5xl lg:text-6xl">
-                    {t.title}
-                </h2>
-                <p class="mt-6 text-lg leading-relaxed text-steel">
-                    {t.subtitle}
-                </p>
-                <p class="mt-6 text-sm font-medium leading-relaxed text-steel">
-                    {t.note}
-                </p>
+                <h2 class="mt-4 text-4xl leading-[0.98] md:text-5xl lg:text-6xl">{t.title}</h2>
+                <p class="mt-6 text-lg leading-relaxed text-steel">{t.subtitle}</p>
+                <p class="mt-6 text-sm font-medium leading-relaxed text-steel">{t.note}</p>
             </div>
 
-            <form
-                name="contact"
-                method="POST"
-                action={`/${lang}/thank-you/`}
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
-                class="border-t-2 border-navy bg-white p-5 md:p-8"
-            >
+            <form name="contact" method="POST" action={`/${lang}/thank-you/`} data-netlify="true" data-netlify-honeypot="bot-field" class="border-t-2 border-navy bg-paper p-5 md:p-8">
                 <input type="hidden" name="form-name" value="contact" />
                 <input type="hidden" name="subject" value={t.subject} />
-                <div class="hidden">
-                    <label>{t.honeypot} <input name="bot-field" /></label>
-                </div>
+                {campaignFields.map((field) => <input type="hidden" name={field} value="" data-campaign-field={field} />)}
+                <div class="hidden"><label>{t.honeypot} <input name="bot-field" /></label></div>
 
                 <div class="grid gap-5 md:grid-cols-2">
-                    <div class="form-field">
-                        <label for="contact-name">{t.name}</label>
-                        <input
-                            type="text"
-                            id="contact-name"
-                            name="name"
-                            autocomplete="name"
-                            placeholder={t.namePlaceholder}
-                            required
-                        />
-                    </div>
-                    <div class="form-field">
-                        <label for="contact-email">{t.email}</label>
-                        <input
-                            type="email"
-                            id="contact-email"
-                            name="email"
-                            autocomplete="email"
-                            placeholder={t.emailPlaceholder}
-                            required
-                        />
-                    </div>
+                    <div class="form-field"><label for="contact-name">{t.name}</label><input type="text" id="contact-name" name="name" autocomplete="name" placeholder={t.namePlaceholder} required /></div>
+                    <div class="form-field"><label for="contact-email">{t.email}</label><input type="email" id="contact-email" name="email" autocomplete="email" placeholder={t.emailPlaceholder} required /></div>
+                    <div class="form-field"><label for="contact-business">{t.business}</label><input type="text" id="contact-business" name="business_name" autocomplete="organization" placeholder={t.businessPlaceholder} required /></div>
+                    <div class="form-field"><label for="contact-location">{t.location}</label><input type="text" id="contact-location" name="city_province" autocomplete="address-level2" placeholder={t.locationPlaceholder} required /></div>
                 </div>
 
                 <div class="form-field mt-5">
-                    <label for="contact-current-setup">
-                        {t.currentSetup}
-                    </label>
-                    <input
-                        type="text"
-                        id="contact-current-setup"
-                        name="current_setup"
-                        placeholder={t.currentSetupPlaceholder}
-                        required
-                    />
+                    <label for="contact-website">{t.website} <span class="font-normal text-steel">({t.websiteOptional})</span></label>
+                    <input type="text" id="contact-website" name="website_url" inputmode="url" autocomplete="url" placeholder={t.websitePlaceholder} />
                 </div>
 
                 <div class="form-field mt-5">
-                    <label for="contact-request-need">{t.requestNeed}</label>
-                    <textarea
-                        id="contact-request-need"
-                        name="request_need"
-                        rows="6"
-                        placeholder={t.requestNeedPlaceholder}
-                        required
-                    ></textarea>
+                    <label for="contact-plan">{t.plan}</label>
+                    <select id="contact-plan" name="preferred_plan" required data-plan-select>
+                        <option value="" disabled selected>{t.planPlaceholder}</option>
+                        <option value="setup">{t.planSetup}</option>
+                        <option value="no_upfront">{t.planNoUpfront}</option>
+                        <option value="unsure">{t.planUnsure}</option>
+                    </select>
                 </div>
 
-                <button type="submit" class="button-primary mt-6 w-full">
-                    {t.submit}
-                </button>
+                <div class="form-field mt-5"><label for="contact-need">{t.need}</label><textarea id="contact-need" name="business_need" rows="5" placeholder={t.needPlaceholder} required></textarea></div>
+                <button type="submit" class="button-primary mt-6 w-full" data-umami-event="managed-website-form-submit">{t.submit}</button>
             </form>
         </div>
     </div>
 </section>
+
+<script is:inline>
+    const campaignFields = ["utm_source", "utm_medium", "utm_campaign", "utm_content"];
+    const params = new URLSearchParams(window.location.search);
+
+    campaignFields.forEach((field) => {
+        const incoming = params.get(field);
+        if (incoming) sessionStorage.setItem(field, incoming);
+        const input = document.querySelector(`[data-campaign-field="${field}"]`);
+        if (input) input.value = incoming || sessionStorage.getItem(field) || "";
+    });
+
+    const preferredPlan = sessionStorage.getItem("preferred_plan");
+    if (preferredPlan) {
+        const select = document.querySelector("[data-plan-select]");
+        if (select?.querySelector(`option[value="${preferredPlan}"]`)) select.value = preferredPlan;
+    }
+
+    document.querySelector("[data-plan-select]")?.addEventListener("change", (event) => {
+        const value = event.target.value;
+        sessionStorage.setItem("preferred_plan", value);
+        if (window.umami) window.umami.track(`form-plan-${value}`);
+    });
+</script>

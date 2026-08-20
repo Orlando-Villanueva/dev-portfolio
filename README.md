@@ -1,6 +1,6 @@
-# Orlando Portfolio | Web Engineer
+# Orlando Portfolio | Managed Websites
 
-A professional, bilingual (EN/FR) freelance web development portfolio built with **Astro**, **Tailwind CSS 4**, and **Alpine.js**.
+A bilingual managed-website service and portfolio built with **Astro**, **Tailwind CSS 4**, and **Alpine.js**.
 
 ## 🛠️ Tech Stack
 
@@ -50,6 +50,11 @@ A professional, bilingual (EN/FR) freelance web development portfolio built with
 - **Engineering Grade UI:** High-contrast, performance-focused design with custom color profiles for tech stacks.
 - **Responsive Design:** Optimized for mobile, tablet, and desktop.
 - **Form Automation:** Built-in Netlify Forms support with honeypot spam protection.
+- **Privacy-friendly Analytics:** Optional Umami Cloud traffic and conversion events.
+
+## Optional analytics
+
+Copy `.env.example` to `.env` and provide `PUBLIC_UMAMI_WEBSITE_ID` to enable Umami Cloud. When the value is absent, the analytics script is not rendered.
 
 ## 🧞 Commands
 

@@ -3,9 +3,10 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Navbar from "@/components/Navbar.astro";
 import Hero from "@/components/Hero.astro";
 import Services from "@/components/Services.astro";
-import RoofingQuoteExample from "@/components/RoofingQuoteExample.astro";
+import TypicalWebsiteExample from "@/components/TypicalWebsiteExample.astro";
 import AudienceProcess from "@/components/AudienceProcess.astro";
 import Work from "@/components/Work.astro";
+import OfferFaq from "@/components/OfferFaq.astro";
 import About from "@/components/About.astro";
 import Contact from "@/components/Contact.astro";
 import Footer from "@/components/Footer.astro";
@@ -20,9 +21,10 @@ const t = homeContent.en;
     <main>
         <Hero {...t.hero} />
         <Services lang={lang} />
-        <RoofingQuoteExample lang={lang} />
+        <TypicalWebsiteExample lang={lang} />
         <AudienceProcess lang={lang} />
         <Work lang={lang} />
+        <OfferFaq lang={lang} />
         <About {...t.about} />
         <Contact lang={lang} />
     </main>

@@ -1,153 +1,188 @@
 ---
 const content = {
     en: {
-        eyebrow: "One focused offer",
-        heading:
-            "A bilingual quote page that asks the right questions before you call back.",
-        intro:
-            "I build a clear path from the place customers find you to a focused form that matches the work you quote.",
-        price: "Projects start at $750 CAD",
-        priceNote:
-            "The starting scope covers one priority service and one focused English/French page and form.",
-        includesLabel: "What the focused setup includes",
-        includes: [
-            "Job-specific questions and natural English/French copy",
-            "A clear path from Google, Facebook, directories, or your current site",
-            "Email notification, confirmation, and follow-up wording",
-            "Mobile testing and deployment",
-        ],
-        startingLabel: "Built around what you have now",
+        audienceEyebrow: "Built for small service businesses",
+        audienceTitle: "A good website, without turning it into another project to manage.",
+        audienceIntro:
+            "This service is built for an established business that needs a clear, trustworthy place to send customers, but does not need a full agency or a custom application.",
         startingPoints: [
+            { title: "No website yet", body: "Give customers a professional destination with your services, hours, location, and contact details." },
+            { title: "Google or Facebook only", body: "Add a website you control instead of relying entirely on a profile, social page, or directory listing." },
+            { title: "Outdated or DIY site", body: "Replace a slow, broken, or embarrassing site with something simple that works well on phones." },
+        ],
+        offerEyebrow: "One managed website service",
+        offerTitle: "The essentials are built, launched, and looked after for you.",
+        offerIntro:
+            "You provide the facts, services, logo, and photos. I organize them, improve the wording, build the site, and remain responsible for the technical details after launch.",
+        includesLabel: "Your website includes",
+        includes: [
+            "One mobile-first page with up to five core sections",
+            "Contact form, click-to-call, map or directions, and social links",
+            "English, French, or both, based on the customers you serve",
+            "Custom-domain setup and search-engine fundamentals",
+            "Performance, accessibility, deployment, hosting, and SSL",
+            "Monitoring, version history, form checks, and minor fixes",
+            "One pre-launch revision",
+            "Up to 30 minutes of routine content changes each month",
+        ],
+        careNote: "Monthly change time does not roll over. Domain registration and other third-party services are paid separately.",
+        pricingEyebrow: "Two ways to pay for the same managed website",
+        pricingTitle: "Choose how you want to pay for your website.",
+        pricingIntro: "Both payment options include the website build, hosting, and ongoing care. Choose whether to contribute toward the build upfront or spread its cost across twelve months.",
+        plans: [
             {
-                title: "Profile or listing only",
-                body: "Create a focused destination beyond a Google profile, Facebook page, or directory listing.",
+                name: "Lower monthly cost",
+                price: "$299 to start",
+                recurring: "+ $49/month",
+                detail: "You own the website at launch. Managed care begins at launch and continues month-to-month. Cancel care anytime and move the website to another hosting provider.",
+                points: ["$299 setup payment", "First $49 care payment due at launch", "No long-term care commitment", "Website ownership from launch"],
+                value: "setup",
+                cta: "Choose lower monthly pricing",
             },
             {
-                title: "Weak or broken website",
-                body: "Replace the unclear request path without turning every project into a full rebuild.",
-            },
-            {
-                title: "Usable site, generic form",
-                body: "Add better questions and calls to action while keeping the parts that already work.",
+                name: "No upfront payment",
+                price: "$0 to start",
+                recurring: "$79/month for 12 months",
+                detail: "The website and managed care are included for twelve required payments. After the final payment, continue care for $49/month or move the website elsewhere.",
+                points: ["No setup payment", "Twelve required monthly payments", "Ownership after all twelve payments", "Care becomes month-to-month afterward"],
+                value: "no_upfront",
+                cta: "Choose no upfront payment",
             },
         ],
-        scope:
-            "Larger bilingual sites, multi-service flows, booking logic, and custom integrations are quoted separately.",
-        cta: "Improve my quote requests",
+        ownership: "Your domain and business content remain yours. Full ownership and cancellation details are confirmed in the service agreement before any work begins.",
+        fitCta: "Tell me about your business",
     },
     fr: {
-        eyebrow: "Une offre ciblée",
-        heading:
-            "Une page bilingue qui pose les bonnes questions avant votre rappel.",
-        intro:
-            "Je crée un parcours clair entre l'endroit où les clients vous trouvent et un formulaire adapté aux travaux que vous soumissionnez.",
-        price: "Projets à partir de 750 $ CA",
-        priceNote:
-            "Le mandat de départ couvre un service prioritaire ainsi qu'une page et un formulaire ciblés en français et en anglais.",
-        includesLabel: "Ce que comprend la mise en place ciblée",
-        includes: [
-            "Questions adaptées aux travaux et textes naturels en français et en anglais",
-            "Parcours clair depuis Google, Facebook, les annuaires ou votre site actuel",
-            "Avis courriel, confirmation et textes de suivi",
-            "Tests mobiles et déploiement",
-        ],
-        startingLabel: "Adaptée à votre situation actuelle",
+        audienceEyebrow: "Une solution pratique pour les petites entreprises de services",
+        audienceTitle: "Un bon site Web, sans ajouter un autre projet à gérer.",
+        audienceIntro:
+            "Ce service s’adresse aux entreprises établies qui ont besoin d’un endroit clair et fiable où diriger leurs clients, sans avoir besoin d’une agence complète ni d’une application sur mesure.",
         startingPoints: [
+            { title: "Aucun site pour le moment", body: "Offrez aux clients une destination professionnelle avec vos services, heures, coordonnées et secteur." },
+            { title: "Seulement Google ou Facebook", body: "Ajoutez un site qui vous appartient au lieu de dépendre entièrement d’une fiche, d’un réseau social ou d’un annuaire." },
+            { title: "Site ancien ou fait maison", body: "Remplacez un site lent, brisé ou gênant par une solution simple qui fonctionne bien sur téléphone." },
+        ],
+        offerEyebrow: "Un seul service de site Web géré",
+        offerTitle: "L’essentiel est créé, lancé et entretenu pour vous.",
+        offerIntro:
+            "Vous fournissez les renseignements, services, logo et photos. Je les organise, améliore les textes, crée le site et reste responsable des aspects techniques après le lancement.",
+        includesLabel: "Votre site comprend",
+        includes: [
+            "Une page adaptée aux mobiles avec jusqu’à cinq sections principales",
+            "Formulaire, bouton d’appel, carte ou itinéraire et liens sociaux",
+            "Français, anglais ou les deux, selon votre clientèle",
+            "Configuration du domaine et éléments de base pour les moteurs de recherche",
+            "Performance, accessibilité, déploiement, hébergement et SSL",
+            "Surveillance, historique des versions, vérification du formulaire et corrections mineures",
+            "Une ronde de révision avant le lancement",
+            "Jusqu’à 30 minutes de changements de contenu courants chaque mois",
+        ],
+        careNote: "Le temps mensuel inutilisé n’est pas reporté. Le domaine et les autres services externes sont payés séparément.",
+        pricingEyebrow: "Deux façons de payer le même site Web géré",
+        pricingTitle: "Choisissez comment vous souhaitez payer votre site Web.",
+        pricingIntro: "Les deux options comprennent la création du site, l’hébergement et l’entretien continu. Choisissez de contribuer au coût de création dès le départ ou de le répartir sur douze mois.",
+        plans: [
             {
-                title: "Fiche ou inscription seulement",
-                body: "Créer une destination ciblée au-delà d'une fiche Google, d'une page Facebook ou d'un annuaire.",
+                name: "Coût mensuel réduit",
+                price: "299 $ pour commencer",
+                recurring: "+ 49 $/mois",
+                detail: "Vous êtes propriétaire du site dès son lancement. L’entretien géré commence au lancement et se poursuit au mois. Vous pouvez l’annuler en tout temps et transférer le site vers un autre hébergeur.",
+                points: ["Paiement initial de 299 $", "Premier paiement de 49 $ au lancement", "Aucun engagement à long terme pour l’entretien", "Propriété du site dès le lancement"],
+                value: "setup",
+                cta: "Choisir le coût mensuel réduit",
             },
             {
-                title: "Site faible ou brisé",
-                body: "Remplacer le parcours de demande confus sans transformer chaque mandat en refonte complète.",
-            },
-            {
-                title: "Site utilisable, formulaire générique",
-                body: "Ajouter de meilleures questions et de meilleurs appels à l'action tout en gardant ce qui fonctionne.",
+                name: "Aucun paiement initial",
+                price: "0 $ pour commencer",
+                recurring: "79 $/mois pendant 12 mois",
+                detail: "Le site et l’entretien géré sont inclus pendant douze paiements obligatoires. Après le dernier paiement, poursuivez l’entretien à 49 $/mois ou transférez le site ailleurs.",
+                points: ["Aucun paiement de départ", "Douze paiements mensuels obligatoires", "Propriété après les douze paiements", "Entretien mensuel par la suite"],
+                value: "no_upfront",
+                cta: "Choisir sans paiement initial",
             },
         ],
-        scope:
-            "Les sites bilingues plus complets, les parcours multiservices, la réservation et les intégrations sur mesure font l'objet d'une soumission distincte.",
-        cta: "Améliorer mes demandes",
+        ownership: "Votre domaine et le contenu de votre entreprise restent à vous. Les modalités complètes de propriété et d’annulation sont confirmées dans l’entente de service avant le début du travail.",
+        fitCta: "Parlez-moi de votre entreprise",
     },
 } as const;
 
-interface Props {
-    lang: keyof typeof content;
-}
-
+interface Props { lang: keyof typeof content; }
 const { lang = "en" } = Astro.props;
 const t = content[lang];
 ---
 
-<section id="offer" class="bg-white py-16 md:py-24">
+<section id="fit" class="bg-white py-16 md:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="grid gap-10 lg:grid-cols-[minmax(0,0.92fr)_minmax(24rem,1.08fr)] lg:gap-16">
-            <div>
-                <p class="section-label text-accent">{t.eyebrow}</p>
-                <h2 class="mt-4 max-w-3xl text-4xl leading-[0.98] md:text-5xl lg:text-6xl">
-                    {t.heading}
-                </h2>
-                <p class="mt-6 max-w-2xl text-lg leading-relaxed text-steel">
-                    {t.intro}
-                </p>
-
-                <div class="mt-8 border-y border-steel/25 py-5">
-                    <p class="text-2xl font-bold text-navy">{t.price}</p>
-                    <p class="mt-2 max-w-xl text-sm leading-relaxed text-steel">
-                        {t.priceNote}
-                    </p>
-                </div>
-
-                <a
-                    href="#contact"
-                    class="button-primary mt-8 inline-flex"
-                >
-                    {t.cta}
-                </a>
-            </div>
-
-            <div class="border-t-2 border-navy bg-paper">
-                <div class="border-b border-steel/20 p-5 md:p-7">
-                    <p class="section-label text-steel">{t.includesLabel}</p>
-                </div>
-                <ul>
-                    {
-                        t.includes.map((item) => (
-                            <li class="flex gap-4 border-b border-steel/20 px-5 py-4 text-navy md:px-7">
-                                <span
-                                    class="mt-0.5 shrink-0 text-base font-bold leading-none text-confirm"
-                                    aria-hidden="true"
-                                >
-                                    ✓
-                                </span>
-                                <span class="font-semibold leading-relaxed">
-                                    {item}
-                                </span>
-                            </li>
-                        ))
-                    }
-                </ul>
-                <p class="p-5 text-sm leading-relaxed text-steel md:p-7">
-                    {t.scope}
-                </p>
-            </div>
+        <div class="max-w-4xl">
+            <p class="section-label text-accent">{t.audienceEyebrow}</p>
+            <h2 class="mt-4 text-4xl leading-[0.98] md:text-5xl lg:text-6xl">{t.audienceTitle}</h2>
+            <p class="mt-6 max-w-3xl text-lg leading-relaxed text-steel">{t.audienceIntro}</p>
         </div>
-
-        <div class="mt-14 border-t border-steel/25 pt-8 md:mt-20">
-            <p class="section-label text-steel">{t.startingLabel}</p>
-            <div class="mt-5 grid gap-px overflow-hidden border border-steel/20 bg-steel/20 md:grid-cols-3">
-                {
-                    t.startingPoints.map((point) => (
-                        <article class="bg-white p-5 md:p-6">
-                            <h3 class="text-xl leading-tight">{point.title}</h3>
-                            <p class="mt-3 text-sm leading-relaxed text-steel">
-                                {point.body}
-                            </p>
-                        </article>
-                    ))
-                }
-            </div>
+        <div class="mt-10 grid gap-px overflow-hidden border border-steel/20 bg-steel/20 md:grid-cols-3">
+            {t.startingPoints.map((point) => (
+                <article class="bg-paper p-6 md:p-7">
+                    <h3 class="text-2xl leading-tight">{point.title}</h3>
+                    <p class="mt-3 leading-relaxed text-steel">{point.body}</p>
+                </article>
+            ))}
         </div>
     </div>
 </section>
+
+<section id="offer" class="bg-paper py-16 md:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-10 lg:grid-cols-[minmax(0,0.88fr)_minmax(26rem,1.12fr)] lg:gap-16">
+            <div>
+                <p class="section-label text-accent">{t.offerEyebrow}</p>
+                <h2 class="mt-4 text-4xl leading-[0.98] md:text-5xl lg:text-6xl">{t.offerTitle}</h2>
+                <p class="mt-6 text-lg leading-relaxed text-steel">{t.offerIntro}</p>
+                <a href="#contact" class="button-primary mt-8" data-umami-event="offer-contact-cta">{t.fitCta}</a>
+            </div>
+            <div class="border-t-2 border-navy bg-white">
+                <div class="border-b border-steel/20 p-5 md:p-7"><p class="section-label text-steel">{t.includesLabel}</p></div>
+                <ul class="grid md:grid-cols-2">
+                    {t.includes.map((item) => (
+                        <li class="flex gap-3 border-b border-steel/20 px-5 py-4 leading-relaxed text-navy md:px-7 md:[&:nth-child(odd)]:border-r">
+                            <span class="shrink-0 font-bold text-confirm" aria-hidden="true">✓</span><span>{item}</span>
+                        </li>
+                    ))}
+                </ul>
+                <p class="p-5 text-sm leading-relaxed text-steel md:p-7">{t.careNote}</p>
+            </div>
+        </div>
+
+        <div id="pricing" class="mt-16 border-t border-steel/25 pt-10 md:mt-24">
+            <p class="section-label text-accent">{t.pricingEyebrow}</p>
+            <h2 class="mt-4 max-w-4xl text-4xl leading-[0.98] md:text-5xl">{t.pricingTitle}</h2>
+            <p class="mt-5 max-w-3xl text-lg leading-relaxed text-steel">{t.pricingIntro}</p>
+            <div class="mt-8 grid gap-6 lg:grid-cols-2">
+                {t.plans.map((plan, index) => (
+                    <article class={`border-t-2 p-6 md:p-8 ${index === 0 ? "border-navy bg-white" : "border-accent bg-navy text-white"}`}>
+                        <p class={`section-label ${index === 0 ? "text-accent" : "text-blue-300"}`}>{plan.name}</p>
+                        <p class={`mt-5 font-display text-5xl font-bold leading-none ${index === 0 ? "text-navy" : "text-white"}`}>{plan.price}</p>
+                        <p class={`mt-3 text-xl font-bold ${index === 0 ? "text-navy" : "text-blue-200"}`}>{plan.recurring}</p>
+                        <p class={`mt-5 leading-relaxed ${index === 0 ? "text-steel" : "text-white/75"}`}>{plan.detail}</p>
+                        <ul class={`mt-6 space-y-3 border-t pt-5 text-sm ${index === 0 ? "border-steel/20 text-steel" : "border-white/20 text-white/80"}`}>
+                            {plan.points.map((point) => <li class="flex gap-3"><span aria-hidden="true">✓</span><span>{point}</span></li>)}
+                        </ul>
+                        <a href="#contact" class={`mt-7 ${index === 0 ? "button-primary" : "button-secondary"}`} data-plan-choice={plan.value} data-umami-event={`pricing-${plan.value}`}>{plan.cta}</a>
+                    </article>
+                ))}
+            </div>
+            <p class="mt-6 max-w-4xl text-sm leading-relaxed text-steel">{t.ownership}</p>
+        </div>
+    </div>
+</section>
+
+<script is:inline>
+    document.querySelectorAll("[data-plan-choice]").forEach((link) => {
+        link.addEventListener("click", () => {
+            const value = link.getAttribute("data-plan-choice");
+            if (value) {
+                sessionStorage.setItem("preferred_plan", value);
+                const select = document.querySelector("select[name=\"preferred_plan\"]");
+                if (select) select.value = value;
+            }
+        });
+    });
+</script>

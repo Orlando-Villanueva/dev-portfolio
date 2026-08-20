@@ -1,154 +1,50 @@
 ---
 const content = {
     en: {
-        audienceEyebrow: "Built for detail-heavy local work",
-        audienceTitle:
-            "For Quebec contractors whose jobs need more than a name and phone number.",
-        audienceIntro:
-            "The strongest fit is an independent business where location, job type, urgency, photos, access, or timing affects the next response.",
-        audiences: [
-            "Contractors and skilled trades",
-            "Roofing and exterior companies",
-            "Cleaning and maintenance teams",
-            "Home-service businesses",
-        ],
-        signalsLabel: "A good fit when",
-        signals: [
-            "Customers find you through Google, Facebook, a directory, or a website.",
-            "Current calls or forms leave important job details unanswered.",
-            "French and English customers should get an equally clear path.",
-        ],
-        processEyebrow: "How the project works",
-        processTitle: "Three steps from the current path to a working request flow.",
+        eyebrow: "A simple path to launch",
+        title: "From your business details to a cared-for website.",
+        timeline: "Most focused sites can launch about one to two weeks after all required content is received. I confirm timing after reviewing your materials.",
         steps: [
-            {
-                title: "Review the current path",
-                body: "Choose one priority service and identify where customers find you, what they see, and which details are missing.",
-            },
-            {
-                title: "Build the page and form",
-                body: "Write the bilingual service copy, shape the job questions, and connect the request to a useful notification.",
-            },
-            {
-                title: "Test, connect, and launch",
-                body: "Verify the mobile experience, confirmations, links, and delivery before putting the new path in front of customers.",
-            },
+            { title: "Share the basics", body: "Send your current website or profile, the services you offer, and which payment option interests you." },
+            { title: "Provide the essentials", body: "Share your business facts, logo, photos, contact details, hours, service area, and preferred language or languages." },
+            { title: "Review one complete draft", body: "I organize the content, build the site, and include one focused revision before launch." },
+            { title: "Launch and hand off the worry", body: "I connect the domain, test the site and form, then handle hosting, monitoring, fixes, and routine updates." },
         ],
     },
     fr: {
-        audienceEyebrow: "Pour les travaux qui demandent des détails",
-        audienceTitle:
-            "Pour les entrepreneurs québécois qui ont besoin de plus qu'un nom et un numéro de téléphone.",
-        audienceIntro:
-            "L'approche convient surtout aux entreprises indépendantes pour lesquelles le secteur, le type de travaux, l'urgence, les photos, l'accès ou le délai changent la façon de répondre.",
-        audiences: [
-            "Entrepreneurs et métiers spécialisés",
-            "Entreprises de toiture et d'extérieur",
-            "Équipes de nettoyage et d'entretien",
-            "Services à domicile",
-        ],
-        signalsLabel: "Un bon choix lorsque",
-        signals: [
-            "Les clients vous trouvent sur Google, Facebook, un annuaire ou un site.",
-            "Les appels ou formulaires actuels laissent des détails importants sans réponse.",
-            "Les clients francophones et anglophones doivent suivre un parcours aussi clair.",
-        ],
-        processEyebrow: "Déroulement du mandat",
-        processTitle:
-            "Trois étapes entre le parcours actuel et une demande prête à utiliser.",
+        eyebrow: "Un parcours simple vers le lancement",
+        title: "De vos renseignements d’entreprise à un site pris en charge.",
+        timeline: "La plupart des sites ciblés peuvent être lancés environ une à deux semaines après la réception de tout le contenu requis. Je confirme l’échéancier après avoir examiné votre matériel.",
         steps: [
-            {
-                title: "Revoir le parcours actuel",
-                body: "Choisir un service prioritaire et voir où les clients vous trouvent, ce qu'ils voient et quels détails manquent.",
-            },
-            {
-                title: "Créer la page et le formulaire",
-                body: "Rédiger les textes bilingues, définir les questions sur les travaux et relier la demande à un avis utile.",
-            },
-            {
-                title: "Tester, relier et lancer",
-                body: "Vérifier l'expérience mobile, les confirmations, les liens et la réception avant de présenter le nouveau parcours aux clients.",
-            },
+            { title: "Partager l’essentiel", body: "Envoyez votre site ou fiche actuelle, les services offerts et l’option de paiement qui vous intéresse." },
+            { title: "Fournir l’essentiel", body: "Partagez les renseignements, le logo, les photos, les coordonnées, les heures, le secteur et la ou les langues souhaitées." },
+            { title: "Réviser une version complète", body: "J’organise le contenu, crée le site et inclus une ronde de révision ciblée avant le lancement." },
+            { title: "Lancer et ne plus vous en soucier", body: "Je relie le domaine, teste le site et le formulaire, puis gère l’hébergement, la surveillance, les corrections et les mises à jour courantes." },
         ],
     },
 } as const;
 
-interface Props {
-    lang: keyof typeof content;
-}
-
+interface Props { lang: keyof typeof content; }
 const { lang = "en" } = Astro.props;
 const t = content[lang];
 ---
 
-<section class="bg-paper py-16 md:py-24">
+<section id="process" class="bg-paper py-16 md:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="grid gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(22rem,0.82fr)] lg:gap-20">
+        <div class="grid gap-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(28rem,1.2fr)] lg:gap-20">
             <div>
-                <p class="section-label text-accent">{t.audienceEyebrow}</p>
-                <h2 class="mt-4 max-w-3xl text-4xl leading-[0.98] md:text-5xl lg:text-6xl">
-                    {t.audienceTitle}
-                </h2>
-                <p class="mt-6 max-w-3xl text-lg leading-relaxed text-steel">
-                    {t.audienceIntro}
-                </p>
-
-                <ul class="mt-8 grid gap-px overflow-hidden border border-steel/20 bg-steel/20 sm:grid-cols-2">
-                    {
-                        t.audiences.map((audience) => (
-                            <li class="bg-white px-5 py-4 font-bold text-navy">
-                                {audience}
-                            </li>
-                        ))
-                    }
-                </ul>
-
-                <div class="mt-9">
-                    <p class="section-label text-steel">{t.signalsLabel}</p>
-                    <ul class="mt-4 space-y-3">
-                        {
-                            t.signals.map((signal) => (
-                                <li class="flex gap-3 leading-relaxed text-steel">
-                                    <span
-                                        class="mt-0.5 shrink-0 text-base font-bold leading-none text-confirm"
-                                        aria-hidden="true"
-                                    >
-                                        ✓
-                                    </span>
-                                    <span>{signal}</span>
-                                </li>
-                            ))
-                        }
-                    </ul>
-                </div>
+                <p class="section-label text-accent">{t.eyebrow}</p>
+                <h2 class="mt-4 text-4xl leading-[0.98] md:text-5xl lg:text-6xl">{t.title}</h2>
+                <p class="mt-6 leading-relaxed text-steel">{t.timeline}</p>
             </div>
-
-            <div class="border-t-2 border-navy pt-6">
-                <p class="section-label text-accent">{t.processEyebrow}</p>
-                <h3 class="mt-3 text-2xl leading-tight md:text-3xl">
-                    {t.processTitle}
-                </h3>
-
-                <ol class="mt-8">
-                    {
-                        t.steps.map((step, index) => (
-                            <li class="grid grid-cols-[2.5rem_1fr] gap-4 border-t border-steel/25 py-5 first:border-t-0 first:pt-0">
-                                <div class="font-display text-3xl font-bold leading-none text-accent">
-                                    {String(index + 1).padStart(2, "0")}
-                                </div>
-                                <div>
-                                    <h4 class="text-xl leading-tight">
-                                        {step.title}
-                                    </h4>
-                                    <p class="mt-2 text-sm leading-relaxed text-steel">
-                                        {step.body}
-                                    </p>
-                                </div>
-                            </li>
-                        ))
-                    }
-                </ol>
-            </div>
+            <ol class="border-t-2 border-navy">
+                {t.steps.map((step, index) => (
+                    <li class="grid grid-cols-[3rem_1fr] gap-4 border-b border-steel/25 py-6">
+                        <span class="font-display text-3xl font-bold leading-none text-accent">{String(index + 1).padStart(2, "0")}</span>
+                        <div><h3 class="text-xl leading-tight">{step.title}</h3><p class="mt-2 leading-relaxed text-steel">{step.body}</p></div>
+                    </li>
+                ))}
+            </ol>
         </div>
     </div>
 </section>

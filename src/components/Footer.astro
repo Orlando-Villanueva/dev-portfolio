@@ -3,26 +3,26 @@ import { getLocalizedHomePath } from "@/i18n/routes";
 
 const labels = {
   en: {
-    tagline: "Better bilingual quote requests for Quebec service contractors.",
+    tagline: "Professional websites built and cared for with simple monthly pricing.",
     explore: "Explore",
     connect: "Connect",
     rights: "All rights reserved.",
-    built: "Built with Astro in Montreal.",
+    built: "Based near Montreal. Serving Canada.",
     links: {
-      offer: "Focused offer",
-      example: "Roofing example",
-      work: "Proof",
+      offer: "Managed website",
+      pricing: "Pricing",
+      work: "Client work",
     },
   },
   fr: {
-    tagline: "Prise de soumissions bilingue pour entrepreneurs de services au Québec.",
+    tagline: "Sites Web professionnels créés et entretenus avec une tarification mensuelle simple.",
     explore: "Explorer",
     connect: "Me suivre",
     rights: "Tous droits réservés.",
-    built: "Construit avec Astro à Montréal.",
+    built: "Établi près de Montréal. Au service du Canada.",
     links: {
-      offer: "Offre ciblée",
-      example: "Exemple de toiture",
+      offer: "Site Web géré",
+      pricing: "Tarifs",
       work: "Réalisations",
     },
   },
@@ -62,9 +62,9 @@ const sectionPath = (hash: string) => `${homePath}${hash}`;
           </li>
           <li>
             <a
-              href={sectionPath("#roofing-example")}
+              href={sectionPath("#pricing")}
               class="transition-colors hover:text-blue-300"
-              >{t.links.example}</a
+              >{t.links.pricing}</a
             >
           </li>
           <li>

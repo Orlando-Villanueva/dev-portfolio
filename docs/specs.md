@@ -1,109 +1,46 @@
-# **Project Requirement Document: Freelance Web Development Portfolio**
+# Managed Website Offer Specification
 
-## **1\. Project Overview**
+## Product
 
-Goal: To establish a professional online presence for a freelance web developer targeting the Greater Montreal area, Quebec, and Canada.  
-Primary Objective: To convert small business owners by showcasing technical reliability and business automation skills.  
-Core Identity: "The Capable Specialist" — Bridging the gap between fast marketing websites and complex web applications.
+One managed website for established Canadian service businesses that need a professional online home with clear monthly pricing and ongoing care.
 
-## **2\. Target Audience & Strategy**
+The same product has two payment methods:
 
-* **Primary Audience:** Small to medium business owners (service-based, local retail) who have outdated or non-existent web presences.  
-* **Secondary Audience:** National clients looking for bilingual (EN/FR) development capabilities.  
-* **Key Selling Propositions:**  
-  1. **Bilingual Native:** Seamless French/English support (vital for Quebec market).  
-  2. **Automation Focus:** Moving manual business processes (calls/texts) to digital tools (forms/portals).  
-  3. **Technical Depth:** Able to build complex logic (Laravel experience) unlike generic template builders.
+- $299 to start + $49/month. The first care payment is due at launch. The client owns the website at launch; care is month-to-month and may be cancelled at the end of a paid period. If care ends, the agreed website files are provided for transfer and Orlando’s hosting and technical responsibility end.
+- $0 to start + $79/month for twelve required payments ($948 total). The website transfers to the client after all twelve payments. The client may then continue month-to-month care at $49/month or transfer the website elsewhere.
 
-## **3\. Content Architecture (Single Page Application Structure)**
+## Included delivery
 
-### **A. Navigation**
+- One mobile-first page with up to five core sections.
+- Contact form, click-to-call, map or directions, and social links.
+- English, French, or both according to the business’s customers, without a bilingual surcharge.
+- Domain connection and search-engine fundamentals.
+- Performance, accessibility, deployment, hosting, SSL, monitoring, version history, and form checks.
+- One pre-launch revision.
+- Up to 30 minutes of routine content changes monthly; time does not roll over.
 
-* **Logo/Brand Name**  
-* **Language Switcher:** Toggle between EN / FR (Critical feature).  
-* **Links:** Services, Work, About, Contact.
+The client supplies accurate business facts, services, contact details, logo, and photos, and approves each language version. Domain registration and optional third-party services are paid separately.
 
-### **B. Hero Section**
+## Boundaries
 
-* **Headline Strategy:** Location-aware \+ Benefit-driven.  
-  * *Concept:* "Bilingual Web Development from Montreal."  
-* **Sub-headline:** Focus on the specific value provided to the cleaning client (Lead Capture).  
-  * *Concept:* "I build fast, custom websites that automate your processes and capture leads."  
-* **Call to Action (CTA):** Low friction (e.g., "Discuss your project").
+The standard service excludes ecommerce, payments, booking, accounts, custom applications, integrations, branding, photography, advertising, ongoing SEO or content campaigns, email administration, emergency support, unlimited revisions, and complicated legacy-site rescue. Additional work is quoted before it begins.
 
-### **C. Services (The "Hybrid" Offer)**
+Public ownership and cancellation summaries must match the finalized client agreement before deployment.
 
-Do not list languages (PHP, JS); list outcomes.
+## Audience and positioning
 
-1. **Marketing Websites:** High-performance, SEO-ready sites for local visibility (Astro).  
-2. **Business Automation:** Custom quote forms, booking systems, and lead capture (The "Hierronix" Model).  
-3. **Web Applications:** Custom portals, user accounts, and database management (The "Delight/Laravel" Model).
+- Public service area: Canada.
+- Strongest fits: businesses with no website, a Facebook/Google-only presence, or an outdated/basic site.
+- Trust position: direct access to Orlando, English/French capability, local roots near Montreal, and clear willingness to refer agency-scale work elsewhere.
 
-### **D. Featured Work (Depth over Breadth)**
+## Conversion and measurement
 
-*Display these as detailed "Case Studies" rather than simple gallery images.*
+The primary action is a short Netlify managed-website request form. It records the selected payment option and campaign tags. Umami Cloud is optional and enabled only when `PUBLIC_UMAMI_WEBSITE_ID` is configured.
 
-**Project 1: Hierronix Care (Business Case)**
+Tracked signals:
 
-* **Tagline:** Converting manual calls into digital leads.  
-* **The Problem:** Client was overwhelmed by text/phone quote requests.  
-* **The Solution:** A bilingual site with a streamlined "Get a Quote" workflow.  
-* **The Result:** 24/7 automated quote intake directly to email.
-
-**Project 2: Delight App (Technical Case)**
-
-* **Tagline:** Scalable Web Application Engineering.  
-* **The Context:** A personal Laravel project with 50+ active users.  
-* **The "Flex":** Demonstrates ability to handle databases, authentication, and complex user logic.  
-* **The Client Benefit:** "Proof that I can build robust, crash-proof systems."
-
-### **E. About & Trust**
-
-* **Location:** Clearly state "Based in Greater Montreal / Valleyfield."  
-* **Language:** Explicitly mention capability to serve Francophone and Anglophone markets.  
-* **Background:** Brief mention of full-stack capabilities (Laravel/Vue) to build trust in technical competence.
-
-### **F. Footer**
-
-* Quick Links.  
-* Social Proof (LinkedIn / GitHub).  
-* Copyright & Legal.
-
-## **4\. Technical Specifications**
-
-### **Core Stack**
-
-* **Framework:** Astro (Static Site Generation).  
-* **Styling:** Tailwind CSS.  
-* **Interactivity:** Alpine.js (Lightweight handling for mobile menu & UI toggles).  
-* **Deployment:** Netlify or Vercel.
-
-### **Functional Requirements**
-
-1. **Internationalization (i18n):**  
-   * Must use Astro's native routing (/en and /fr sub-paths).  
-   * Content must be fully mirrored in both languages.  
-   * Auto-detection of browser language preference (optional but recommended).  
-2. **Performance Budget:**  
-   * Target: 95+ Mobile score on Google PageSpeed Insights.  
-   * Images: Use Astro \<Image /\> component for automatic WebP conversion and lazy loading.  
-3. **Contact/Lead Form:**  
-   * Implementation: Netlify Forms or Formspree (Keep it static, no backend required).  
-   * Fields: Name, Email, Service Type, Language Preference.  
-4. **SEO & Schema:**  
-   * Implementation of LocalBusiness or ProfessionalService JSON-LD schema.  
-   * Explicit hreflang tags for SEO to understand the EN/FR relationship.
-
-### **Design Aesthetic**
-
-* **Visual Style:** Clean, minimalist, and "fast-looking."  
-* **Typography:** High legibility sans-serif.  
-* **Palette:** Professional, trustworthy colors (Navy, Slate, Clean White) with a distinct accent color for CTAs.
-
-## **5\. Implementation Roadmap**
-
-1. **Setup:** Initialize Astro project with Tailwind and Alpine integrations.  
-2. **Routing:** Configure src/pages/\[lang\]/ folder structure for i18n.  
-3. **Content:** Create content collections for "Projects" to keep data separate from UI.  
-4. **Development:** Build components (Nav, Hero, ProjectCard, Form).  
-5. **Deployment:** Push to Netlify/Vercel and configure DNS.
+- Visits and referral sources.
+- Hero, offer, navigation, and pricing CTA clicks.
+- Payment-option interest.
+- Managed-website form submission attempts.
+- Localized thank-you-page completions.

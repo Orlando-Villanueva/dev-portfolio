@@ -2,53 +2,53 @@ import orlandoImg from "@/assets/orlando.png";
 
 export const homeContent = {
     en: {
-        title: "Orlando Villanueva | Better Quote Requests for Quebec Contractors",
+        title: "Managed Websites for Canadian Small Businesses | Orlando Villanueva",
         hero: {
-            headline: "Turn your online presence into clearer quote requests.",
+            headline: "A professional website, built and cared for with simple monthly pricing.",
             availabilityText: "Available for new projects",
             localProof:
-                "Orlando Villanueva, full-stack developer near Montreal / Valleyfield",
+                "Based near Montreal. Serving small businesses across Canada.",
             subheadline:
-                "I help independent Quebec contractors and home-service businesses turn a basic or broken site, Google profile, Facebook page, directory listing, or generic form into a bilingual path that captures the job details you need before calling back.",
-            primaryCTA: "Improve my quote requests",
-            secondaryCTA: "See the roofing example",
-            priceNote: "Focused bilingual projects start at $750 CAD.",
+                "I create and look after simple, fast websites for service businesses that have no site, rely on Google or Facebook, or have outgrown an outdated DIY website.",
+            primaryCTA: "Tell me about your business",
+            secondaryCTA: "See what’s included",
+            priceNote: "Both include the website and ongoing care: $299 to start + $49/month, or $0 to start + $79/month for 12 months.",
         },
         about: {
-            heading: "A local full-stack developer for the quote-request details templates leave unfinished.",
-            body: "I am Orlando Villanueva, a full-stack developer based near Salaberry-de-Valleyfield and serving Quebec contractors in English and French. I focus on the practical pieces that turn a basic online presence into a clearer quote-request path: service positioning, bilingual copy, mobile calls to action, job-specific questions, notifications, and follow-up details.\n\nThe goal is not simply a prettier page. It is a reliable bilingual request path that helps people understand what you do and send enough job detail before your team replies.",
+            heading: "Work directly with the developer who builds and looks after your site.",
+            body: "I am Orlando Villanueva, a full-stack developer based near Salaberry-de-Valleyfield. I help small service businesses across Canada get a professional website with clear pricing and ongoing care, without navigating a complicated agency process.\n\nYou deal with me directly from the first conversation through launch and ongoing updates. If your needs call for a larger agency, a custom application, or a marketing team, I will tell you plainly.",
             image: orlandoImg,
-            location: "Montreal, Valleyfield & Quebec",
-            rigor: "Software Engineering Rigor",
-            capability: "Quote Requests",
-            professional: "French / English",
+            location: "Near Montreal, serving Canada",
+            rigor: "Direct developer access",
+            capability: "Ongoing website care",
+            professional: "English and French",
         },
         description:
-            "Focused bilingual quote pages and job-specific forms for Quebec contractors in Montreal, Valleyfield, and across Quebec.",
+            "Simple professional websites built and cared for by a Canadian developer, with low-upfront and no-upfront options.",
     },
     fr: {
-        title: "Orlando Villanueva | Meilleures demandes de soumission au Québec",
+        title: "Sites Web Gérés pour Petites Entreprises Canadiennes | Orlando Villanueva",
         hero: {
-            headline: "Transformez votre présence en ligne en demandes de soumission plus claires.",
+            headline: "Un site Web professionnel, créé et entretenu avec une tarification mensuelle simple.",
             availabilityText: "Disponible pour de nouveaux projets",
             localProof:
-                "Orlando Villanueva, développeur full-stack près de Montréal / Valleyfield",
+                "Établi près de Montréal. Au service des petites entreprises partout au Canada.",
             subheadline:
-                "J'aide les entrepreneurs indépendants et les entreprises de services à domicile au Québec à transformer un site de base ou brisé, une fiche Google, une page Facebook, un annuaire ou un formulaire générique en parcours bilingue qui capte les détails nécessaires avant le rappel.",
-            primaryCTA: "Améliorer mes demandes",
-            secondaryCTA: "Voir l'exemple de toiture",
-            priceNote: "Projets bilingues ciblés à partir de 750 $ CA.",
+                "Je crée et prends en charge des sites simples et rapides pour les entreprises de services qui n’ont pas de site, dépendent de Google ou Facebook, ou ont dépassé les limites d’un ancien site maison.",
+            primaryCTA: "Parlez-moi de votre entreprise",
+            secondaryCTA: "Voir ce qui est inclus",
+            priceNote: "Les deux options incluent le site et l’entretien : 299 $ pour commencer + 49 $/mois, ou 0 $ pour commencer + 79 $/mois pendant 12 mois.",
         },
         about: {
-            heading: "Un développeur full-stack local pour les détails de soumission que les modèles laissent incomplets.",
-            body: "Je suis Orlando Villanueva, développeur full-stack établi près de Salaberry-de-Valleyfield et au service des entrepreneurs québécois en français et en anglais. Je travaille les éléments concrets qui transforment une présence en ligne de base en parcours de soumission plus clair : positionnement du service, textes bilingues, appels à l'action mobiles, questions adaptées aux travaux, avis et détails de suivi.\n\nL'objectif n'est pas seulement une plus belle page. C'est un parcours bilingue fiable qui aide les visiteurs à comprendre votre offre et à envoyer assez de détails avant que votre équipe réponde.",
+            heading: "Travaillez directement avec le développeur qui crée et entretient votre site.",
+            body: "Je suis Orlando Villanueva, développeur full-stack établi près de Salaberry-de-Valleyfield. J’aide les petites entreprises de services partout au Canada à obtenir un site professionnel avec une tarification claire et un entretien continu, sans passer par un processus d’agence compliqué.\n\nVous communiquez directement avec moi, de la première discussion au lancement et aux mises à jour. Si vos besoins exigent plutôt une grande agence, une application sur mesure ou une équipe marketing, je vous le dirai franchement.",
             image: orlandoImg,
-            location: "Montréal, Valleyfield et Québec",
-            rigor: "Rigueur en ingénierie logicielle",
-            capability: "Prise de soumissions",
-            professional: "Français / anglais",
+            location: "Près de Montréal, partout au Canada",
+            rigor: "Accès direct au développeur",
+            capability: "Entretien continu du site",
+            professional: "Français et anglais",
         },
         description:
-            "Pages bilingues et formulaires adaptés aux travaux pour entrepreneurs au Québec, à Montréal et à Valleyfield.",
+            "Sites Web professionnels simples, créés et entretenus par un développeur canadien, avec options à faible coût initial ou sans coût initial.",
     },
 } as const;

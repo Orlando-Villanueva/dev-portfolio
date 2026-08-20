@@ -1,0 +1,53 @@
+---
+const content = {
+    en: {
+        eyebrow: "Clear boundaries before we start",
+        title: "Ownership, care, and what this service does not include.",
+        items: [
+            { q: "Who owns the domain and website?", a: "You own your domain and business content. With the $299 setup option, you own the website at launch. With the no-upfront option, ownership transfers after the 12-month initial term. The agreement confirms the handoff details." },
+            { q: "What counts as a monthly change?", a: "Routine text, photo, hours, service, or contact-detail updates are included up to 30 minutes per month. Unused time does not roll over. New pages, redesigns, and new functionality are quoted before work begins." },
+            { q: "What happens if I cancel monthly care?", a: "With the $299 option, you can cancel care at the end of any paid monthly period. You keep ownership of the website, and I provide the agreed website files for transfer to another hosting provider. With the no-upfront option, all twelve initial payments are required before ownership transfers. After those payments, care becomes month-to-month and can be cancelled the same way. Cancelling care ends my hosting, monitoring, form checks, updates, and technical responsibility for the site." },
+            { q: "Can the website be in English and French?", a: "Yes. The site can be English, French, or both according to the customers you serve, with no bilingual surcharge. You provide accurate business information and approve each version before launch." },
+            { q: "What is outside this service?", a: "Ecommerce, online payments, booking systems, customer accounts, custom applications, integrations, branding, photography, advertising, ongoing SEO or content campaigns, email administration, emergency support, unlimited revisions, and complicated legacy-site rescue are not included." },
+            { q: "What if I need something larger?", a: "I will explain whether it can be quoted separately or whether an agency or specialist would serve you better. You will not be pushed into a service that is not appropriate for your needs." },
+            { q: "Are there other costs?", a: "Domain registration and any optional third-party services are paid separately. Those costs are identified before you approve them." },
+        ],
+    },
+    fr: {
+        eyebrow: "Des limites claires avant de commencer",
+        title: "Propriété, entretien et éléments non compris dans le service.",
+        items: [
+            { q: "À qui appartiennent le domaine et le site?", a: "Votre domaine et le contenu de votre entreprise vous appartiennent. Avec l’option à 299 $, le site vous appartient au lancement. Avec l’option sans coût initial, la propriété est transférée après la période initiale de 12 mois. L’entente confirme les détails du transfert." },
+            { q: "Qu’est-ce qu’un changement mensuel?", a: "Les changements courants de textes, photos, heures, services ou coordonnées sont inclus jusqu’à 30 minutes par mois. Le temps inutilisé n’est pas reporté. Les nouvelles pages, refontes et fonctionnalités sont soumissionnées avant le travail." },
+            { q: "Que se passe-t-il si j’annule l’entretien mensuel?", a: "Avec l’option à 299 $, vous pouvez annuler l’entretien à la fin de toute période mensuelle payée. Vous conservez la propriété du site et je fournis les fichiers convenus pour son transfert vers un autre hébergeur. Avec l’option sans paiement initial, les douze paiements sont requis avant le transfert de propriété. Ensuite, l’entretien devient mensuel et peut être annulé de la même façon. L’annulation met fin à mon hébergement, à la surveillance, aux vérifications du formulaire, aux mises à jour et à ma responsabilité technique pour le site." },
+            { q: "Le site peut-il être en français et en anglais?", a: "Oui. Le site peut être en français, en anglais ou dans les deux langues selon votre clientèle, sans supplément bilingue. Vous fournissez des renseignements exacts et approuvez chaque version avant le lancement." },
+            { q: "Qu’est-ce qui n’est pas compris?", a: "Le commerce électronique, les paiements, la réservation, les comptes clients, les applications sur mesure, les intégrations, l’image de marque, la photographie, la publicité, les campagnes SEO ou de contenu, la gestion des courriels, le soutien d’urgence, les révisions illimitées et le sauvetage de sites complexes ne sont pas inclus." },
+            { q: "Et si j’ai besoin d’un projet plus grand?", a: "Je vous expliquerai si le besoin peut faire l’objet d’une soumission distincte ou si une agence ou un spécialiste serait préférable. Je ne vous pousserai pas vers un service mal adapté." },
+            { q: "Y a-t-il d’autres coûts?", a: "Le domaine et les services externes optionnels sont payés séparément. Ces coûts sont indiqués avant votre approbation." },
+        ],
+    },
+} as const;
+
+interface Props { lang: keyof typeof content; }
+const { lang = "en" } = Astro.props;
+const t = content[lang];
+---
+
+<section id="faq" class="bg-paper py-16 md:py-24">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl">
+            <p class="section-label text-accent">{t.eyebrow}</p>
+            <h2 class="mt-4 text-4xl leading-[0.98] md:text-5xl lg:text-6xl">{t.title}</h2>
+        </div>
+        <div class="mt-10 border-t-2 border-navy">
+            {t.items.map((item) => (
+                <details class="group border-b border-steel/25 py-5">
+                    <summary class="flex cursor-pointer list-none items-center justify-between gap-6 text-lg font-bold text-navy">
+                        <span>{item.q}</span><span class="text-2xl font-normal text-accent transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                    </summary>
+                    <p class="max-w-4xl pb-2 pt-4 leading-relaxed text-steel">{item.a}</p>
+                </details>
+            ))}
+        </div>
+    </div>
+</section>

@@ -10,7 +10,7 @@ interface Props {
 
 const {
 	title,
-	description = "Focused bilingual quote pages and job-specific forms for Quebec contractors.",
+		description = "Simple professional websites built and cared for by a Canadian developer.",
 	lang = "en",
 	image = "/social-preview.png",
 } = Astro.props;
@@ -31,29 +31,30 @@ const englishUrl = new URL(englishPath, siteUrl).toString();
 const frenchUrl = new URL(frenchPath, siteUrl).toString();
 const ogLocale = lang === "fr" ? "fr_CA" : "en_CA";
 const alternateLocale = lang === "fr" ? "en_CA" : "fr_CA";
+const umamiWebsiteId = import.meta.env.PUBLIC_UMAMI_WEBSITE_ID;
 const schemaCopy =
-	lang === "fr"
-		? {
-				description:
-					"Pages bilingues et formulaires adaptés aux travaux pour entrepreneurs au Québec.",
-				serviceType: [
-					"Pages de demande de soumission bilingues",
-					"Formulaires de soumission bilingues",
-					"Questions adaptées aux travaux",
-					"Parcours depuis les fiches et sites existants",
-					"Avis et confirmations de demande",
-				],
-			}
-		: {
-				description:
-					"Focused bilingual quote pages and job-specific forms for Quebec contractors.",
-				serviceType: [
-					"Bilingual quote-request pages",
-					"Bilingual quote forms",
-					"Job-specific request questions",
-					"Profile and existing-site request paths",
-					"Request notifications and confirmations",
-				],
+		lang === "fr"
+			? {
+					description:
+						"Sites Web professionnels simples, créés et entretenus pour les petites entreprises canadiennes.",
+					serviceType: [
+						"Création de sites Web pour petites entreprises",
+						"Entretien de sites Web",
+						"Hébergement et surveillance",
+						"Sites Web en français et en anglais",
+						"Formulaires de contact",
+					],
+				}
+			: {
+					description:
+						"Simple professional websites built and maintained for Canadian small businesses.",
+					serviceType: [
+						"Small-business website design",
+						"Managed website care",
+						"Website hosting and monitoring",
+						"English and French websites",
+						"Contact forms",
+					],
 			};
 const schema = {
 	"@context": "https://schema.org",
@@ -69,10 +70,10 @@ const schema = {
 		addressCountry: "CA",
 	},
 	areaServed: [
-		"Quebec",
-		"Montreal",
-		"Salaberry-de-Valleyfield",
-		"Greater Montreal",
+		{
+			"@type": "Country",
+			name: "Canada",
+		},
 	],
 	knowsLanguage: ["English", "French"],
 	serviceType: schemaCopy.serviceType,
@@ -119,11 +120,22 @@ const schema = {
 			href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;600;700&display=swap"
 			rel="stylesheet"
 		/>
-		<script
-			type="application/ld+json"
+			<script
+				type="application/ld+json"
 			is:inline
-			set:html={JSON.stringify(schema)}
-		/>
+				set:html={JSON.stringify(schema)}
+			/>
+			{
+				umamiWebsiteId && (
+					<script
+						is:inline
+						defer
+						src="https://cloud.umami.is/script.js"
+						data-website-id={umamiWebsiteId}
+						data-domains="orlandovillanueva.com"
+					/>
+				)
+			}
 	</head>
 	<body class="bg-ghost">
 		<slot />

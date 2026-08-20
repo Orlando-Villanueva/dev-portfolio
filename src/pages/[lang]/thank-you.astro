@@ -10,22 +10,22 @@ export function getStaticPaths() {
 
 const content = {
     en: {
-        title: "Message Sent!",
-        heading: "Thank You!",
+        title: "Request Sent | Orlando Villanueva",
+        heading: "Your request is on its way.",
         message:
-            "Your message has been sent successfully. I'll get back to you within 24 hours.",
-        cta: "Back to Home",
+            "Thanks for sharing the details. I’ll review them and reply within two business days.",
+        cta: "Back to the offer",
         description:
-            "Your message has been sent successfully. I'll get back to you soon.",
+            "Your managed website request has been sent successfully.",
     },
     fr: {
-        title: "Message Envoyé !",
-        heading: "Merci !",
+        title: "Demande Envoyée | Orlando Villanueva",
+        heading: "Votre demande est en route.",
         message:
-            "Votre message a bien été envoyé. Je vous répondrai dans les 24 heures.",
-        cta: "Retour à l'accueil",
+            "Merci pour les renseignements. Je les examinerai et vous répondrai dans les deux jours ouvrables.",
+        cta: "Retour à l’offre",
         description:
-            "Votre message a bien été envoyé. Je vous répondrai bientôt.",
+            "Votre demande pour un site Web géré a bien été envoyée.",
     },
 } as const;
 
@@ -68,4 +68,9 @@ const homePath = getLocalizedHomePath(lang);
         </div>
     </main>
     <Footer lang={lang} />
+    <script is:inline>
+        window.addEventListener("load", () => {
+            if (window.umami) window.umami.track("managed-website-form-complete");
+        });
+    </script>
 </BaseLayout>

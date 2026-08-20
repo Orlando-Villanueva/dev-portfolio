@@ -1,0 +1,63 @@
+---
+const content = {
+    en: {
+        eyebrow: "What the finished site can contain",
+        title: "One focused page that answers the questions customers usually have.",
+        intro: "The exact content follows your business. The structure stays intentionally simple so customers can understand your services and contact you quickly on a phone.",
+        sampleLabel: "Illustrative service-business website",
+        business: "Northline Home Services",
+        tagline: "Reliable home maintenance, without the runaround.",
+        cta: "Request service",
+        sections: ["Services", "Why choose us", "Service area", "Hours", "Contact"],
+        points: ["Clear service and location information", "Prominent call and contact actions", "Customer-provided photos and trust details", "A form delivered directly to the business"],
+        note: "This example illustrates the standard structure. Each client site uses the business’s own identity, information, photos, and approved wording.",
+    },
+    fr: {
+        eyebrow: "Ce que le site terminé peut contenir",
+        title: "Une page ciblée qui répond aux questions habituelles des clients.",
+        intro: "Le contenu exact suit votre entreprise. La structure reste volontairement simple pour que les clients comprennent vos services et communiquent rapidement sur leur téléphone.",
+        sampleLabel: "Exemple illustratif d’un site d’entreprise de services",
+        business: "Services Résidentiels Northline",
+        tagline: "Un entretien résidentiel fiable, sans complications.",
+        cta: "Demander un service",
+        sections: ["Services", "Pourquoi nous choisir", "Secteur", "Heures", "Contact"],
+        points: ["Services et secteur clairement présentés", "Boutons d’appel et de contact visibles", "Photos et éléments de confiance fournis par le client", "Formulaire envoyé directement à l’entreprise"],
+        note: "Cet exemple illustre la structure standard. Chaque site utilise l’identité, les renseignements, les photos et les textes approuvés de l’entreprise.",
+    },
+} as const;
+
+interface Props { lang: keyof typeof content; }
+const { lang = "en" } = Astro.props;
+const t = content[lang];
+---
+
+<section id="example" class="bg-navy py-16 text-white md:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid items-start gap-12 lg:grid-cols-[minmax(0,0.82fr)_minmax(30rem,1.18fr)] lg:gap-16">
+            <div>
+                <p class="section-label text-blue-300">{t.eyebrow}</p>
+                <h2 class="mt-4 text-4xl leading-[0.98] text-white md:text-5xl lg:text-6xl">{t.title}</h2>
+                <p class="mt-6 text-lg leading-relaxed text-white/70">{t.intro}</p>
+                <ul class="mt-8 space-y-3">
+                    {t.points.map((point) => <li class="flex gap-3 text-white/85"><span class="font-bold text-blue-300" aria-hidden="true">✓</span><span>{point}</span></li>)}
+                </ul>
+            </div>
+            <div>
+                <p class="section-label text-blue-300">{t.sampleLabel}</p>
+                <div class="mt-4 overflow-hidden border border-white/15 bg-white text-navy shadow-2xl">
+                    <div class="flex items-center justify-between border-b border-steel/15 px-5 py-4">
+                        <span class="font-bold">{t.business}</span><span class="rounded bg-paper px-2 py-1 text-xs font-bold text-steel">EN / FR</span>
+                    </div>
+                    <div class="bg-paper px-6 py-10 md:px-10 md:py-14">
+                        <p class="font-display text-4xl font-bold leading-none md:text-5xl">{t.tagline}</p>
+                        <div class="mt-7 inline-flex bg-accent px-5 py-3 font-bold text-white">{t.cta}</div>
+                    </div>
+                    <div class="grid gap-px bg-steel/15 sm:grid-cols-5">
+                        {t.sections.map((section) => <div class="bg-white px-3 py-4 text-center text-xs font-bold">{section}</div>)}
+                    </div>
+                </div>
+                <p class="mt-4 text-sm leading-relaxed text-white/60">{t.note}</p>
+            </div>
+        </div>
+    </div>
+</section>
