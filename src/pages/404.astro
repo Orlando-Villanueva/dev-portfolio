@@ -1,0 +1,38 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Navbar from "@/components/Navbar.astro";
+import Footer from "@/components/Footer.astro";
+---
+
+<BaseLayout
+    title="Page Not Found | Orlando Villanueva"
+    description="The page you requested could not be found."
+    noindex={true}
+>
+    <Navbar lang="en" />
+    <main class="min-h-[70vh] flex items-center justify-center px-4 py-20">
+        <section class="max-w-2xl text-center">
+            <p class="mb-4 text-sm font-bold uppercase tracking-[0.2em] text-orange">
+                Error 404
+            </p>
+            <h1 class="text-4xl font-bold text-navy md:text-5xl">
+                This page could not be found.
+            </h1>
+            <p class="mx-auto mt-6 max-w-xl text-lg text-slate">
+                Orlando Villanueva builds and cares for simple professional websites for Canadian service businesses.
+                Use one of these links to find the right place.
+            </p>
+            <div class="mt-10 flex flex-wrap justify-center gap-4">
+                <a href="/" class="button-primary">English homepage</a>
+                <a href="/fr/" class="button-secondary">Accueil français</a>
+            </div>
+            <p class="mt-10 text-sm text-slate">
+                For machine-readable site information, see the
+                <a href="/sitemap.xml" class="font-semibold text-navy underline"> sitemap</a>
+                or
+                <a href="/llms.txt" class="font-semibold text-navy underline"> llms.txt</a>.
+            </p>
+        </section>
+    </main>
+    <Footer lang="en" />
+</BaseLayout>

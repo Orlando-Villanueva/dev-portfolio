@@ -6,6 +6,7 @@ interface Props {
 	description?: string;
 	lang?: string;
 	image?: string;
+	noindex?: boolean;
 }
 
 const {
@@ -13,6 +14,7 @@ const {
 		description = "Simple professional websites built and cared for by a Canadian developer.",
 	lang = "en",
 	image = "/social-preview.png",
+	noindex = false,
 } = Astro.props;
 
 const siteUrl = Astro.site ?? new URL("https://orlandovillanueva.com");
@@ -90,6 +92,7 @@ const schema = {
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<meta name="description" content={description} />
+		{noindex && <meta name="robots" content="noindex, follow" />}
 		<link rel="canonical" href={canonicalUrl} />
 		<link rel="alternate" hreflang="en" href={englishUrl} />
 		<link rel="alternate" hreflang="fr" href={frenchUrl} />
