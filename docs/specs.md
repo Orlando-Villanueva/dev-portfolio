@@ -7,7 +7,7 @@ One managed website for established Canadian service businesses that need a prof
 The same product has two payment methods:
 
 - $299 to start + $49/month. The first care payment is due at launch. The client owns the website at launch; care is month-to-month and may be cancelled at the end of a paid period. If care ends, the agreed website files are provided for transfer and Orlando’s hosting and technical responsibility end.
-- $0 to start + $79/month for twelve required payments ($948 total). The website transfers to the client after all twelve payments. The client may then continue month-to-month care at $49/month or transfer the website elsewhere.
+- $0 to start + $79/month for twelve required payments. The website transfers to the client after all twelve payments. The client may then continue month-to-month care at $49/month or transfer the website elsewhere.
 
 ## Included delivery
 
@@ -16,14 +16,15 @@ The same product has two payment methods:
 - English, French, or both according to the business’s customers, without a bilingual surcharge.
 - Domain connection and search-engine fundamentals.
 - Performance, accessibility, deployment, hosting, SSL, monitoring, version history, and form checks.
-- One pre-launch revision.
+- One website-specific visual direction and one focused adjustment before written approval.
+- One separate pre-launch website revision after implementation.
 - Up to 30 minutes of routine content changes monthly; time does not roll over.
 
-The client supplies accurate business facts, services, contact details, logo, and photos, and approves each language version. Domain registration and optional third-party services are paid separately.
+The client supplies accurate business facts, services, contact details, logo, photos, and visual preferences, approves the visual direction in writing before implementation, and approves each language version before launch. Client review periods pause the schedule. Domain registration and optional third-party services are paid separately.
 
 ## Boundaries
 
-The standard service excludes ecommerce, payments, booking, accounts, custom applications, integrations, branding, photography, advertising, ongoing SEO or content campaigns, email administration, emergency support, unlimited revisions, and complicated legacy-site rescue. Additional work is quoted before it begins.
+The standard service excludes ecommerce, payments, booking, accounts, custom applications, integrations, logo creation, naming, photography, broader brand strategy, a second visual concept, a complete visual restart, advertising, ongoing SEO or content campaigns, email administration, emergency support, unlimited revisions, and complicated legacy-site rescue. Additional work is quoted before it begins.
 
 Public ownership and cancellation summaries must match the finalized client agreement before deployment.
 
