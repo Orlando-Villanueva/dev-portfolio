@@ -4,10 +4,7 @@
 
 One managed website for established Canadian service businesses that need a professional online home with clear monthly pricing and ongoing care.
 
-The same product has two payment methods:
-
-- $299 to start + $49/month. The first care payment is due at launch. The client owns the website at launch; care is month-to-month and may be cancelled at the end of a paid period. If care ends, the agreed website files are provided for transfer and Orlando’s hosting and technical responsibility end.
-- $0 to start + $79/month for twelve required payments. The website transfers to the client after all twelve payments. The client may then continue month-to-month care at $49/month or transfer the website elsewhere.
+The service costs $299 to start plus $49/month from launch. The client owns the website at launch; care is month-to-month and may be cancelled at the end of a paid period. If care ends after outstanding amounts are paid, the agreed website files are provided for transfer and Orlando’s hosting and technical responsibility end.
 
 ## Included delivery
 
@@ -36,12 +33,11 @@ Public ownership and cancellation summaries must match the finalized client agre
 
 ## Conversion and measurement
 
-The primary action is a short Netlify managed-website request form. It records the selected payment option, page locale, offer version, and campaign tags so private operations can interpret each submission against the terms the prospect saw. Umami Cloud is optional and enabled only when `PUBLIC_UMAMI_WEBSITE_ID` is configured.
+The primary action is a short Netlify managed-website request form. It records the page locale, offer version, and campaign tags so private operations can interpret each submission against the terms the prospect saw. Umami Cloud is optional and enabled only when `PUBLIC_UMAMI_WEBSITE_ID` is configured.
 
 Tracked signals:
 
 - Visits and referral sources.
-- Hero, offer, navigation, and pricing CTA clicks.
-- Payment-option interest.
+- Primary contact CTA clicks.
 - Managed-website form submission attempts.
 - Localized thank-you-page completions.

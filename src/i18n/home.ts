@@ -12,7 +12,7 @@ export const homeContent = {
                 "I create and look after simple, fast websites for service businesses that have no site, rely on Google or Facebook, or have outgrown an outdated DIY website.",
             primaryCTA: "Tell me about your business",
             secondaryCTA: "See what’s included",
-            priceNote: "Both include the website and ongoing care: $299 to start + $49/month, or $0 to start + $79/month for 12 months.",
+            priceNote: "$299 to start, then $49/month from launch. You own the website at launch.",
         },
         about: {
             heading: "Work directly with the developer who builds and looks after your site.",
@@ -24,7 +24,7 @@ export const homeContent = {
             professional: "English and French",
         },
         description:
-            "Simple professional websites built and cared for by a Canadian developer, with low-upfront and no-upfront options.",
+            "Simple professional websites built and cared for by a Canadian developer for $299 to start and $49 per month.",
     },
     fr: {
         title: "Sites Web Gérés pour Petites Entreprises Canadiennes | Orlando Villanueva",
@@ -37,7 +37,7 @@ export const homeContent = {
                 "Je crée et prends en charge des sites simples et rapides pour les entreprises de services qui n’ont pas de site, dépendent de Google ou Facebook, ou ont dépassé les limites d’un ancien site maison.",
             primaryCTA: "Parlez-moi de votre entreprise",
             secondaryCTA: "Voir ce qui est inclus",
-            priceNote: "Les deux options incluent le site et l’entretien : 299 $ pour commencer + 49 $/mois, ou 0 $ pour commencer + 79 $/mois pendant 12 mois.",
+            priceNote: "299 $ pour commencer, puis 49 $/mois dès le lancement. Le site vous appartient dès son lancement.",
         },
         about: {
             heading: "Travaillez directement avec le développeur qui crée et entretient votre site.",
@@ -49,6 +49,6 @@ export const homeContent = {
             professional: "Français et anglais",
         },
         description:
-            "Sites Web professionnels simples, créés et entretenus par un développeur canadien, avec options à faible coût initial ou sans coût initial.",
+            "Sites Web professionnels simples, créés et entretenus par un développeur canadien pour 299 $ au départ et 49 $ par mois.",
     },
 } as const;

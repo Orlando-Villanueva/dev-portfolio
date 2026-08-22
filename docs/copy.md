@@ -17,7 +17,7 @@ Je crée et prends en charge des sites simples et rapides pour les entreprises d
 ## Positioning rules
 
 - Sell relief and ongoing responsibility, not hours of development.
-- Describe one product with two payment methods, not two service tiers.
+- Describe one product with simple setup and monthly care pricing, not a custom-project quote.
 - Say “search-engine fundamentals,” not “SEO,” and make no ranking promise.
 - Keep Canada open as the service area while using Montreal-area roots as trust context.
 - Make ownership, monthly change limits, and exclusions visible before the form.
@@ -32,4 +32,4 @@ Je crée et prends en charge des sites simples et rapides pour les entreprises d
 
 ## Payment explanation
 
-Both options include the website build, hosting, and ongoing care. The $299 option provides ownership at launch and month-to-month care at $49. The no-upfront option spreads the build cost across twelve required payments of $79; ownership transfers after all twelve payments. After that, care may continue month-to-month at $49 or the website may be transferred elsewhere.
+The service costs $299 to start, then $49 per month from launch. The client owns the website at launch. Care continues month-to-month and may be cancelled at the end of a paid monthly period. Once outstanding amounts are paid, the agreed website files can be transferred elsewhere and Orlando’s hosting and technical responsibility end.

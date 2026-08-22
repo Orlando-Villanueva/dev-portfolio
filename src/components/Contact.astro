@@ -10,11 +10,6 @@ const content = {
         website: "Current website or profile URL",
         websiteOptional: "Optional",
         location: "City and province",
-        plan: "Which payment option interests you?",
-        planPlaceholder: "Choose an option",
-        planSetup: "$299 to start + $49/month",
-        planNoUpfront: "$0 to start + $79/month for 12 months",
-        planUnsure: "Not sure yet",
         need: "Tell me briefly about the business and what you need",
         namePlaceholder: "Your name",
         emailPlaceholder: "you@example.com",
@@ -37,11 +32,6 @@ const content = {
         website: "Site ou fiche actuelle",
         websiteOptional: "Facultatif",
         location: "Ville et province",
-        plan: "Quelle option de paiement vous intéresse?",
-        planPlaceholder: "Choisissez une option",
-        planSetup: "299 $ pour commencer + 49 $/mois",
-        planNoUpfront: "0 $ pour commencer + 79 $/mois pendant 12 mois",
-        planUnsure: "Je ne sais pas encore",
         need: "Décrivez brièvement l’entreprise et votre besoin",
         namePlaceholder: "Votre nom",
         emailPlaceholder: "vous@exemple.com",
@@ -60,7 +50,7 @@ interface Props { lang: keyof typeof content; }
 const { lang } = Astro.props;
 const t = content[lang];
 const campaignFields = ["utm_source", "utm_medium", "utm_campaign", "utm_content"];
-const offerVersion = "managed-website-v1-2026-08";
+const offerVersion = "managed-website-v1-one-plan-2026-08";
 ---
 
 <section id="contact" class="bg-white py-16 md:py-24">
@@ -93,16 +83,6 @@ const offerVersion = "managed-website-v1-2026-08";
                     <input type="text" id="contact-website" name="website_url" inputmode="url" autocomplete="url" placeholder={t.websitePlaceholder} />
                 </div>
 
-                <div class="form-field mt-5">
-                    <label for="contact-plan">{t.plan}</label>
-                    <select id="contact-plan" name="preferred_plan" required data-plan-select>
-                        <option value="" disabled selected>{t.planPlaceholder}</option>
-                        <option value="setup">{t.planSetup}</option>
-                        <option value="no_upfront">{t.planNoUpfront}</option>
-                        <option value="unsure">{t.planUnsure}</option>
-                    </select>
-                </div>
-
                 <div class="form-field mt-5"><label for="contact-need">{t.need}</label><textarea id="contact-need" name="business_need" rows="5" placeholder={t.needPlaceholder} required></textarea></div>
                 <button type="submit" class="button-primary mt-6 w-full" data-umami-event="managed-website-form-submit">{t.submit}</button>
             </form>
@@ -121,15 +101,4 @@ const offerVersion = "managed-website-v1-2026-08";
         if (input) input.value = incoming || sessionStorage.getItem(field) || "";
     });
 
-    const preferredPlan = sessionStorage.getItem("preferred_plan");
-    if (preferredPlan) {
-        const select = document.querySelector("[data-plan-select]");
-        if (select?.querySelector(`option[value="${preferredPlan}"]`)) select.value = preferredPlan;
-    }
-
-    document.querySelector("[data-plan-select]")?.addEventListener("change", (event) => {
-        const value = event.target.value;
-        sessionStorage.setItem("preferred_plan", value);
-        if (window.umami) window.umami.track(`form-plan-${value}`);
-    });
 </script>
