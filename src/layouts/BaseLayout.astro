@@ -17,6 +17,13 @@ const {
 	noindex = false,
 } = Astro.props;
 
+const socialImage =
+	image === "/social-preview.png"
+		? lang === "fr"
+			? "/social-preview-fr.png"
+			: "/social-preview-en.png"
+		: image;
+
 const siteUrl = Astro.site ?? new URL("https://orlandovillanueva.com");
 const pathWithoutLocale =
 	Astro.url.pathname.replace(/^\/(en|fr)(?=\/|$)/, "") || "/";
@@ -103,7 +110,7 @@ const schema = {
 		<meta property="og:url" content={canonicalUrl} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
-		<meta property="og:image" content={new URL(image, Astro.url)} />
+		<meta property="og:image" content={new URL(socialImage, Astro.url)} />
 		<meta property="og:locale" content={ogLocale} />
 		<meta property="og:locale:alternate" content={alternateLocale} />
 		<meta property="og:image:type" content="image/png" />
@@ -115,7 +122,7 @@ const schema = {
 		<meta name="twitter:url" content={canonicalUrl} />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
-		<meta name="twitter:image" content={new URL(image, Astro.url)} />
+		<meta name="twitter:image" content={new URL(socialImage, Astro.url)} />
 
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
