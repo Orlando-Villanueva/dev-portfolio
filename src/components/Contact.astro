@@ -2,21 +2,19 @@
 const content = {
     en: {
         eyebrow: "Get started",
-        title: "Tell me about your business.",
-        subtitle: "Send the basics. I’ll review what you need and reply within two business days with the recommended next step.",
+        title: "Ready for a better website?",
+        subtitle: "Text me on WhatsApp or SMS and I’ll reply today. Prefer email? Use the short form below.",
+        directLabel: "Fastest option",
+        whatsapp: "Text me on WhatsApp",
+        sms: "or by text",
         name: "Name",
         email: "Email",
         business: "Business name",
-        website: "Current website or profile URL",
-        websiteOptional: "Optional",
-        location: "City and province",
         need: "Tell me briefly about the business and what you need",
         namePlaceholder: "Your name",
         emailPlaceholder: "you@example.com",
         businessPlaceholder: "Business name",
-        websitePlaceholder: "example.com, @yourbusiness, or a Google/Facebook profile",
-        locationPlaceholder: "Toronto, ON",
-        needPlaceholder: "What services do you offer, what do customers need to find, and what is missing or frustrating about your current setup?",
+        needPlaceholder: "What do you offer, and what should your website help customers do?",
         submit: "Send my request",
         note: "No payment or commitment is required to send this form.",
         honeypot: "Don’t fill this out if you’re human:",
@@ -24,21 +22,19 @@ const content = {
     },
     fr: {
         eyebrow: "Pour commencer",
-        title: "Parlez-moi de votre entreprise.",
-        subtitle: "Envoyez l’essentiel. J’examinerai vos besoins et vous répondrai dans les deux jours ouvrables avec la prochaine étape recommandée.",
+        title: "Prêt pour un meilleur site Web?",
+        subtitle: "Textez-moi par WhatsApp ou SMS et je répondrai aujourd’hui. Vous préférez le courriel? Utilisez le court formulaire ci-dessous.",
+        directLabel: "Option la plus rapide",
+        whatsapp: "Textez-moi sur WhatsApp",
+        sms: "ou par texto",
         name: "Nom",
         email: "Courriel",
         business: "Nom de l’entreprise",
-        website: "Site ou fiche actuelle",
-        websiteOptional: "Facultatif",
-        location: "Ville et province",
         need: "Décrivez brièvement l’entreprise et votre besoin",
         namePlaceholder: "Votre nom",
         emailPlaceholder: "vous@exemple.com",
         businessPlaceholder: "Nom de l’entreprise",
-        websitePlaceholder: "exemple.com, @votreentreprise ou une fiche Google/Facebook",
-        locationPlaceholder: "Montréal, QC",
-        needPlaceholder: "Quels services offrez-vous, que doivent trouver les clients et qu’est-ce qui manque ou vous dérange dans votre présence actuelle?",
+        needPlaceholder: "Que proposez-vous et que voulez-vous que votre site permette aux clients de faire?",
         submit: "Envoyer ma demande",
         note: "Aucun paiement ni engagement n’est requis pour envoyer ce formulaire.",
         honeypot: "Ne remplissez pas ce champ si vous êtes humain :",
@@ -50,7 +46,9 @@ interface Props { lang: keyof typeof content; }
 const { lang } = Astro.props;
 const t = content[lang];
 const campaignFields = ["utm_source", "utm_medium", "utm_campaign", "utm_content"];
-const offerVersion = "managed-website-v1-one-plan-2026-08";
+const offerVersion = "managed-website-v2-two-plans-2026-09";
+const whatsappHref = "https://wa.me/15144437144";
+const smsHref = "sms:+15144437144";
 ---
 
 <section id="contact" class="bg-white py-16 md:py-24">
@@ -60,6 +58,11 @@ const offerVersion = "managed-website-v1-one-plan-2026-08";
                 <p class="section-label text-accent">{t.eyebrow}</p>
                 <h2 class="mt-4 text-4xl leading-[0.98] md:text-5xl lg:text-6xl">{t.title}</h2>
                 <p class="mt-6 text-lg leading-relaxed text-steel">{t.subtitle}</p>
+                <p class="mt-8 text-sm font-bold uppercase tracking-widest text-navy/60">{t.directLabel}</p>
+                <div class="mt-3 grid max-w-md grid-cols-1 gap-3 sm:grid-cols-2">
+                    <a href={whatsappHref} class="button-primary min-h-16 px-4 py-3 leading-tight" data-umami-event="managed-website-whatsapp">{t.whatsapp}</a>
+                    <a href={smsHref} class="button-secondary min-h-16 px-4 py-3 leading-tight" data-umami-event="managed-website-sms">{t.sms}</a>
+                </div>
                 <p class="mt-6 text-sm font-medium leading-relaxed text-steel">{t.note}</p>
             </div>
 
@@ -75,12 +78,6 @@ const offerVersion = "managed-website-v1-one-plan-2026-08";
                     <div class="form-field"><label for="contact-name">{t.name}</label><input type="text" id="contact-name" name="name" autocomplete="name" placeholder={t.namePlaceholder} required /></div>
                     <div class="form-field"><label for="contact-email">{t.email}</label><input type="email" id="contact-email" name="email" autocomplete="email" placeholder={t.emailPlaceholder} required /></div>
                     <div class="form-field"><label for="contact-business">{t.business}</label><input type="text" id="contact-business" name="business_name" autocomplete="organization" placeholder={t.businessPlaceholder} required /></div>
-                    <div class="form-field"><label for="contact-location">{t.location}</label><input type="text" id="contact-location" name="city_province" autocomplete="address-level2" placeholder={t.locationPlaceholder} required /></div>
-                </div>
-
-                <div class="form-field mt-5">
-                    <label for="contact-website">{t.website} <span class="font-normal text-steel">({t.websiteOptional})</span></label>
-                    <input type="text" id="contact-website" name="website_url" inputmode="url" autocomplete="url" placeholder={t.websitePlaceholder} />
                 </div>
 
                 <div class="form-field mt-5"><label for="contact-need">{t.need}</label><textarea id="contact-need" name="business_need" rows="5" placeholder={t.needPlaceholder} required></textarea></div>

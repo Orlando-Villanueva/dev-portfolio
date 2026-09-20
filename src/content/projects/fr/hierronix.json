@@ -1,9 +1,9 @@
 {
     "title": "Hierronix Care",
     "tagline": "Demandes de soumission locales en français et en anglais.",
-    "problem": "Le client dépendait des appels téléphoniques et des textos pour les demandes de soumission de nettoyage, ce qui rendait la collecte des bons détails plus difficile avant la réponse.",
-    "solution": "Création d'un site web bilingue haute performance avec un message de service clair et un parcours 'Obtenir une soumission' qui capture les détails essentiels dès le départ.",
-    "result": "Réception des demandes de soumission 24/7 directement dans leur boîte courriel, avec des détails plus clairs avant le premier suivi.",
+    "problem": "Les appels et les textos compliquaient la collecte des bons détails.",
+    "solution": "Un site bilingue clair avec un formulaire de demande de soumission ciblé.",
+    "result": "Les demandes arrivent avec les détails nécessaires pour répondre plus vite.",
     "image": "@/assets/projects/hierronix.png",
     "tags": [
         "Astro",

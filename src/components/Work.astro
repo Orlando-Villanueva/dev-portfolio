@@ -6,9 +6,10 @@ const labels = {
     en: {
         eyebrow: "A real small-business website",
         title:
-            "Hierronix needed a professional home for its services and requests.",
+            "Hierronix needed a clear path from service questions to quote requests.",
         subtitle:
-            "The project shows the same practical foundation: a fast bilingual site, clear service information, and a contact path that works around the clock.",
+            "A fast site, clear service information, and a request path that works around the clock.",
+        benefits: ["Clear on phones", "Easy request path", "Built for real customers"],
         problem: "Business problem",
         solution: "What I built",
         result: "Practical outcome",
@@ -16,9 +17,10 @@ const labels = {
     fr: {
         eyebrow: "Un vrai site de petite entreprise",
         title:
-            "Hierronix avait besoin d’un espace professionnel pour ses services et ses demandes.",
+            "Hierronix avait besoin d’un parcours clair vers les demandes de soumission.",
         subtitle:
-            "Le projet présente la même base pratique : un site bilingue rapide, des services clairs et un parcours de contact accessible en tout temps.",
+            "Un site rapide, des services clairs et un parcours de demande accessible en tout temps.",
+        benefits: ["Clair sur téléphone", "Demande facile à envoyer", "Pensé pour de vrais clients"],
         problem: "Problème d'affaires",
         solution: "Ce que j'ai créé",
         result: "Résultat pratique",
@@ -41,17 +43,6 @@ projects.sort((a, b) => {
 const primaryProject = projects[0];
 const t = labels[lang];
 
-const tagStyles: Record<string, string> = {
-    Laravel: "bg-red-50 text-red-700 border-red-100",
-    Astro: "bg-purple-50 text-purple-700 border-purple-100",
-    "Tailwind CSS": "bg-sky-50 text-sky-700 border-sky-100",
-    htmx: "bg-indigo-50 text-indigo-700 border-indigo-100",
-    "Alpine.js": "bg-cyan-50 text-cyan-700 border-cyan-100",
-    PostgreSQL: "bg-blue-50 text-blue-800 border-blue-100",
-};
-
-const getTagStyle = (tag: string) =>
-    tagStyles[tag] || "bg-navy/5 text-navy border-steel/15";
 ---
 
 <section id="work" class="bg-white py-16 md:py-24">
@@ -82,11 +73,9 @@ const getTagStyle = (tag: string) =>
 
                     <div>
                         <div class="flex flex-wrap gap-2">
-                            {primaryProject.data.tags.map((tag) => (
-                                <span
-                                    class={`border px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider ${getTagStyle(tag)}`}
-                                >
-                                    {tag}
+                            {t.benefits.map((benefit) => (
+                                <span class="border border-steel/20 bg-paper px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-navy">
+                                    {benefit}
                                 </span>
                             ))}
                         </div>

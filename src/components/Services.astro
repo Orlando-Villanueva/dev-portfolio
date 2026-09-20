@@ -1,76 +1,100 @@
 ---
 const content = {
     en: {
-        audienceEyebrow: "Built for small service businesses",
-        audienceTitle: "A good website, without turning it into another project to manage.",
+        audienceEyebrow: "For small service businesses",
+        audienceTitle: "A good website, without another project to manage.",
         audienceIntro:
-            "This service is built for an established business that needs a clear, trustworthy place to send customers, but does not need a full agency or a custom application.",
+            "Get a clear place to send customers when Facebook or Google is not enough. I keep the site simple, mobile-friendly, and looked after.",
         startingPoints: [
-            { title: "No website yet", body: "Give customers a professional destination with your services, hours, location, and contact details." },
-            { title: "Google or Facebook only", body: "Add a website you control instead of relying entirely on a profile, social page, or directory listing." },
-            { title: "Outdated or DIY site", body: "Replace a slow, broken, or embarrassing site with something simple that works well on phones." },
+            { title: "No website yet", body: "Give customers your services, prices, hours, location, and contact details in one place." },
+            { title: "Facebook or Google only", body: "Add a website you control instead of relying on a social page or directory listing." },
+            { title: "An outdated site", body: "Replace a slow or broken site with something clear that works well on phones." },
         ],
-        offerEyebrow: "One managed website service",
-        offerTitle: "The essentials are built, launched, and looked after for you.",
+        offerEyebrow: "What you get",
+        offerTitle: "A clear, mobile-first site with the essentials included.",
         offerIntro:
-            "You provide the facts, services, logo, and photos. I organize them, prepare a visual direction, and begin the full website only after your written approval. I then remain responsible for the technical details after launch.",
-        includesLabel: "Your website includes",
+            "Your base site is written in one language of your choice — English or French, included. Both plans include launch in about two weeks, domain, hosting, content updates, and support by text or email.",
+        includesLabel: "Included with both plans",
         includes: [
-            "One mobile-first page with up to five core sections, in English, French, or both",
-            "Contact actions, domain connection, search fundamentals, accessibility, and performance",
-            "One website-specific visual direction, one focused adjustment, and one separate pre-launch revision",
-            "Hosting, SSL, monitoring, form checks, minor fixes, and up to 30 minutes of routine monthly changes",
+            "One-page mobile site in one language of your choice",
+            "Your presentation, services and prices, service area, and map",
+            "Call, SMS, and WhatsApp buttons, plus a contact form",
+            "Domain and hosting included, so you do not have to manage them",
+            "Content updates included, with support by text or email",
         ],
-        careNote: "Monthly change time does not roll over. Domain registration and other third-party services are paid separately.",
-        pricingEyebrow: "Simple managed website pricing",
-        pricingTitle: "Start for $299, then leave the ongoing care to me.",
-        pricingIntro: "The setup payment covers the initial direction and website build. Managed care begins at launch for $49 per month.",
-        plan: {
-            name: "Managed website",
-            price: "$299 to start",
-            recurring: "+ $49/month from launch",
-            detail: "You own the website at launch. Care continues month-to-month and may be cancelled at the end of any paid monthly period.",
-            points: ["Website ownership from launch", "Hosting, monitoring, and routine care", "First $49 care payment due at launch", "Transferable if monthly care ends"],
-            cta: "Tell me about your business",
-        },
-        ownership: "Your domain and business content remain yours. If care ends after all outstanding amounts are paid, I provide the agreed website files for transfer and my hosting and technical responsibility end.",
-        fitCta: "Tell me about your business",
+        pricingEyebrow: "Two plans, one simple commitment",
+        pricingTitle: "Choose the way customers contact you.",
+        pricingIntro:
+            "Both plans include launch in about two weeks. Start with a 12-month commitment, then continue month to month with no new commitment and 30 days’ notice.",
+        plans: [
+            {
+                name: "Showcase",
+                price: "$79/month",
+                detail: "A focused one-page site for presenting your business and getting calls, texts, WhatsApp messages, and form requests.",
+                points: ["One-page mobile site", "Services, prices, area, map, and contact buttons", "Content updates and text/email support"],
+                cta: "Ask about Showcase",
+            },
+            {
+                name: "Booking",
+                price: "$129/month",
+                detail: "Everything in Showcase, plus a booking or quote-request form with automatic confirmation and a Google reviews page.",
+                points: ["Everything in Showcase", "Booking or quote form with automatic confirmation", "Google reviews page"],
+                cta: "Ask about Booking",
+            },
+        ],
+        optionsLabel: "One-time add-ons",
+        options: ["Extra page — $150/page", "Simple logo — $150"],
+        commitment:
+            "Early exit: pay a $500 transfer fee and the site becomes yours, or deactivate the site. Your domain always remains yours.",
+        fitCta: "Text me today",
     },
     fr: {
-        audienceEyebrow: "Une solution pratique pour les petites entreprises de services",
+        audienceEyebrow: "Pour les petites entreprises de services",
         audienceTitle: "Un bon site Web, sans ajouter un autre projet à gérer.",
         audienceIntro:
-            "Ce service s’adresse aux entreprises établies qui ont besoin d’un endroit clair et fiable où diriger leurs clients, sans avoir besoin d’une agence complète ni d’une application sur mesure.",
+            "Ayez un endroit clair où envoyer vos clients quand Facebook ou Google ne suffit plus. Je garde le site simple, adapté aux téléphones et pris en charge.",
         startingPoints: [
-            { title: "Aucun site pour le moment", body: "Offrez aux clients une destination professionnelle avec vos services, heures, coordonnées et secteur." },
-            { title: "Seulement Google ou Facebook", body: "Ajoutez un site qui vous appartient au lieu de dépendre entièrement d’une fiche, d’un réseau social ou d’un annuaire." },
-            { title: "Site ancien ou fait maison", body: "Remplacez un site lent, brisé ou gênant par une solution simple qui fonctionne bien sur téléphone." },
+            { title: "Aucun site pour le moment", body: "Présentez vos services, tarifs, heures, secteur et coordonnées au même endroit." },
+            { title: "Seulement Facebook ou Google", body: "Ajoutez un site que vous contrôlez au lieu de dépendre d’une page sociale ou d’un annuaire." },
+            { title: "Un site désuet", body: "Remplacez un site lent ou brisé par une solution claire qui fonctionne bien sur téléphone." },
         ],
-        offerEyebrow: "Un seul service de site Web géré",
-        offerTitle: "L’essentiel est créé, lancé et entretenu pour vous.",
+        offerEyebrow: "Ce que vous obtenez",
+        offerTitle: "Un site mobile clair avec l’essentiel déjà compris.",
         offerIntro:
-            "Vous fournissez les renseignements, services, logo et photos. Je les organise, prépare une direction visuelle et commence le site complet seulement après votre approbation écrite. Je reste ensuite responsable des aspects techniques après le lancement.",
-        includesLabel: "Votre site comprend",
+            "Votre site de base est rédigé dans une langue au choix — français ou anglais, incluse. Les deux forfaits comprennent la mise en ligne en environ deux semaines, le domaine, l’hébergement, les mises à jour et le soutien par texto ou courriel.",
+        includesLabel: "Inclus dans les deux forfaits",
         includes: [
-            "Une page adaptée aux mobiles avec jusqu’à cinq sections, en français, en anglais ou dans les deux langues",
-            "Actions de contact, connexion du domaine, bases du référencement, accessibilité et performance",
-            "Une direction visuelle propre au site, un ajustement ciblé et une révision distincte avant le lancement",
-            "Hébergement, SSL, surveillance, vérification du formulaire, corrections mineures et jusqu’à 30 minutes de changements mensuels",
+            "Un site mobile d’une page dans une langue de votre choix",
+            "Votre présentation, vos services et tarifs, votre secteur et une carte",
+            "Boutons d’appel, de texto et WhatsApp, plus un formulaire de contact",
+            "Domaine et hébergement inclus, sans rien à gérer de votre côté",
+            "Mises à jour de contenu incluses, avec soutien par texto ou courriel",
         ],
-        careNote: "Le temps mensuel inutilisé n’est pas reporté. Le domaine et les autres services externes sont payés séparément.",
-        pricingEyebrow: "Une tarification simple pour un site Web géré",
-        pricingTitle: "Commencez pour 299 $, puis confiez-moi l’entretien continu.",
-        pricingIntro: "Le paiement initial couvre la direction et la création du site. L’entretien géré commence au lancement à 49 $ par mois.",
-        plan: {
-            name: "Site Web géré",
-            price: "299 $ pour commencer",
-            recurring: "+ 49 $/mois dès le lancement",
-            detail: "Le site vous appartient dès son lancement. L’entretien se poursuit au mois et peut être annulé à la fin de toute période mensuelle payée.",
-            points: ["Propriété du site dès le lancement", "Hébergement, surveillance et entretien courant", "Premier paiement de 49 $ au lancement", "Transfert possible à la fin de l’entretien"],
-            cta: "Parlez-moi de votre entreprise",
-        },
-        ownership: "Votre domaine et le contenu de votre entreprise restent à vous. Si l’entretien prend fin après le paiement des sommes dues, je fournis les fichiers convenus pour le transfert et ma responsabilité d’hébergement et de soutien technique prend fin.",
-        fitCta: "Parlez-moi de votre entreprise",
+        pricingEyebrow: "Deux forfaits, un engagement simple",
+        pricingTitle: "Choisissez comment vos clients communiquent avec vous.",
+        pricingIntro:
+            "Les deux forfaits comprennent la mise en ligne en environ deux semaines. Commencez avec un engagement de 12 mois, puis continuez au mois sans nouvel engagement et avec un préavis de 30 jours.",
+        plans: [
+            {
+                name: "Vitrine",
+                price: "79 $/mois",
+                detail: "Un site d’une page pour présenter votre entreprise et recevoir des appels, textos, messages WhatsApp et demandes par formulaire.",
+                points: ["Site mobile d’une page", "Services, tarifs, secteur, carte et boutons de contact", "Mises à jour et soutien par texto ou courriel"],
+                cta: "Parler du forfait Vitrine",
+            },
+            {
+                name: "Réservation",
+                price: "129 $/mois",
+                detail: "Tout ce qui est compris dans Vitrine, avec un formulaire de réservation ou de demande de soumission, une confirmation automatique et une page d’avis Google.",
+                points: ["Tout ce qui est compris dans Vitrine", "Formulaire de réservation ou de soumission avec confirmation automatique", "Page d’avis Google"],
+                cta: "Parler du forfait Réservation",
+            },
+        ],
+        optionsLabel: "Ajouts en paiement unique",
+        options: ["Page supplémentaire — 150 $/page", "Logo simple — 150 $"],
+        commitment:
+            "Départ anticipé : payez 500 $ pour transférer le site, qui devient alors votre propriété, ou désactivez-le. Votre nom de domaine reste toujours à vous.",
+        fitCta: "Textez-moi aujourd’hui",
     },
 } as const;
 
@@ -99,7 +123,7 @@ const t = content[lang];
 
 <section id="offer" class="bg-paper py-16 md:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="grid gap-10 lg:grid-cols-[minmax(0,0.88fr)_minmax(26rem,1.12fr)] lg:gap-16">
+        <div class="grid gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(26rem,1.2fr)] lg:gap-16">
             <div>
                 <p class="section-label text-accent">{t.offerEyebrow}</p>
                 <h2 class="mt-4 text-4xl leading-[0.98] md:text-5xl lg:text-6xl">{t.offerTitle}</h2>
@@ -108,14 +132,13 @@ const t = content[lang];
             </div>
             <div class="border-t-2 border-navy bg-white">
                 <div class="border-b border-steel/20 p-5 md:p-7"><p class="section-label text-steel">{t.includesLabel}</p></div>
-                <ul class="grid md:grid-cols-2">
+                <ul>
                     {t.includes.map((item) => (
-                        <li class="flex gap-3 border-b border-steel/20 px-5 py-4 leading-relaxed text-navy md:px-7 md:[&:nth-child(odd)]:border-r">
+                        <li class="flex gap-3 border-b border-steel/20 px-5 py-4 leading-relaxed text-navy md:px-7">
                             <span class="shrink-0 font-bold text-confirm" aria-hidden="true">✓</span><span>{item}</span>
                         </li>
                     ))}
                 </ul>
-                <p class="p-5 text-sm leading-relaxed text-steel md:p-7">{t.careNote}</p>
             </div>
         </div>
 
@@ -123,23 +146,36 @@ const t = content[lang];
             <p class="section-label text-accent">{t.pricingEyebrow}</p>
             <h2 class="mt-4 max-w-4xl text-4xl leading-[0.98] md:text-5xl">{t.pricingTitle}</h2>
             <p class="mt-5 max-w-3xl text-lg leading-relaxed text-steel">{t.pricingIntro}</p>
-            <div class="mt-8 max-w-4xl">
-                <article class="grid border-t-2 border-navy bg-white md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
-                    <div class="p-6 md:p-8">
-                        <p class="section-label text-accent">{t.plan.name}</p>
-                        <p class="mt-5 font-display text-5xl font-bold leading-none text-navy">{t.plan.price}</p>
-                        <p class="mt-3 text-xl font-bold text-navy">{t.plan.recurring}</p>
-                        <p class="mt-5 leading-relaxed text-steel">{t.plan.detail}</p>
-                    </div>
-                    <div class="border-t border-steel/20 p-6 md:border-l md:border-t-0 md:p-8">
-                        <ul class="space-y-3 text-sm text-steel">
-                            {t.plan.points.map((point) => <li class="flex gap-3"><span aria-hidden="true">✓</span><span>{point}</span></li>)}
+            <div class="mt-8 grid gap-6 lg:grid-cols-2">
+                {t.plans.map((plan) => (
+                    <article class="border-t-2 border-navy bg-white p-6 md:p-8">
+                        <p class="section-label text-accent">{plan.name}</p>
+                        <p class="mt-5 font-display text-5xl font-bold leading-none text-navy">{plan.price}</p>
+                        <p class="mt-5 leading-relaxed text-steel">{plan.detail}</p>
+                        <ul class="mt-6 space-y-3 text-sm text-steel">
+                            {plan.points.map((point) => <li class="flex gap-3"><span aria-hidden="true">✓</span><span>{point}</span></li>)}
                         </ul>
-                        <a href="#contact" class="button-primary mt-7" data-umami-event="managed-website-cta">{t.plan.cta}</a>
-                    </div>
-                </article>
+                        <a href="#contact" class="button-primary mt-7" data-umami-event="managed-website-cta">{plan.cta}</a>
+                    </article>
+                ))}
             </div>
-            <p class="mt-6 max-w-4xl text-sm leading-relaxed text-steel">{t.ownership}</p>
+            <div class="mt-8 grid overflow-hidden border border-steel/20 bg-white md:grid-cols-[0.8fr_1.2fr]">
+                <div class="p-6 md:p-8">
+                    <p class="section-label text-accent">{t.optionsLabel}</p>
+                    <ul class="mt-4 grid gap-3 text-steel sm:grid-cols-2 md:grid-cols-1">
+                        {t.options.map((option) => (
+                            <li class="flex items-start gap-3">
+                                <span class="mt-0.5 font-bold text-confirm" aria-hidden="true">✓</span>
+                                <span>{option}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+                <div class="border-t border-steel/20 p-6 md:border-l md:border-t-0 md:p-8">
+                    <p class="section-label text-steel">{lang === "en" ? "If you leave early" : "En cas de départ anticipé"}</p>
+                    <p class="mt-4 leading-relaxed text-steel">{t.commitment}</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>

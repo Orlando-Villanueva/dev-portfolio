@@ -1,0 +1,48 @@
+---
+import { testimonials } from "@/data/temoignages";
+
+const labels = {
+    en: {
+        eyebrow: "Client words",
+        title: "What changed for local business owners.",
+    },
+    fr: {
+        eyebrow: "Paroles de clients",
+        title: "Ce qui a changé pour des entrepreneurs locaux.",
+    },
+} as const;
+
+interface Props { lang: keyof typeof labels; }
+const { lang = "en" } = Astro.props;
+const t = labels[lang];
+const localizedTestimonials = testimonials.map((item) => ({
+    ...item,
+    quote: item.quote[lang],
+    city: item.city[lang],
+}));
+---
+
+{
+    localizedTestimonials.length > 0 && (
+        <section id="testimonials" class="bg-white py-16 md:py-20">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl">
+                    <p class="section-label text-accent">{t.eyebrow}</p>
+                    <h2 class="mt-4 text-4xl leading-[0.98] md:text-5xl">{t.title}</h2>
+                </div>
+                <div class="mt-10 grid gap-5 md:grid-cols-3">
+                    {localizedTestimonials.map((item) => (
+                        <figure class="border-t-2 border-navy bg-paper p-6">
+                            <blockquote class="leading-relaxed text-navy">“{item.quote}”</blockquote>
+                            <figcaption class="mt-6 border-t border-steel/20 pt-4 text-sm">
+                                <strong class="block text-navy">{item.name}</strong>
+                                <span class="block text-steel">{item.business}</span>
+                                <span class="block text-steel">{item.city}</span>
+                            </figcaption>
+                        </figure>
+                    ))}
+                </div>
+            </div>
+        </section>
+    )
+}

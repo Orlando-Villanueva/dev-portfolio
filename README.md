@@ -1,6 +1,6 @@
 # Orlando Portfolio | Managed Websites
 
-A bilingual managed-website service and portfolio built with **Astro**, **Tailwind CSS 4**, and **Alpine.js**.
+A managed-website service and portfolio with English and French routes, built with **Astro**, **Tailwind CSS 4**, and **Alpine.js**.
 
 ## 🛠️ Tech Stack
 
@@ -8,7 +8,7 @@ A bilingual managed-website service and portfolio built with **Astro**, **Tailwi
 - **Styling:** [Tailwind CSS 4](https://tailwindcss.com/)
 - **Interactivity:** [Alpine.js](https://alpinejs.dev/)
 - **Deployment:** [Netlify](https://www.netlify.com/) (with Netlify Forms integration)
-- **Internationalization:** Astro i18n routing (`/en`, `/fr`)
+- **Internationalization:** Astro i18n routing (`/`, `/fr`)
 
 ## 📂 Project Structure
 
