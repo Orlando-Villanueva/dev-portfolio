@@ -69,8 +69,8 @@ const schema = {
 	"@context": "https://schema.org",
 	"@type": ["ProfessionalService", "LocalBusiness"],
 	name: "Orlando Villanueva",
-	url: new URL("/", siteUrl).toString(),
-	image: new URL(image, siteUrl).toString(),
+	url: canonicalUrl,
+	image: new URL(socialImage, siteUrl).toString(),
 	description: schemaCopy.description,
 	address: {
 		"@type": "PostalAddress",
