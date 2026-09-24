@@ -1,0 +1,50 @@
+{
+    "slug": "exemple",
+    "locale": "fr",
+    "name": "Atelier Éclat",
+    "tagline": "Des soins simples pour prendre une pause et repartir du bon pied.",
+    "phone": "+15145550100",
+    "area": "Montréal et les environs",
+    "colors": {
+        "primary": "#243B42",
+        "accent": "#C36B4C"
+    },
+    "services": [
+        { "name": "Soin express", "price": "45 $" },
+        { "name": "Soin signature", "price": "85 $" },
+        { "name": "Forfait détente", "price": "120 $" }
+    ],
+    "copy": {
+        "pageSuffix": "Site démo",
+        "metaDescription": "Démo fictive d’un commerce. Aucune réservation réelle n’est créée.",
+        "banner": "Site démo · Présentation non officielle · Aucune réservation réelle",
+        "headerCall": "Appeler",
+        "heroEyebrow": "À votre service",
+        "callAction": "Appeler",
+        "whatsappAction": "Écrire sur WhatsApp",
+        "servicesEyebrow": "Ce que nous proposons",
+        "servicesTitle": "Nos services",
+        "requestEyebrow": "Faisons connaissance",
+        "requestTitle": "Demander un rendez-vous",
+        "requestIntro": "Indiquez ce qui vous convient. Cette démo ne crée aucune réservation : dans un vrai commerce, votre demande serait confirmée manuellement.",
+        "nameLabel": "Votre nom",
+        "phoneLabel": "Téléphone",
+        "serviceLabel": "Service souhaité",
+        "servicePlaceholder": "Choisir un service",
+        "dateLabel": "Date souhaitée",
+        "messageLabel": "Message (facultatif)",
+        "messagePlaceholder": "Un détail utile pour préparer votre demande",
+        "honeypotLabel": "Ne pas remplir",
+        "submitLabel": "Envoyer ma demande",
+        "formNote": "Ceci est une démonstration. Aucune réservation ne sera prise et personne ne vous contactera pour un rendez-vous.",
+        "formSubject": "Demande de démo",
+        "footerDemo": "Site démo non officiel",
+        "footerCredit": "Présentation créée par",
+        "creatorName": "Orlando Villanueva",
+        "confirmationEyebrow": "Demande envoyée",
+        "confirmationTitle": "Merci pour votre message.",
+        "confirmationFirstParagraph": "Votre demande a été reçue dans le cadre de cette démonstration. Aucune réservation n’a été créée et personne ne vous contactera pour un rendez-vous.",
+        "confirmationSecondParagraph": "Sur un vrai site, le commerçant recevrait la demande par courriel et vous recontacterait manuellement pour confirmer la disponibilité.",
+        "confirmationReturnAction": "Retourner à la démo"
+    }
+}

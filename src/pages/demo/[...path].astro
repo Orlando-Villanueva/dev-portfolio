@@ -1,0 +1,117 @@
+---
+import { getCollection } from 'astro:content';
+import '@/styles/global.css';
+
+export async function getStaticPaths() {
+    const demos = await getCollection('demos');
+
+    return demos.flatMap((demo) => {
+        const basePath = demo.data.locale === 'fr'
+            ? demo.data.slug
+            : `${demo.data.locale}/${demo.data.slug}`;
+
+        return [
+            { params: { path: basePath }, props: { demo, confirmation: false } },
+            { params: { path: `${basePath}/merci` }, props: { demo, confirmation: true } },
+        ];
+    });
+}
+
+const { demo, confirmation } = Astro.props;
+const { slug, locale, name, tagline, phone, area, colors, services, copy } = demo.data;
+const demoPath = locale === 'fr' ? `/demo/${slug}/` : `/demo/${locale}/${slug}/`;
+const phoneLabel = phone.replace(/^\+1(\d{3})(\d{3})(\d{4})$/, '($1) $2-$3');
+const whatsappHref = `https://wa.me/${phone.replace(/\D/g, '')}`;
+const shell = 'mx-auto w-full max-w-[1140px] px-5';
+const eyebrow = 'text-xs font-extrabold uppercase tracking-[0.15em] text-[var(--demo-accent)]';
+const button = 'inline-flex min-h-14 items-center justify-center rounded-sm border px-5 py-3 text-center text-sm font-bold no-underline transition-colors';
+const input = 'min-h-12 w-full rounded-sm border border-[#a9b4b0] bg-white p-3 text-base text-[var(--demo-primary)] focus-visible:outline-[var(--demo-accent)]';
+---
+
+<!doctype html>
+<html lang={locale} style={`--demo-primary: ${colors.primary}; --demo-accent: ${colors.accent};`}>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="noindex, nofollow" />
+        <meta name="description" content={copy.metaDescription} />
+        <title>{name} · {copy.pageSuffix}</title>
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    </head>
+    <body class="min-h-screen bg-[#f9f7f3] font-sans text-[var(--demo-primary)] antialiased">
+        <div class="border-b border-[#e9c7b8] bg-[#fff0e9] px-4 py-2 text-center text-xs font-bold tracking-wide text-[#743721]" role="note">{copy.banner}</div>
+        {confirmation ? (
+            <main class="mx-auto mt-[14vh] mb-16 w-full max-w-[44.5rem] px-5">
+                <p class:list={[eyebrow, 'mb-5']}>{copy.confirmationEyebrow}</p>
+                <h1 class="my-8 break-words font-serif text-[clamp(3rem,11vw,5.5rem)] leading-none font-medium tracking-[-0.05em] text-[var(--demo-primary)]">{copy.confirmationTitle}</h1>
+                <p class="mb-5 text-lg leading-relaxed">{copy.confirmationFirstParagraph}</p>
+                <p class="text-lg leading-relaxed">{copy.confirmationSecondParagraph}</p>
+                <a class="mt-6 inline-block bg-[var(--demo-primary)] px-5 py-4 font-bold text-white no-underline hover:bg-[var(--demo-accent)] focus-visible:outline-[var(--demo-accent)]" href={demoPath}>{copy.confirmationReturnAction} · {name}</a>
+            </main>
+        ) : (
+            <>
+                <header class:list={[shell, 'flex items-center justify-between gap-4 py-6']}>
+                    <a class="font-serif text-[1.35rem] font-bold no-underline" href={demoPath} aria-label={name}>{name}</a>
+                    <a class="shrink-0 text-sm font-bold underline underline-offset-4" href={`tel:${phone}`}>{copy.headerCall} <span aria-hidden="true">↗</span></a>
+                </header>
+                <main>
+                    <section class:list={[shell, 'grid gap-10 py-16 pb-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16 lg:py-20 lg:pb-28']} aria-labelledby="hero-title">
+                        <div>
+                            <p class:list={[eyebrow, 'mb-5']}>{copy.heroEyebrow}<span aria-hidden="true"> · </span>{area}</p>
+                            <h1 id="hero-title" class="m-0 break-words font-serif text-[clamp(4rem,14vw,7.5rem)] leading-none font-medium tracking-[-0.045em] text-[var(--demo-primary)]">{name}</h1>
+                            <p class="mt-6 max-w-lg break-words text-[clamp(1.15rem,3vw,1.55rem)] leading-normal text-[#4e5c5e]">{tagline}</p>
+                            <div class="mt-8 grid gap-3 sm:flex sm:flex-wrap">
+                                <a class:list={[button, 'border-[var(--demo-primary)] bg-[var(--demo-primary)] text-white hover:border-[var(--demo-accent)] hover:bg-[var(--demo-accent)]']} href={`tel:${phone}`}>{copy.callAction} {phoneLabel}</a>
+                                <a class:list={[button, 'border-[var(--demo-primary)] bg-transparent text-[var(--demo-primary)] hover:bg-[#eae9e4]']} href={whatsappHref} target="_blank" rel="noopener noreferrer">{copy.whatsappAction}</a>
+                            </div>
+                        </div>
+                        <div class="relative flex min-h-60 items-end justify-end overflow-hidden bg-gradient-to-br from-[#e6e5d9] to-[#bec6b6] p-6 font-serif text-[clamp(2rem,8vw,4rem)] leading-none italic text-[var(--demo-primary)] lg:min-h-[30rem]" aria-hidden="true"><span class="absolute top-[11%] left-[15%] size-28 rounded-full bg-[#e7cfb8] lg:size-44"></span><span class="absolute right-[9%] bottom-[7%] size-32 rounded-full bg-[#d59270] lg:size-48"></span><span class="relative">{name}</span></div>
+                    </section>
+                    <section class:list={[shell, 'pt-4 pb-24']} aria-labelledby="services-title">
+                        <div class="mb-8">
+                            <p class:list={[eyebrow, 'mb-5']}>{copy.servicesEyebrow}</p>
+                            <h2 id="services-title" class="m-0 font-serif text-[clamp(2.6rem,8vw,4.5rem)] leading-tight font-medium tracking-[-0.045em] text-[var(--demo-primary)]">{copy.servicesTitle}</h2>
+                        </div>
+                        <div>
+                            {services.map((service, index) => (
+                                <div class="grid grid-cols-[2rem_minmax(0,1fr)_auto] items-baseline gap-3 border-t border-[#c8ceca] py-6 last:border-b">
+                                    <span class="text-xs font-extrabold text-[var(--demo-accent)]">{String(index + 1).padStart(2, '0')}</span>
+                                    <h3 class="m-0 break-words text-[clamp(1rem,4vw,1.3rem)] font-semibold text-[var(--demo-primary)]">{service.name}</h3>
+                                    <span class="whitespace-nowrap text-sm font-extrabold">{service.price}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+                    <section class="bg-[#e9ece7] py-20" id="request" aria-labelledby="request-title">
+                        <div class:list={[shell, 'lg:grid lg:grid-cols-[0.8fr_1.2fr] lg:gap-20']}>
+                            <div>
+                                <p class:list={[eyebrow, 'mb-5']}>{copy.requestEyebrow}</p>
+                                <h2 id="request-title" class="m-0 font-serif text-[clamp(2.6rem,8vw,4.5rem)] leading-tight font-medium tracking-[-0.045em] text-[var(--demo-primary)]">{copy.requestTitle}</h2>
+                                <p class="mt-6 max-w-md leading-relaxed text-[#4e5c5e]">{copy.requestIntro}</p>
+                            </div>
+                            <form class="mt-8 bg-white p-6 shadow-[0_12px_40px_#243b4214] sm:p-8 lg:mt-0" name="demo-request" method="POST" action={`${demoPath}merci/`} data-netlify="true" data-netlify-honeypot="bot-field">
+                                <input type="hidden" name="form-name" value="demo-request" />
+                                <input type="hidden" name="subject" value={`${copy.formSubject} : ${name} (${slug})`} />
+                                <input type="hidden" name="demo_slug" value={slug} />
+                                <input type="hidden" name="demo_name" value={name} />
+                                <div class="sr-only" aria-hidden="true"><label>{copy.honeypotLabel} <input name="bot-field" tabindex="-1" autocomplete="off" /></label></div>
+                                <div class="sm:grid sm:grid-cols-2 sm:gap-4">
+                                    <div class="mb-5"><label class="mb-2 block text-sm font-bold" for="request-name">{copy.nameLabel}</label><input class={input} id="request-name" name="name" autocomplete="name" required /></div>
+                                    <div class="mb-5"><label class="mb-2 block text-sm font-bold" for="request-phone">{copy.phoneLabel}</label><input class={input} id="request-phone" name="phone" type="tel" autocomplete="tel" required /></div>
+                                </div>
+                                <div class="sm:grid sm:grid-cols-2 sm:gap-4">
+                                    <div class="mb-5"><label class="mb-2 block text-sm font-bold" for="request-service">{copy.serviceLabel}</label><select class={input} id="request-service" name="service" required><option value="">{copy.servicePlaceholder}</option>{services.map((service) => <option value={service.name}>{service.name} · {service.price}</option>)}</select></div>
+                                    <div class="mb-5"><label class="mb-2 block text-sm font-bold" for="request-date">{copy.dateLabel}</label><input class={input} id="request-date" name="desired_date" type="date" required /></div>
+                                </div>
+                                <div class="mb-5"><label class="mb-2 block text-sm font-bold" for="request-message">{copy.messageLabel}</label><textarea class:list={[input, 'resize-y']} id="request-message" name="message" rows="4" placeholder={copy.messagePlaceholder}></textarea></div>
+                                <button class:list={[button, 'w-full cursor-pointer border-[var(--demo-primary)] bg-[var(--demo-primary)] text-white hover:border-[var(--demo-accent)] hover:bg-[var(--demo-accent)]']} type="submit">{copy.submitLabel}</button>
+                                <p class="mt-4 text-xs leading-normal text-[#52605d]">{copy.formNote}</p>
+                            </form>
+                        </div>
+                    </section>
+                </main>
+                <footer class:list={[shell, 'flex flex-wrap justify-between gap-4 py-8 text-xs text-[#56615f]']}><span>{name} · {copy.footerDemo}</span><span>{copy.footerCredit} <a class="font-bold underline underline-offset-4" href="https://orlandovillanueva.com/fr/">{copy.creatorName}</a></span></footer>
+            </>
+        )}
+    </body>
+</html>
