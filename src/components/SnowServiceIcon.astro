@@ -1,0 +1,25 @@
+---
+const { kind } = Astro.props as { kind: 'driveway' | 'walkway' | 'commercial' };
+---
+<svg class="size-12 text-[#2878a0]" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    {kind === 'driveway' && <>
+        <path d="M5 22 24 8l19 14" />
+        <path d="M10 19v16h28V19" />
+        <path d="M18 35V23h12v12" />
+        <path d="M14 40h20M18 44h12" />
+        <path d="M5 9v7m-3-4h6M40 6v7m-3-4h6" />
+    </>}
+    {kind === 'walkway' && <>
+        <path d="M9 6v36M39 6v36" />
+        <path d="M16 11h16M16 23h16M16 35h16" />
+        <path d="m22 14 2 2 2-2m-4 12 2 2 2-2" />
+        <path d="M5 15h8M35 31h8" />
+    </>}
+    {kind === 'commercial' && <>
+        <path d="M7 18h34l-3-10H10L7 18Z" />
+        <path d="M9 18v23h30V18" />
+        <path d="M16 41V27h16v14" />
+        <path d="M13 18v5m8-5v5m6-5v5m8-5v5" />
+        <path d="M4 41h40" />
+    </>}
+</svg>
