@@ -20,7 +20,7 @@ export const snowDemos: SnowProspect[] = [
         slug: 'tuff-dvs',
         name: 'Tuff - Déneigement D.V.S',
         city: 'Les Cèdres',
-        locationPhrase: 'aux Cèdres',
+        locationPhrase: 'à Les Cèdres',
         phone: '+15148650263',
         sectors: ['Les Cèdres'],
     },
