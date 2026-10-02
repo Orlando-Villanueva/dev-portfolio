@@ -54,3 +54,13 @@ Créer un deuxième fichier pour le même prospect, par exemple `src/content/dem
 Le formulaire utilise Netlify Forms, le même canal que le formulaire principal, sous le nom `demo-request`. Les champs `demo_slug` et `demo_name` permettent d'identifier la démo dans la soumission. La page de confirmation confirme que la demande de test a été reçue, mais qu'aucune réservation n'est créée ni qu'un suivi aura lieu. Aucun courriel automatique n'est envoyé au visiteur.
 
 Après le premier déploiement de ce formulaire, vérifier dans Netlify que la détection des formulaires est activée et qu'une notification **Form submission** envoie `demo-request` à la même adresse que le formulaire principal. Une notification configurée pour tous les formulaires peut déjà la couvrir; vérifier qu'elle l'inclut. Envoyer une demande de test avec des coordonnées fictives, puis confirmer sa présence dans Netlify et la réception du courriel avant de partager la démo. La notification arrive à Orlando; le commerçant présenté ne la reçoit pas directement.
+
+## Démos déneigement — lot 3
+
+Les pages `/demo/ottinger/`, `/demo/sbc/` et `/demo/grp/` réutilisent `SnowDemo.astro` et les assets hiver locaux. Leur configuration se trouve dans `src/data/snowDemos.ts`, séparément du gabarit; chacune possède aussi une confirmation à `/merci/`.
+
+Le champ optionnel `colors` pilote le thème complet via les variables CSS du gabarit : `primary`, `accent`, `onAccent` pour les liens, surtitres et boutons; `overlay` pour la teinte sombre du hero; `surface`, `softSurface`, `text`, `muted` pour les fonds et textes; `cta`, `onCta`, `ctaKicker` pour le bandeau de soumission. Le pied de page reprend les couleurs de texte et de liens du thème. Les couleurs doivent être des hexadécimales lisibles ensemble. Sans `colors`, le thème bleu existant reste inchangé. Les trois prospects du lot 3 utilisent désormais ce thème bleu par défaut, sans couleurs personnalisées. La photo, le logo générique et la structure hiver restent identiques.
+
+Si aucune ville n’est connue, omettre `city`, laisser `locationPhrase` vide et `sectors` vide. Le gabarit utilise alors des textes neutres et invite à confirmer les secteurs par téléphone. GRP n’affiche aucune ville.
+
+Ces pages restent non indexées, exclues du sitemap et sans lien depuis le portfolio. Leur formulaire ne transmet ni n’enregistre les coordonnées. Le lot 3 ne doit pas être déployé en production avant approbation explicite.

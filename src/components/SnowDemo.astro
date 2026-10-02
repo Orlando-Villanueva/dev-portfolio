@@ -4,7 +4,14 @@ import SnowServiceIcon from '@/components/SnowServiceIcon.astro';
 import '@/styles/global.css';
 
 const { prospect, confirmation } = Astro.props as { prospect: SnowProspect; confirmation: boolean };
-const { slug, name, city, locationPhrase, phone, sectors } = prospect;
+const { slug, name, city, locationPhrase, phone, sectors, colors } = prospect;
+const locationSuffix = locationPhrase ? `, ${locationPhrase}` : '';
+const brandStyle = colors ? `
+    --snow-primary: ${colors.primary}; --snow-accent: ${colors.accent}; --snow-on-accent: ${colors.onAccent};
+    --snow-overlay: ${colors.overlay}; --snow-surface: ${colors.surface}; --snow-soft-surface: ${colors.softSurface};
+    --snow-text: ${colors.text}; --snow-muted: ${colors.muted};
+    --snow-cta: ${colors.cta}; --snow-on-cta: ${colors.onCta}; --snow-cta-kicker: ${colors.ctaKicker};
+` : undefined;
 const path = `/demo/${slug}/`;
 const phoneLabel = phone.replace(/^\+1(\d{3})(\d{3})(\d{4})$/, '($1) $2-$3');
 const services = [
@@ -19,75 +26,75 @@ const services = [
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="noindex, nofollow" />
-        <meta name="description" content={`Démo non officielle d’un site de déneigement pour ${name}, ${locationPhrase}. Aucune demande réelle n’est transmise.`} />
+        <meta name="description" content={`Démo non officielle d’un site de déneigement pour ${name}${locationSuffix}. Aucune demande réelle n’est transmise.`} />
         <title>{name} · Site démo</title>
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     </head>
-    <body class="snow-demo m-0 bg-[#f4f8fb] font-sans text-[#102c43] antialiased">
-        <div class="bg-[#d8eef8] px-4 py-2 text-center text-xs font-bold tracking-wide text-[#123b55]" role="note">Site démo · Présentation non officielle · Aucune demande réelle</div>
+    <body data-branded={colors ? "true" : undefined} style={brandStyle} class="snow-demo m-0 bg-[#f4f8fb] font-sans text-[#102c43] antialiased">
+        <div class="snow-notice bg-[#d8eef8] px-4 py-2 text-center text-xs font-bold tracking-wide text-[#123b55]" role="note">Site démo · Présentation non officielle · Aucune demande réelle</div>
         <header class="mx-auto flex max-w-[1180px] items-center justify-between gap-4 px-5 py-5">
-            <a class="flex min-w-0 items-center gap-3 font-bold text-[#123b55] no-underline" href={path} aria-label={name}>
+            <a class="snow-brand flex min-w-0 items-center gap-3 font-bold text-[#123b55] no-underline" href={path} aria-label={name}>
                 <img class="size-10 rounded-full object-cover" src="/demo/snow/logo-flocon.png" alt="" width="40" height="40" />
                 <span class="text-base leading-tight sm:text-xl">{name}</span>
             </a>
-            <a class="shrink-0 text-sm font-bold text-[#123b55] underline underline-offset-4" href={`tel:${phone}`}>Appeler <span aria-hidden="true">↗</span></a>
+            <a class="snow-call-link shrink-0 text-sm font-bold text-[#123b55] underline underline-offset-4" href={`tel:${phone}`}>Appeler <span aria-hidden="true">↗</span></a>
         </header>
         {confirmation ? (
             <main class="mx-auto min-h-[55vh] max-w-[760px] px-5 py-24">
-                <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-[#357da4]">Demande de démo</p>
+                <p class="snow-kicker text-xs font-extrabold uppercase tracking-[0.18em] text-[#357da4]">Demande de démo</p>
                 <h1 class="mt-4 font-serif text-[clamp(3rem,9vw,5rem)] leading-tight">Merci pour votre message.</h1>
                 <p class="mt-6 text-lg leading-relaxed">Cette démonstration ne transmet aucune demande réelle à {name}. Personne ne vous contactera à la suite de ce formulaire.</p>
-                <a class="mt-8 inline-block rounded bg-[#123b55] px-6 py-4 font-bold text-white no-underline" href={path}>Retourner à la démo</a>
+                <a class="snow-primary-button mt-8 inline-block rounded bg-[#123b55] px-6 py-4 font-bold text-white no-underline" href={path}>Retourner à la démo</a>
             </main>
         ) : (
             <main>
-                <section class="relative isolate min-h-[610px] overflow-hidden bg-[#123b55] text-white lg:min-h-[680px]" aria-labelledby="hero-title">
+                <section class="snow-hero relative isolate min-h-[610px] overflow-hidden bg-[#123b55] text-white lg:min-h-[680px]" aria-labelledby="hero-title">
                     <img class="absolute inset-0 -z-20 size-full object-cover object-center" src="/demo/snow/hero-hiver.jpg" alt="Entrée de cour déneigée au petit matin en hiver" width="2352" height="1008" fetchpriority="high" />
-                    <div class="absolute inset-0 -z-10 bg-gradient-to-r from-[#092539f2] via-[#092539bd] to-[#09253930]"></div>
+                    <div class="snow-overlay absolute inset-0 -z-10 bg-gradient-to-r from-[#092539f2] via-[#092539bd] to-[#09253930]"></div>
                     <div class="mx-auto flex min-h-[610px] max-w-[1180px] flex-col justify-center px-5 py-20 lg:min-h-[680px]">
-                        <p class="mb-5 text-sm font-bold uppercase tracking-[0.2em] text-[#bde9fb]">Déneigement {locationPhrase}</p>
+                        <p class="snow-kicker-on-dark mb-5 text-sm font-bold uppercase tracking-[0.2em] text-[#bde9fb]">Déneigement {locationPhrase}</p>
                         <h1 id="hero-title" class="m-0 max-w-[820px] font-serif text-[clamp(3.5rem,9vw,7.6rem)] leading-[0.98] tracking-[-0.045em] text-white">L’hiver arrive.<br />Votre entrée reste dégagée.</h1>
-                        <p class="mt-7 max-w-xl text-lg leading-relaxed text-[#edf7fd]">{name} · Un service de déneigement près de chez vous, {locationPhrase}.</p>
+                        <p class="snow-hero-copy mt-7 max-w-xl text-lg leading-relaxed text-[#edf7fd]">{name} · Un service de déneigement {city ? `près de chez vous${locationSuffix}` : 'pour votre propriété'}.</p>
                         <div class="mt-10 flex flex-wrap gap-3">
-                            <a class="inline-flex min-h-14 items-center rounded bg-[#d1effb] px-6 py-3 font-bold text-[#123b55] no-underline hover:bg-white" href={`tel:${phone}`}>Appeler {phoneLabel}</a>
-                            <a class="inline-flex min-h-14 items-center rounded border border-white px-6 py-3 font-bold text-white no-underline hover:bg-white/15" href="#soumission">Demande de soumission</a>
+                            <a class="snow-call-button inline-flex min-h-14 items-center rounded bg-[#d1effb] px-6 py-3 font-bold text-[#123b55] no-underline hover:bg-white" href={`tel:${phone}`}>Appeler {phoneLabel}</a>
+                            <a class="snow-secondary-button inline-flex min-h-14 items-center rounded border border-white px-6 py-3 font-bold text-white no-underline hover:bg-white/15" href="#soumission">Demande de soumission</a>
                         </div>
                     </div>
                 </section>
                 <section class="mx-auto max-w-[1180px] px-5 py-20" aria-labelledby="services-title">
-                    <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-[#357da4]">Pour traverser l’hiver</p>
+                    <p class="snow-kicker text-xs font-extrabold uppercase tracking-[0.18em] text-[#357da4]">Pour traverser l’hiver</p>
                     <h2 id="services-title" class="mt-3 font-serif text-[clamp(2.5rem,6vw,4.5rem)] leading-tight">Des accès dégagés, saison après saison.</h2>
                     <div class="mt-10 grid gap-4 md:grid-cols-3">
-                        {services.map((service, index) => <article class="rounded border border-[#c9dce7] bg-white p-7"><div class="flex items-start justify-between"><SnowServiceIcon kind={service.icon} /><span class="text-xs font-extrabold text-[#357da4]">0{index + 1}</span></div><h3 class="mt-5 text-xl font-bold">{service.title}</h3><p class="mt-3 leading-relaxed text-[#4b6170]">{service.description}</p></article>)}
+                        {services.map((service, index) => <article class="snow-service-card rounded border border-[#c9dce7] bg-white p-7"><div class="flex items-start justify-between"><SnowServiceIcon kind={service.icon} /><span class="snow-kicker text-xs font-extrabold text-[#357da4]">0{index + 1}</span></div><h3 class="mt-5 text-xl font-bold">{service.title}</h3><p class="snow-muted mt-3 leading-relaxed text-[#4b6170]">{service.description}</p></article>)}
                     </div>
                 </section>
-                <section class="bg-[#e5f1f7] py-20" aria-labelledby="confidence-title">
+                <section class="snow-soft-section bg-[#e5f1f7] py-20" aria-labelledby="confidence-title">
                     <div class="mx-auto grid max-w-[1180px] gap-10 px-5 lg:grid-cols-2 lg:gap-24">
-                        <div><p class="text-xs font-extrabold uppercase tracking-[0.18em] text-[#357da4]">Un service local</p><h2 id="confidence-title" class="mt-3 font-serif text-[clamp(2.5rem,6vw,4.5rem)] leading-tight">Votre propriété mérite de l’attention.</h2></div>
-                        <div class="self-center text-lg leading-relaxed text-[#355269]"><p>Un bon déneigement, c’est un accès praticable et un travail fait avec soin autour de votre entrée et de votre pavé.</p><p class="mt-5">Parlons de votre propriété et de vos besoins avant la saison.</p></div>
+                        <div><p class="snow-kicker text-xs font-extrabold uppercase tracking-[0.18em] text-[#357da4]">{city ? 'Un service local' : 'Un service attentionné'}</p><h2 id="confidence-title" class="mt-3 font-serif text-[clamp(2.5rem,6vw,4.5rem)] leading-tight">Votre propriété mérite de l’attention.</h2></div>
+                        <div class="snow-muted self-center text-lg leading-relaxed text-[#355269]"><p>Un bon déneigement, c’est un accès praticable et un travail fait avec soin autour de votre entrée et de votre pavé.</p><p class="mt-5">Parlons de votre propriété et de vos besoins avant la saison.</p></div>
                     </div>
                 </section>
                 <section class="mx-auto max-w-[1180px] px-5 py-20" aria-labelledby="sectors-title">
-                    <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-[#357da4]">Près de chez vous</p>
+                    <p class="snow-kicker text-xs font-extrabold uppercase tracking-[0.18em] text-[#357da4]">{city ? 'Près de chez vous' : 'Pour votre propriété'}</p>
                     <h2 id="sectors-title" class="mt-3 font-serif text-[clamp(2.5rem,6vw,4.5rem)] leading-tight">Secteurs desservis</h2>
-                    <p class="mt-5 max-w-2xl text-lg text-[#355269]">{sectors.join(' · ')}</p>
-                    <p class="mt-3 text-sm text-[#526b7a]">Communiquez avec nous pour confirmer la disponibilité à votre adresse.</p>
+                    <p class="snow-muted mt-5 max-w-2xl text-lg text-[#355269]">{sectors.length ? sectors.join(' · ') : 'Contactez-nous pour connaître les secteurs desservis.'}</p>
+                    <p class="snow-muted mt-3 text-sm text-[#526b7a]">Communiquez avec nous pour confirmer la disponibilité à votre adresse.</p>
                 </section>
                 <section id="soumission" class="bg-[#123b55] py-20 text-white" aria-labelledby="request-title">
                     <div class="mx-auto grid max-w-[1180px] gap-10 px-5 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
-                        <div><p class="text-xs font-extrabold uppercase tracking-[0.18em] text-[#bde9fb]">Avant la prochaine neige</p><h2 id="request-title" class="mt-3 font-serif text-[clamp(2.5rem,6vw,4.5rem)] leading-tight text-white">Demande de soumission</h2><p class="mt-6 leading-relaxed text-[#d8e9f2]">Décrivez votre propriété. Ce formulaire illustre une demande de soumission et ne transmet aucune donnée réelle à l’entreprise.</p></div>
-                        <form class="rounded bg-white p-6 text-[#123b55] sm:p-8" id="snow-request-form" data-confirmation-url={`${path}merci/`}>
+                        <div><p class="snow-kicker-on-dark text-xs font-extrabold uppercase tracking-[0.18em] text-[#bde9fb]">Avant la prochaine neige</p><h2 id="request-title" class="snow-cta-title mt-3 font-serif text-[clamp(2.5rem,6vw,4.5rem)] leading-tight text-white">Demande de soumission</h2><p class="snow-cta-copy mt-6 leading-relaxed text-[#d8e9f2]">Décrivez votre propriété. Ce formulaire illustre une demande de soumission et ne transmet aucune donnée réelle à l’entreprise.</p></div>
+                        <form class="snow-form rounded bg-white p-6 text-[#123b55] sm:p-8" id="snow-request-form" data-confirmation-url={`${path}merci/`}>
                             <div class="grid gap-5 sm:grid-cols-2"><div><label class="mb-2 block font-bold" for="snow-name">Votre nom</label><input class="snow-input" id="snow-name" name="name" autocomplete="name" required /></div><div><label class="mb-2 block font-bold" for="snow-phone">Téléphone</label><input class="snow-input" id="snow-phone" name="phone" type="tel" autocomplete="tel" required /></div></div>
                             <div class="mt-5"><label class="mb-2 block font-bold" for="snow-address">Adresse de la propriété</label><input class="snow-input" id="snow-address" name="address" autocomplete="street-address" required /></div>
                             <div class="mt-5"><label class="mb-2 block font-bold" for="snow-property">Type de propriété</label><select class="snow-input" id="snow-property" name="property_type" required><option value="">Choisir un type</option><option value="residential">Résidentielle</option><option value="commercial">Commerciale</option></select></div>
-                            <button class="mt-7 min-h-14 w-full cursor-pointer rounded border-0 bg-[#123b55] px-5 font-bold text-white hover:bg-[#24617d]" type="button" id="snow-request-button">Envoyer ma demande</button>
-                            <p class="mt-4 text-xs leading-relaxed text-[#526b7a]">Site démo non officiel. Les renseignements saisis ne sont pas envoyés ni enregistrés. Personne ne vous contactera.</p>
+                            <button class="snow-primary-button mt-7 min-h-14 w-full cursor-pointer rounded border-0 bg-[#123b55] px-5 font-bold text-white hover:bg-[#24617d]" type="button" id="snow-request-button">Envoyer ma demande</button>
+                            <p class="snow-muted mt-4 text-xs leading-relaxed text-[#526b7a]">Site démo non officiel. Les renseignements saisis ne sont pas envoyés ni enregistrés. Personne ne vous contactera.</p>
                         </form>
                     </div>
                 </section>
             </main>
         )}
-        <footer class="mx-auto flex max-w-[1180px] flex-wrap justify-between gap-4 px-5 py-8 text-xs text-[#526b7a]"><span>{name} · {city} · Site démo non officiel</span><a class="font-bold text-[#123b55]" href={`tel:${phone}`}>{phoneLabel}</a></footer>
+        <footer class="snow-footer mx-auto flex max-w-[1180px] flex-wrap justify-between gap-4 px-5 py-8 text-xs text-[#526b7a]"><span>{name}{city ? ` · ${city}` : ''} · Site démo non officiel</span><a class="snow-call-link font-bold text-[#123b55]" href={`tel:${phone}`}>{phoneLabel}</a></footer>
         <script>
             const requestForm = document.querySelector<HTMLFormElement>('#snow-request-form');
             const requestButton = document.querySelector<HTMLButtonElement>('#snow-request-button');
@@ -100,6 +107,44 @@ const services = [
                 });
             }
         </script>
-        <style>.snow-input { display: block; width: 100%; min-height: 3rem; border: 1px solid #a7bbc7; border-radius: .25rem; background: white; padding: .75rem; color: #123b55; font-size: 1rem; } .snow-input:focus-visible { outline: 3px solid #7cc3e5; outline-offset: 2px; }</style>
+        <style>
+            /* Only configured prospects receive overrides; earlier demos keep their blue theme. */
+            .snow-demo[data-branded] { background: var(--snow-surface); color: var(--snow-text); }
+            .snow-demo[data-branded] .snow-notice,
+            .snow-demo[data-branded] .snow-soft-section { background: var(--snow-soft-surface); }
+            .snow-demo[data-branded] .snow-notice,
+            .snow-demo[data-branded] .snow-brand { color: var(--snow-primary); }
+            .snow-demo[data-branded] .snow-hero { background: var(--snow-overlay); }
+            .snow-demo[data-branded] .snow-overlay {
+                background-image: linear-gradient(to right,
+                    color-mix(in srgb, var(--snow-overlay) 95%, transparent),
+                    color-mix(in srgb, var(--snow-overlay) 80%, transparent),
+                    color-mix(in srgb, var(--snow-overlay) 25%, transparent));
+            }
+            .snow-demo[data-branded] .snow-hero-copy { color: white; }
+            .snow-demo[data-branded] .snow-muted { color: var(--snow-muted); }
+            .snow-demo[data-branded] .snow-service-card { border-color: color-mix(in srgb, var(--snow-primary) 25%, white); }
+            .snow-demo[data-branded] #soumission { background: var(--snow-cta); color: var(--snow-on-cta); }
+            .snow-demo[data-branded] .snow-cta-title,
+            .snow-demo[data-branded] .snow-cta-copy { color: var(--snow-on-cta); }
+            .snow-demo[data-branded] #soumission .snow-kicker-on-dark { color: var(--snow-cta-kicker); }
+            .snow-demo[data-branded] .snow-form,
+            .snow-demo[data-branded] .snow-input { color: var(--snow-text); }
+            .snow-demo[data-branded] .snow-footer { color: var(--snow-muted); }
+
+            .snow-demo[data-branded] .snow-call-link,
+            .snow-demo[data-branded] .snow-kicker { color: var(--snow-primary); }
+            .snow-demo[data-branded] .snow-kicker-on-dark { color: var(--snow-accent); }
+            .snow-demo[data-branded] .snow-call-button {
+                background: var(--snow-accent);
+                color: var(--snow-on-accent);
+                box-shadow: inset 0 0 0 2px var(--snow-primary);
+            }
+            .snow-demo[data-branded] .snow-secondary-button { border-color: var(--snow-accent); color: var(--snow-accent); }
+            .snow-demo[data-branded] .snow-primary-button { background: var(--snow-primary); color: white; }
+            .snow-demo[data-branded] .snow-call-button:hover,
+            .snow-demo[data-branded] .snow-primary-button:hover { filter: brightness(0.92); }
+            .snow-demo[data-branded] .snow-input:focus-visible { outline-color: var(--snow-primary); }
+            .snow-input { display: block; width: 100%; min-height: 3rem; border: 1px solid #a7bbc7; border-radius: .25rem; background: white; padding: .75rem; color: #123b55; font-size: 1rem; } .snow-input:focus-visible { outline: 3px solid #7cc3e5; outline-offset: 2px; }</style>
     </body>
 </html>

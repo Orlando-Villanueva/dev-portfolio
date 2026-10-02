@@ -1,10 +1,23 @@
 export type SnowProspect = {
     slug: string;
     name: string;
-    city: string;
+    city?: string;
     locationPhrase: string;
     phone: string;
     sectors: string[];
+    colors?: {
+        primary: string;
+        accent: string;
+        onAccent: string;
+        overlay: string;
+        surface: string;
+        softSurface: string;
+        text: string;
+        muted: string;
+        cta: string;
+        onCta: string;
+        ctaKicker: string;
+    };
 };
 
 export const snowDemos: SnowProspect[] = [
@@ -39,5 +52,28 @@ export const snowDemos: SnowProspect[] = [
         locationPhrase: 'aux Cèdres',
         phone: '+14389988303',
         sectors: ['Les Cèdres'],
+    },
+    {
+        slug: 'ottinger',
+        name: 'Paysagiste Ottinger',
+        city: 'Pincourt',
+        locationPhrase: 'à Pincourt',
+        phone: '+15144253799',
+        sectors: ['Pincourt'],
+    },
+    {
+        slug: 'sbc',
+        name: 'SBC Déneigement',
+        city: 'Hudson',
+        locationPhrase: 'à Hudson',
+        phone: '+14504588042',
+        sectors: ['Hudson'],
+    },
+    {
+        slug: 'grp',
+        name: 'Déneigement GRP',
+        locationPhrase: '',
+        phone: '+14508818733',
+        sectors: [],
     },
 ];
